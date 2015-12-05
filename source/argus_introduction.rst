@@ -1,3 +1,5 @@
+.. _argus_main:
+
 <img src="%ATTACHURLPATH%/peacock.png" alt="peacock.png" width='100'
 height='84' />
 

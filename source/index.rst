@@ -11,9 +11,9 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   argus_arch
+   argus_introduction
    pap_config
-   pep_gsi_info
+   gsi_pep_callout
 
 .. toctree::
    :hidden:

@@ -1,3 +1,5 @@
+.. _gsi_pep_callout:
+
 Argus: GSI PEP Callout
 ======================
 
