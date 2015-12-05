@@ -11,9 +11,14 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   argus_arch.rst
-   pap_config.rst
-   pep_gsi_info.rst
+   argus_arch
+   pap_config
+   pep_gsi_info
+
+.. toctree::
+   :hidden:
+
+   ArgusEMIDeployment
 
 
 Indices and tables
