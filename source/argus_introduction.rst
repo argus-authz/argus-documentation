@@ -58,7 +58,8 @@ Argus EMI Deployment
 ~~~~~~~~~~~~~~~~~~~~
 
 For EMI, the Argus Service is installed with YUM, and configured with
-YAIM. Please follow the :ref:`Argus Deployment for EMI documentation <ArgusEMIDeployment>`.
+YAIM. Please follow the Argus :ref:`Deployment for EMI <ArgusEMIDeployment>` 
+documentation.
 
 gLExec Worker Node with Argus Deployment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
