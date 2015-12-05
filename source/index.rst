@@ -12,6 +12,8 @@ Contents:
    :maxdepth: 2
 
    argus_arch.rst
+   pap_config.rst
+   pep_gsi_info.rst
 
 
 Indices and tables
