@@ -1,7 +1,4 @@
-.. _argus_main:
-
-<img src="%ATTACHURLPATH%/peacock.png" alt="peacock.png" width='100'
-height='84' />
+.. _argus_introduction:
 
 Argus Authorization Service
 ===========================
@@ -32,8 +29,10 @@ The Argus Authorization Service is composed of three main components:
 The following graphic shows the interaction between the components of
 the service:
 
-<img src="%ATTACHURLPATH%/glite-ARGUS\_components-v2.png" width="900"
-alt="Argus Components" />
+.. figure:: /images/ARGUS_components.png
+   :align: center
+
+   **Argus service components**
 
 **Note:** In Argus, the PEP is separated in a client/server
 architecture. The PEP Server handles the lightweight PEP client
