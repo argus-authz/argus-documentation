@@ -11,6 +11,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   argus_arch.rst
 
 
 Indices and tables
