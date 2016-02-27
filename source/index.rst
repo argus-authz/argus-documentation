@@ -29,6 +29,7 @@ Contents:
 
    misc/argus_emi_deployment
    misc/grid_map_file
+   misc/emi_yaim_configuration
 
 
 Indices and tables

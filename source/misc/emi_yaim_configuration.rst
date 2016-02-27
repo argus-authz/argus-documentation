@@ -1,9 +1,12 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1360142460"
-format="1.1" reprev="1.5" version="1.5"}%
-%META:TOPICPARENT{name="ArgusEMIDeployment"}%
+.. _argus_emi_yaim_configuration:
 
 Argus YAIM Configuration for EMI
 ================================
+
+.. warning::
+
+    As of UMD 4.0, YAIM is no longer supported to configure Argus. This page is kept for reference only.
+
 
 YAIM Configuration for ARGUS\_server
 ------------------------------------

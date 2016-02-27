@@ -165,8 +165,7 @@ variable:
     VO_DTEAM_VOMSES="'dteam voms.hellasgrid.gr 15004 /C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms.hellasgrid.gr dteam' 'dteam voms2.hellasgrid.gr 15004 /C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms2.hellasgrid.gr dteam'"
     VO_DTEAM_VOMS_CA_DN="'/C=GR/O=HellasGrid/OU=Certification Authorities/CN=HellasGrid CA 2006' '/C=GR/O=HellasGrid/OU=Certification Authorities/CN=HellasGrid CA 2006'"
 
-Documentation of all the `Argus YAIM Configuration
-Variables <ArgusEMIYaimConfiguration>`__.
+See the documentation of all the supported Argus YAIM `configuration variables <argus_emi_yaim_configuration>`.
 
 Generate Argus Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
