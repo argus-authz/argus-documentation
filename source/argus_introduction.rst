@@ -44,9 +44,9 @@ Argus Service Installation
 The following section provides instructions for setting up an Argus
 environment quickly. It does not provide an exhaustive description of
 every possible deployment model or configuration option, that can be
-found in the following `Service
-Components <AuthorizationFramework#Service_Components>`__ and `Enabled
-Applications <AuthorizationFramework#Enabled_Applications>`__ sections.
+found in the following :ref:`Service
+Components <argus_intro_service_components>` and :ref:`Enabled
+Applications <argus_intro_enabled_applications>` sections.
 
 Before you continue it is recommend that you read this :ref:`introduction to
 the Argus system <argus_concepts>`. This will provide you with a better
@@ -66,6 +66,8 @@ gLExec Worker Node with Argus Deployment
 To install and configure an Argus compatible gLExec worker node, follow
 these `GLExec Argus Quick Installation
 Guide <https://wiki.nikhef.nl/grid/GLExec_Argus_Quick_Installation_Guide>`__
+
+.. _argus_intro_service_components:
 
 Service Components
 ------------------
@@ -150,6 +152,8 @@ padding-right:
 15px;">\ `Troubleshooting <AuthZPEPDTroubleshoot>`__\ </td> <td
 style="padding-left: 10px; padding-right: 15px;"></td> <td
 style="padding-left: 10px; padding-right: 15px;"></td> </tr> </table>
+
+.. _argus_intro_enabled_applications:
 
 Enabled Applications
 --------------------
