@@ -80,7 +80,7 @@ use cases.
 PAP: Policy Administration Point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The :ref:`Policy Administration Point (PAP) <argus_pap_index>` provides three major functions:
+The :ref:`Policy Administration Point <argus_pap_index>` (PAP) provides three major functions:
 
 -  Provide the tools for authoring policies
 -  Store and manage authored policies
@@ -90,7 +90,7 @@ The :ref:`Policy Administration Point (PAP) <argus_pap_index>` provides three ma
 PDP: Policy Decision Point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Policy Decision Point (PDP) is a policy evaluation engine. The PDP
+The :ref:`Policy Decision Point <argus_pap_index>` (PDP) is a policy evaluation engine. The PDP
 receives authorization requests from Policy Enforcement Points and
 evaluates these requests against authorization policies retrieved from
 the PAP.
@@ -105,10 +105,12 @@ the PAP.
       - :ref:`Troubleshooting <argus_pdp_troubleshooting>`
 
 
+.. _argus_introduction_pep:
+
 PEP: Policy Enforcement Point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Policy Enforcement Point (PEP) is the client to the authorization
+The :ref:`Policy Enforcement Point <argus_pep_index>` (PEP) is the client to the authorization
 service. It gathers information relevant to an authorization request
 (e.g. who the user, what action they are attempting to perform, which
 service they are attempting to perform the action on, etc.) and sends

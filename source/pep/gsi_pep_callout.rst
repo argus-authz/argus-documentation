@@ -13,15 +13,14 @@ Callouts <http://www.globus.org/toolkit/security/callouts/>`__ framework
 allows to plug in authorization and mapping modules.
 
 The GSI PEP Callout module implements the functionality to authorize and
-map the user by calling out to the `Argus PEP
-Server <AuthorizationFramework#Policy_Enforcement_Point>`__.
+map the user by calling out to the :ref:`Argus PEP Server <argus_introduction_pep>`.
 
 Authorization and Mapping
 +++++++++++++++++++++++++
 
 Based on the Grid credientials, typically a proxy certificate, the GSI
-PEP Callout module will send an authorization request to the `Argus PEP
-Server <AuthorizationFramework#Policy_Enforcement_Point>`__, and then
+PEP Callout module will send an authorization request to the
+:ref:`Argus PEP Server <argus_introduction_pep>`, and then
 parse the authorization response decision to authorize the user and the
 obligations to map him to a local account.
 
@@ -47,8 +46,7 @@ following elements:
 -  XACML resource with the attribute element:
 
    -  AttributeId: ``urn:oasis:names:tc:xacml:1.0:resource:resource-id``
-   -  Value: The value of the `GSI PEP Callout configuration
-      directive <AuthZPEPGSIConfig#Configuration_Directives>`__
+   -  Value: The value of the GSI PEP Callout :ref:`configuration directive <pep_gsi_callout_conf_directives>`
       ``xacml_resourceid``.
 
 -  XACML action with the attribute element:
@@ -80,6 +78,8 @@ following response elements are parsed to authorize and map the user:
 The local identity mapping will only succeed if the authorization
 decision is ``Permit``.
 
+
+.. _pep_gsi_callout_configuration:
 
 Configuration
 -------------
@@ -140,6 +140,8 @@ the configurations file:
 
 -  ``$GSI_PEP_CALLOUT_CONF`` (Environment variable)
 -  ``/etc/grid-security/gsi-pep-callout.conf``
+
+.. _pep_gsi_callout_conf_directives:
 
 Configuration Directives
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -241,7 +243,7 @@ Example
 
 This example shows how to start the GridFTP server in debug mode. The
 configuration files ``gsi-authz.conf`` and ``gsi-pep-callout.conf`` must
-be correctly configured as describe `here <AuthZPEPGSIConfig>`__.
+be correctly configured as :ref:`previously described<pep_gsi_callout_configuration>`.
 
 ::
 

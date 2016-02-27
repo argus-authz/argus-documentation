@@ -1,3 +1,4 @@
+.. _authz_grid_map_file:
 
 Authorization Service: Grid Map File Syntax
 ===========================================

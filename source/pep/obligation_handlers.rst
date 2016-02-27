@@ -16,19 +16,19 @@ Grid Map POSIX Account Mapping Obligation Handler
 .. note::
 
     The Grid Map Account Mapping Obligation Handler only works with
-    the :ref:`gLite Grid Authorization Profile PIP <argus_pep_pip_grid_authz_profile>`,
+    the :ref:`Grid Authorization Profile PIP <argus_pep_pip_grid_authz_profile>`,
     or with clients implementing the `XACML Grid Worker Node Authorization Profile
     (v.1.0) <https://edms.cern.ch/document/1058175>`__ or the `XACML Grid
     Computing Element Authorization Profile
     (v.1.0) <https://edms.cern.ch/document/1078881>`__ specifications.
 
 This obligation handler maps a subject ID, given as a DN, and set of
-FQANs, for example those provided by the `gLite Grid Authorization
-Profile PIP <AuthZPEPPIP#gLite_Grid_Authorization_Profile>`__, in to a
+FQANs, for example those provided by the
+:ref:`Grid Authorization Profile PIP <argus_pep_pip_grid_authz_profile>`, in to a
 POSIX account (login name, primary group name and secondary group
 names).
 
-This mapping is controlled by two `grid map files <AuthZMapFile>`__, one
+This mapping is controlled by two :ref:`grid map files <authz_grid_map_file>`, one
 that provides the mapping of the subject to an account indicator (login
 name or pool account indicatior) and one that maps the subject to a set
 of group names (one primary and any number of secondary).
@@ -36,7 +36,7 @@ of group names (one primary and any number of secondary).
 Configuration
 +++++++++++++
 
-#. Create the account and group `mapping files <AuthZMapFile>`__
+#. Create the account and group :ref:`mapping files <authz_grid_map_file>`
    appropriate for your environment
 #. Create a new INI section for your handler (you may
    choose any valid INI section name)
@@ -53,9 +53,9 @@ OH Configuration Properties
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
 | Property                               | Description                                                                                                                                | Required?   | Default Value                                                 | Since         |
 +========================================+============================================================================================================================================+=============+===============================================================+===============+
-| ``accountMapFile``                     | The absolute path to the `map file <AuthZMapFile>`__ used to map a subject to a POSIX login name.                                          | Y           | None.                                                         | Argus 1.0     |
+| ``accountMapFile``                     | The absolute path to the :ref:`map file <authz_grid_map_file>` used to map a subject to a POSIX login name.                                | Y           | None.                                                         | Argus 1.0     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
-| ``groupMapFile``                       | The absolute path to the `map file <AuthZMapFile>`__ used to map a subject to a set of POSIX groups.                                       | Y           | None.                                                         | Argus 1.0     |
+| ``groupMapFile``                       | The absolute path to the :ref:`map file <authz_grid_map_file>` used to map a subject to a set of POSIX groups.                             | Y           | None.                                                         | Argus 1.0     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
 | ``gridMapDir``                         | The absolute path to the grid map directory.                                                                                               | Y           | None.                                                         | Argus 1.0     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
@@ -89,8 +89,7 @@ Required Request Attributes
 
 This obligation handler **requires** the following request attributes in
 order to correctly map the user. The attributes can be provided by the
-`gLite Grid Authorization Profile
-PIP <AuthZPEPPIP#gLite_Grid_Authorization_Profile>`__, or directly by
+:ref:`Grid Authorization Profile PIP <argus_pep_pip_grid_authz_profile>`, or directly by
 the clients implementing the `XACML Grid Worker Node Authorization
 Profile (v.1.0) <https://edms.cern.ch/document/1058175>`__ or the `XACML
 Grid Computing Element Authorization Profile

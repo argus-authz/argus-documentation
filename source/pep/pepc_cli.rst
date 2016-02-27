@@ -3,6 +3,8 @@
 Argus PEP Clients
 =================
 
+.. _argus_pepc_pepcli:
+
 pepcli
 ------
 
@@ -95,6 +97,8 @@ the action ``my_action_id``, using the Grid proxy as credentials
     $ pepcli --pepd https://argus.example.org:8154/authz --capath /etc/grid-security/certificate --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem  --keyinfo /tmp/x509up_u637--resourceid my_resource_id --actionid my_action_id
     Decision: Permit
 
+
+.. _argus_pepc_javacli:
 
 PEP Java Client Command Line
 ----------------------------
