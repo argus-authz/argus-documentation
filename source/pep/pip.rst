@@ -625,6 +625,8 @@ Environment Time PIP enabled:
     [TIME_PIP]
     parserClass = org.glite.authz.pep.pip.provider.EnvironmentTimePIPIniConfigurationParser
 
+.. _argus_pep_pip_static_attributes:
+
 Static Attributes PIP
 ^^^^^^^^^^^^^^^^^^^^^
 

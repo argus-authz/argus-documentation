@@ -1,25 +1,14 @@
 .. _argus_pepc_cli:
 
-Argus PEP Client: ``pepcli``
-============================
+Argus PEP Clients
+=================
 
-Installation
-------------
+pepcli
+------
 
-The ``pepcli`` command is by default installed with the ``emi-argus``
-metapackage, see `Argus EMI
-Deployment <https://twiki.cern.ch/twiki/bin/view/EGEE/ArgusEMIDeployment>`__.
-But you can install it separately on your host for testing purpose.
+``pepcli`` is the main ARGUS PEP client, based on the C API of the PEP client.
 
-EMI Installation
-~~~~~~~~~~~~~~~~
-
-Install it with YUM: ``yum install argus-pepcli``
-
-PEP Command Line Interface
---------------------------
-
-This ``pepcli`` command allows you to submit a XACML request to the PEP
+The ``pepcli`` command allows you to submit a XACML request to the PEP
 daemon and display the XACML response.
 
 The command is very useful to check if a XACML policy applies (decision
@@ -28,8 +17,20 @@ the given XACML request. Or to check if the XACML response correspond to
 the values you are expecting (``uidgid``, ``secondary-gids``, ...) for
 the user mapping.
 
+Installation
+^^^^^^^^^^^^
+
+The ``pepcli`` command is by default installed with the ``emi-argus``
+metapackage, see :ref:`Argus EMI Deployment <argus_emi_deployment>`.
+But you can also install it separately on your host for testing purpose.
+To install it with YUM:
+
+.. code-block:: bash
+
+    yum install argus-pepcli
+
 Usage
------
+^^^^^
 
 ::
 
@@ -66,7 +67,7 @@ Usage
 The MAN page is also available: ``man pepcli``
 
 Return Code
------------
+^^^^^^^^^^^
 
 The ``pepcli`` command return ``0`` when a valid XACML Response have
 been received, but neither content of the XACML response, nor the
@@ -81,7 +82,7 @@ On error the ``pepcli`` command returns the following value:
 -  ``5`` PEP-C client library error (see output for more detail)
 
 Examples
---------
+^^^^^^^^
 
 Submit a XACML Request to the PEP daemon endpoint URL
 ``https://argus.example.org:8154/authz`` (using SSL/TLS client
@@ -93,3 +94,16 @@ the action ``my_action_id``, using the Grid proxy as credentials
 
     $ pepcli --pepd https://argus.example.org:8154/authz --capath /etc/grid-security/certificate --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem  --keyinfo /tmp/x509up_u637--resourceid my_resource_id --actionid my_action_id
     Decision: Permit
+
+
+PEP Java Client Command Line
+----------------------------
+
+The PEP-J library contains a basic command line utility that is useful
+for sending test requests to the PEP daemon.
+
+The command line client, ``bin/testreq.sh``, takes a single parameter,
+the path (absolute or relative) path to a client configuration file.
+This client will create an empty request and then run any configured
+PIPs in order to populate it. The :ref:`Static Attribute PIP <argus_pep_pip_static_attributes>`
+is very useful for creating custom requests with which to test.

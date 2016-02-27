@@ -1,10 +1,7 @@
 .. _argus_pepc_api:
 
-Argus PEP Client Library: Programming Interface
-===============================================
-
-PEP Client API for C
-====================
+Argus PEP Client Library: C API
+===============================
 
 Documentation
 -------------
@@ -115,7 +112,3 @@ here:
     }
     ...
 
-%META:FILEATTACHMENT{name="Argus\_PEP\_ObjectModel.png"
-attachment="Argus\_PEP\_ObjectModel.png" attr="h" comment="PEP XACML
-Object Model" date="1290185662" path="Argus\_PEP\_ObjectModel.png"
-size="351476" user="ad968f62f612332eff6b" version="1"}%

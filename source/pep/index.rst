@@ -9,13 +9,16 @@ server component and there are different lightweight PEP clients
 available: C client, Java client, GSI PEP Callout client, ...
 
 .. toctree::
-    :maxdepth: 2
+   :maxdepth: 2
 
-    pepd_installation
-    pepd_configuration
-    pepd_operation
-    pepd_troubleshooting
-    pip
+   pepd_installation
+   pepd_configuration
+   pepd_operation
+   pepd_troubleshooting
+   pip
 
-    gsi_pep_callout
+   pep_cli
+   pepc_api
+
+   gsi_pep_callout
 
