@@ -19,6 +19,7 @@ Contents:
    pap/index
    pdp/index
    pep/index
+   monitoring/index
 
    twiki_pages/index
 
