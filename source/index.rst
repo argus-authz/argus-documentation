@@ -20,6 +20,7 @@ Contents:
    pdp/index
    pep/index
    monitoring/index
+   misc/examples
 
    twiki_pages/index
 

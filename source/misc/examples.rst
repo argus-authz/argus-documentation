@@ -1,18 +1,15 @@
-%META:TOPICINFO{author="chad\_2elajoie\_40switch\_2ech"
-date="1255951721" format="1.1" reprev="1.3" version="1.3"}%
-%META:TOPICPARENT{name="AuthZIntro"}%
+.. _argus_request_and_policy_examples:
 
-Example Authorization Requests and Policies
-===========================================
+Example of Authorization Requests and Policies
+==============================================
 
 The following examples of policies and associated requests are meant to
 illustrate some of the possible policies, requests, and resulting
 authorization decisions.
 
-Note, the examples below use the PAP's `simplified policy
-language <SimplifiedPolicyLanguage>`__ to express policies. So please
-review this syntax, before proceeding, if you are not yet familiar with
-it.
+Note, the examples below use the PAP's
+:ref:`simplified policy language <argus_simplified_policy_language>` to express policies. So please
+review this syntax, before proceeding, if you are not yet familiar with it.
 
 User Based Authorization
 ------------------------
