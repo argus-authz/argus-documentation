@@ -51,20 +51,49 @@ POLICY section
 SECURITY section
 ~~~~~~~~~~~~~~~~
 
-\| **Property** \| **Description** \| **Required?** \| **Default Value**
-\| \| servicePrivateKey \| An absolute path to the file containing the
-unencrypted, PEM-encoded, private key used by this service. All PDPs
-instances within a single logical PDP should use the same key. \| Y \|
-None. \| \| serviceCertificate \| An absolute path to the file
-containing the unencrypted, PEM-encoded, certifcate used by this
-service. All PDPs instances within a single logical PDP should use the
-same key. \| Y \| None. \| \| trustInfoDir \| An absolute path to the
-directory that contains standard X.509 trust information, such as the
-IGTF Trust Anchor Distribution. \| Y \| None \| \| enableSSL \|
-Indicates whether the service port should use SSL/TLS or not. \| N \|
-false \| \| requireClientCertAuthentication \| Indicates whether the
-client must use a valid client certificate to authenticate to the PDP \|
-N \| false \|
+.. list-table::
+    :header-rows: 1
+
+    *
+        - Property
+        - Description
+        - Required
+        - Default Value
+
+    *
+        - servicePrivateKey
+        - An absolute path to the file containing the
+          unencrypted, PEM-encoded, private key used by this service. All PDPs
+          instances within a single logical PDP should use the same key
+        - Yes
+        - None
+
+    *
+        - serviceCertificate
+        - An absolute path to the file containing the unencrypted, PEM-encoded, certifcate used by this
+          service. All PDPs instances within a single logical PDP should use the same key
+        - Yes
+        - None
+
+    *
+        - trustInfoDir
+        - An absolute path to the directory that contains standard X.509 trust information, such as the
+          IGTF Trust Anchor Distribution
+        - Yes
+        - None
+
+    *
+        - enableSSL
+        - Indicates whether the service port should use SSL/TLS or not
+        - No
+        - false
+
+    *
+        - requireClientCertAuthentication
+        - Indicates whether the client must use a valid client certificate to authenticate to the PDP
+        - No
+        - false
+
 
 Example pdp.ini files
 ~~~~~~~~~~~~~~~~~~~~~
@@ -118,15 +147,40 @@ SERVICE section
 POLICY section
 ~~~~~~~~~~~~~~
 
-\| **Property** \| **Description** \| **Required?** \| **Default Value**
-\| \| policySetId \| The ID of the policy to fetch from the PAP. \| N \|
--1 \| \| connectionTimeout \| This is the length of time, in seconds,
-the PAP client will wait for the PAP to send information before it
-considers the request timed out. \| N \| 30 seconds \| \|
-receiveBufferSize \| This is the size, in bytes, that will be allocated
-to the PAP client send buffer. \| N \| 16384 (16kb) \| \| sendBufferSize
-\| This is the size, in bytes, that will be allocated to the PAP client
-request buffer. \| N \| 16384 (16kb) \|
+.. list-table::
+    :header-rows: 1
+
+    *
+        - Property
+        - Description
+        - Required
+        - Default Value
+
+    *
+        - policySetId
+        - The ID of the policy to fetch from the PAP
+        - No
+        - -1
+
+    *
+        - connectionTimeout
+        - This is the length of time, in seconds,  the PAP client will wait for the PAP to send information before it
+          considers the request timed out
+        - None
+        - 30
+
+    *
+        - receiveBufferSize
+        - This is the size, in bytes, that will be allocated to the PAP client send buffer
+        - No
+        - 16384 (16KB)
+
+    *
+        - sendBufferSize
+        - This is the size, in bytes, that will be allocated to the PAP client request buffer
+        - No
+        - 16384 (16KB)
+
 
 SECURITY section
 ~~~~~~~~~~~~~~~~
