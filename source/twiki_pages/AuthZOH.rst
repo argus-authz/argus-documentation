@@ -1,6 +1,3 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1361525528"
-format="1.1" reprev="1.27" version="1.27"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
 
 Argus PEP Server Obligation Handlers
 ====================================
@@ -13,13 +10,14 @@ like "write output to directory X" or "perform all work as user 1".
 Grid Map POSIX Account Mapping Obligation Handler
 -------------------------------------------------
 
-**NOTE: The Grid Map Account Mapping Obligation Handler only works with
-the `gLite Grid Authorization Profile
-PIP <AuthZPEPPIP#gLite_Grid_Authorization_Profile>`__, or with clients
-implementing the `XACML Grid Worker Node Authorization Profile
-(v.1.0) <https://edms.cern.ch/document/1058175>`__ or the `XACML Grid
-Computing Element Authorization Profile
-(v.1.0) <https://edms.cern.ch/document/1078881>`__ specifications.**
+.. note::
+
+    The Grid Map Account Mapping Obligation Handler only works with
+    the :ref:`gLite Grid Authorization Profile PIP <argus_pep_pip_grid_authz_profile>`,
+    or with clients implementing the `XACML Grid Worker Node Authorization Profile
+    (v.1.0) <https://edms.cern.ch/document/1058175>`__ or the `XACML Grid
+    Computing Element Authorization Profile
+    (v.1.0) <https://edms.cern.ch/document/1078881>`__ specifications.
 
 This obligation handler maps a subject ID, given as a DN, and set of
 FQANs, for example those provided by the `gLite Grid Authorization
@@ -33,7 +31,7 @@ name or pool account indicatior) and one that maps the subject to a set
 of group names (one primary and any number of secondary).
 
 Configuration
-~~~~~~~~~~~~~
++++++++++++++
 
 #. Create the account and group `mapping files <AuthZMapFile>`__
    appropriate for your environment
@@ -77,14 +75,14 @@ OH Configuration Properties
 for Argus 1.0 and Argus 1.1. From Argus 1.2 the default is *true*.**
 
 Required Response Obligation Trigger
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++++++
 
 This obligation handler is triggered if the PDP response contains the
 obligation ``http://glite.org/xacml/obligation/local-environment-map``,
 or the value defined by the *handledObligationId* parameter.
 
 Required Request Attributes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++
 
 This obligation handler **requires** the following request attributes in
 order to correctly map the user. The attributes can be provided by the
@@ -124,7 +122,7 @@ Grid Computing Element Authorization Profile
       for the subject
 
 Response Obligation Results
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++
 
 This result of this obligation handler is the **replacement** of the
 generic ``http://glite.org/xacml/obligation/local-environment-map`` with
@@ -163,13 +161,13 @@ account mapping obligation handler defined:
     gridMapDir = /etc/grid-security/gridmapdir
 
 Account and Group Mapping
-~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++
 
 This Obligation Handler uses the following logic to determine the
 mapping of the subject to a POSIX account.
 
 Preconditions
-'''''''''''''
+^^^^^^^^^^^^^
 
 -  The input to this process is the subject DN of the end-entity
    certificate of the user and optionally a primary FQAN and a list of
@@ -184,7 +182,7 @@ Preconditions
    also be read/writable by the user running the authorization service.
 
 Mapping Steps
-'''''''''''''
+^^^^^^^^^^^^^
 
 #. If a primary FQAN is given it is checked against the mappings listed
    in the account map file. If the primary FQAN matches a key in the map
@@ -239,7 +237,7 @@ Mapping Steps
 handler only returns a login name. No group information is returned.
 
 DN Encoding Rules
-'''''''''''''''''
+^^^^^^^^^^^^^^^^^
 
 #. Leading zeros are removed from attribute types that are encoded as
    dotted decimal OIDs
@@ -266,16 +264,15 @@ DN Encoding Rules
 #. The DN is converted to the non-standard, openssl one line format
 #. The string is then URL-encoded
 
-Be Aware
-''''''''
+.. note::
 
--  A reorder of entries in the group map file that results in a change
-   in the primary group will cause an incoming user to be mapped to a
-   new account as this information is part of the link created in the
-   grid map directory.
--  A reordering of entries in the group map file that does **not**
-   result in a change to the primary group but provides the same
-   secondary groups in a different order does **not** result in a new
-   mapping for a returning user since the link created in the grid map
-   directory orders the secondary group names in ascending alphabetical
-   order.
+    -  A reorder of entries in the group map file that results in a change
+       in the primary group will cause an incoming user to be mapped to a
+       new account as this information is part of the link created in the
+       grid map directory.
+    -  A reordering of entries in the group map file that does **not**
+       result in a change to the primary group but provides the same
+       secondary groups in a different order does **not** result in a new
+       mapping for a returning user since the link created in the grid map
+       directory orders the secondary group names in ascending alphabetical
+       order.

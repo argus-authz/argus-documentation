@@ -1,5 +1,3 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1282748946"
-format="1.1" version="1.2"}% %META:TOPICPARENT{name="AuthZOH"}%
 
 Authorization Service: Grid Map File Syntax
 ===========================================
@@ -51,25 +49,25 @@ case the following escape sequences may be used:
 +-------------------+---------------------------------------------------------------------+
 | Escape Sequence   | Represents                                                          |
 +===================+=====================================================================+
-| \\'               | a single quote                                                      |
+| ``\'``            | a single quote                                                      |
 +-------------------+---------------------------------------------------------------------+
-| \\"               | a double quote                                                      |
+| ``\"``            | a double quote                                                      |
 +-------------------+---------------------------------------------------------------------+
-| \\\\              | a backwards slash                                                   |
+| ``\\``            | a backwards slash                                                   |
 +-------------------+---------------------------------------------------------------------+
-| \\/               | a forward slash                                                     |
+| ``\/``            | a forward slash                                                     |
 +-------------------+---------------------------------------------------------------------+
-| \\f               | a formfeed                                                          |
+| ``\f``            | a formfeed                                                          |
 +-------------------+---------------------------------------------------------------------+
-| \\n               | a new line                                                          |
+| ``\n``            | a new line                                                          |
 +-------------------+---------------------------------------------------------------------+
-| \\r               | a carriage return                                                   |
+| ``\r``            | a carriage return                                                   |
 +-------------------+---------------------------------------------------------------------+
-| \\t               | a horizontal tab                                                    |
+| ``\t``            | a horizontal tab                                                    |
 +-------------------+---------------------------------------------------------------------+
-| \\x##             | the ASCII character corresponding to the given hexadecimal digits   |
+| ``\x##``          | the ASCII character corresponding to the given hexadecimal digits   |
 +-------------------+---------------------------------------------------------------------+
-| \\u####           | the UTF-8 character corresponding to the given hexadecimal digits   |
+| ``\u####``        | the UTF-8 character corresponding to the given hexadecimal digits   |
 +-------------------+---------------------------------------------------------------------+
 
 Map Targets
