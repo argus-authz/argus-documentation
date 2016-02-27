@@ -26,7 +26,8 @@ Contents:
 .. toctree::
    :hidden:
 
-   argus_emi_deployment
+   misc/argus_emi_deployment
+   misc/grid_map_file
 
 
 Indices and tables
