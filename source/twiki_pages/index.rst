@@ -3,9 +3,10 @@
 Legacy Pages from Twiki site
 ============================
 
-The pages below have been converted to the new conversion format without any specific review. They are coming from
-the former Argus |Twiki site| and are pending
-integration into the new documentation.
+.. warning::
+
+    The pages below have been converted to the new documentation format without any specific review. They are coming from
+    the former Argus |Twiki site| and are probably obsolete. They are kept here for reference only.
 
 .. |Twiki site| raw:: html
 
