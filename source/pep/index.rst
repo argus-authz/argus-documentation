@@ -10,10 +10,13 @@ implemented as a client-server architecture. The PEP Daemon is the
 server component and there are different lightweight PEP clients
 available: C client, Java client, GSI PEP Callout client, ...
 
-`Installation <AuthZPEPDInstall>`__
+.. toctree::
+    :maxdepth: 2
 
-`Configuration <AuthZPEPDConfig>`__
+    pepd_installation
+    pepd_configuration
+    pepd_operation
+    pepd_troubleshooting
 
-`Operation <AuthZPEPDOperation>`__
+    gsi_pep_callout
 
-`Troubleshooting <AuthZPEPDTroubleshoot>`__
