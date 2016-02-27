@@ -193,7 +193,7 @@ Nagios Monitoring
 
 Nagios plugins are available to monitor an Argus server.
 
--  **EMI**: :ref:`EMI Argus Nagios Probes Documentation <argus_emi_nagios_probees>`__
+-  **EMI**: :ref:`EMI Argus Nagios Probes Documentation <argus_emi_nagios_probes>`
 
 Development Information
 -----------------------
