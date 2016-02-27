@@ -193,10 +193,7 @@ Nagios Monitoring
 
 Nagios plugins are available to monitor an Argus server.
 
--  For **EMI**: `Argus Nagios Probes Documentation
-   (EMI) <ArgusEMINagiosProbes>`__
--  For **gLite 3.2**: `Installation and Configuration of the Nagios
-   plugins for Argus (gLite 3.2) <AuthZNagios>`__
+-  **EMI**: :ref:`EMI Argus Nagios Probes Documentation <argus_emi_nagios_probees>`__
 
 Development Information
 -----------------------
@@ -204,19 +201,7 @@ Development Information
 Argus Product Team
 ~~~~~~~~~~~~~~~~~~
 
-Since the beginning of EMI the Argus development is led by the `Argus
-PT <https://twiki.cern.ch/twiki/bin/view/EMI/Argus>`__.
-
-Security Assessment
-~~~~~~~~~~~~~~~~~~~
-
-In June 2011, the Universitat Autònoma de Barcelona (Manuel Brugnoli and
-Elisa Heymann, CAOS - UAB) have finished the vulnerabitlity assessment
-of the Argus services. The document is available here:
-
--  `20110601-Argus\_Vulnerability\_Assessment.pdf <%ATTACHURL%/20110601-Argus_Vulnerability_Assessment.pdf>`__:
-   Argus Vulnerability Assessment (Universtat Autònoma de Barcelona,
-   June 2011)
+Argus is an open-source product hosted on `GitHub <https://github.com/argus-authz>`__
 
 Specifications
 ~~~~~~~~~~~~~~

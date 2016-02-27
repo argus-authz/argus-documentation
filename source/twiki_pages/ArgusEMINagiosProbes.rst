@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="daiftimi" date="1362467858" format="1.1"
-reprev="1.9" version="1.9"}%
-%META:TOPICPARENT{name="ArgusEMIDeployment"}%
+.. _argus_emi_nagios_probes:
 
 Nagios Probes for Argus (EMI-2 & EMI-3)
 =======================================
