@@ -14,7 +14,6 @@ integration into the new documentation.
 .. toctree::
    :maxdepth: 1
 
-   ArgusEMIDeployment
    ArgusEMIEmirConfiguration
    ArgusEMIFineTuning
    ArgusEMINagiosProbes
@@ -29,7 +28,6 @@ integration into the new documentation.
    AuthZOH
    AuthZPAP
    AuthZPAPCLI
-   AuthZPAPConfig
    AuthZPAPInstall
    AuthZPAPOperation
    AuthZPAPTroubleshoot
@@ -48,7 +46,6 @@ integration into the new documentation.
    AuthZPEPDOperation
    AuthZPEPDTroubleshoot
    AuthZPEPGSIConfig
-   AuthZPEPGSIInfo
    AuthZPEPGSIInstall
    AuthZPEPGSITroubleshooting
    AuthZPEPJCLI
