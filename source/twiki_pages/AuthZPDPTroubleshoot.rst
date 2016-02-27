@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="chad\_2elajoie\_40switch\_2ech"
-date="1263402485" format="1.1" version="1.2"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _argus_pdp_troubleshooting:
 
 Argus: Policy Decision Point (PDP): Troubleshooting
 ===================================================

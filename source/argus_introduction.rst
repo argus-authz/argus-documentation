@@ -106,12 +106,15 @@ receives authorization requests from Policy Enforcement Points and
 evaluates these requests against authorization policies retrieved from
 the PAP.
 
-<table border="0"> <tr> <td style="padding-right:
-15px;">\ `Installation <AuthZPDPInstall>`__\ </td> <td
-style="padding-right: 15px;">\ `Configuration <AuthZPDPConfig>`__\ </td>
-<td style="padding-right:
-15px;">\ `Operation <AuthZPDPOperation>`__\ </td>
-<td>`Troubleshooting <AuthZPDPTroubleshoot>`__\ </td> </tr> </table>
+.. list-table::
+   :header-rows: 0
+
+   *
+      - :ref:`Installation <argus_pdp_installation>`
+      - :ref:`Configuration <argus_pdp_configuration>`
+      - :ref:`Operation <argus_pdp_operation>`
+      - :ref:`Troubleshooting <argus_pdp_troubleshooting>`
+
 
 PEP: Policy Enforcement Point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,5 +1,4 @@
-%META:TOPICINFO{author="litmaath" date="1423676969" format="1.1"
-version="1.9"}% %META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _argus_pdp_configuration:
 
 Argus Policy Decision Point (PDP): Configuration
 ================================================
