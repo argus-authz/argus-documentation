@@ -1,12 +1,9 @@
 .. _argus_pepj_api:
 
-Argus: PEP Java Client: Programming Interface
-=============================================
+Argus PEP Client: Java Programming Interface
+============================================
 
-PEP Java Client API
-===================
-
-The Argus PEP Java client library is use to communicate with the Argus
+The Argus PEP Java client library is used to communicate with the Argus
 PEP daemon. It authorizes request and receives response back from Argus.
 
 Javadoc
@@ -21,8 +18,10 @@ PEP XACML Object Model
 The PEP client XACML object model implemented in the package
 ``org.glite.authz.common.model`` follow this schema:
 
-<img src="%ATTACHURLPATH%/Argus\_PEP\_ObjectModel.png"
-alt="Argus\_PEP\_ObjectModel.png" width='600' />
+
+.. figure:: /images/Argus_PEP_ObjectModel.png
+   :align: center
+   :scale: 25%
 
 Basic Example
 -------------
@@ -105,6 +104,7 @@ Just click on the following image which will download the application to
 your desktop and start it. Once you've downloaded it you can restart it
 by double-clicking the Argus-PEP-Client.jnlp file.
 
-`<img src="%ATTACHURLPATH%/Pep-Client-Gui-Screenshot.png"
-alt="Pep-Client-Gui-Screenshot.png" width='497' height='218'
-/> <%ATTACHURL%/Argus-Pep-Client.jnlp>`__
+.. figure:: /images/Pep-Client-Gui-Screenshot.png
+   :align: center
+   :scale: 60%
+
