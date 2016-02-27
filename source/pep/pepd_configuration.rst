@@ -7,7 +7,7 @@ Configuration File
 ------------------
 
 The PEP is configured through the user of the ``pepd.ini`` file. This
-file is a `standard INI file <AuthZINIFile>`__ with different defined
+file is a standard INI file with different defined
 sections. The ``SERVICE`` section contains properties related the PEP
 Server service as a whole and how it listens for incoming requests. The
 ``PDP`` section that control how callouts to the PDP are made. The final

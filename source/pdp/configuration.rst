@@ -7,7 +7,7 @@ Configuration File Syntax
 -------------------------
 
 The PDP is configured through the use of the ``pdp.ini`` file. This file
-is a `standard INI file <AuthZINIFile>`__ with three defined sections.
+is a standard INI file  with three defined sections.
 The ``SERVICE`` section contains properties related the PDP service as a
 whole and how it listens for incoming requests. The ``POLICY`` section
 contains properties for the retrieval of policies from the Policy

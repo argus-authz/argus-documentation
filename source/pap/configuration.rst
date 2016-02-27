@@ -17,8 +17,8 @@ Service configuration file
 --------------------------
 
 The service is primarily configured through the
-``pap_configuration.ini`` configuration file. This file is a `standard
-INI file <AuthZINIFile>`__ with five defined sections.
+``pap_configuration.ini`` configuration file. This file is a standard
+INI file with five defined sections.
 
 Section: [paps]
 ~~~~~~~~~~~~~~~

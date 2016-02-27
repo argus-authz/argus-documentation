@@ -23,7 +23,7 @@ them have at least one value, which is not null or an empty string.
 Configuration
 ^^^^^^^^^^^^^
 
-#. Create a new `INI section <AuthZINIFile>`__ for you PIP (you may
+#. Create a new INI section for you PIP (you may
    choose any valid INI section name. e.g. REQVALIDATOR\_PIP)
 #. Into the PIP INI section add the ``parserClass`` property with the
    value
@@ -91,7 +91,7 @@ value from the old, unsupported and wrong OpenSSL oneline format (e.g.
 Configuration
 ^^^^^^^^^^^^^
 
-#. Create a new `INI section <AuthZINIFile>`__ for you PIP (you may
+#. Create a new INI section for you PIP (you may
    choose any valid INI section name. e.g. OPENSSLSUBJECT\_PIP)
 #. Into the PIP INI section add the ``parserClass`` property with the
    value
@@ -160,7 +160,7 @@ Computing Element Authorization Profile
 Configuration
 ^^^^^^^^^^^^^
 
-#. Create a new `INI section <AuthZINIFile>`__ for you PIP (you may
+#. Create a new INI section for you PIP (you may
    choose any valid INI section name. e.g. GLITEXACMLPROFILE\_PIP)
 #. Into the PIP INI section add the ``parserClass`` property with the
    value
@@ -327,7 +327,7 @@ specifications.
 Configuration
 ^^^^^^^^^^^^^
 
-#. Create a new `INI section <AuthZINIFile>`__ for you PIP (you may
+#. Create a new INI section for you PIP (you may
    choose any valid INI section name. e.g. COMMONXACMLPROFILE\_PIP)
 #. Into the PIP INI section add the ``parserClass`` property with the
    value
@@ -495,7 +495,7 @@ accepted within a request.
 Configuration
 +++++++++++++
 
-#. Create a new `INI section <AuthZINIFile>`__ for you PIP (you may
+#. Create a new INI section for you PIP (you may
    choose any valid INI section name. e.g. WHITELIST\_PIP)
 #. Into the PIP INI section add the ``parserClass`` property with the
    value
@@ -558,7 +558,7 @@ PEP Server as will make every request different.
 Configuration
 +++++++++++++
 
-#. Create a new `INI section <AuthZINIFile>`__ for you PIP (you may
+#. Create a new INI section for you PIP (you may
    choose any valid INI section name. e.g. TIME\_PIP)
 #. To PIP INI section add the ``parserClass`` property with the value
    ``org.glite.authz.pep.pip.provider.EnvironmentTimePIPIniConfigurationParser``
@@ -639,7 +639,7 @@ arbitrary request.
 Configuration
 +++++++++++++
 
-#. Create a new `INI section <AuthZINIFile>`__ for you PIP (you may
+#. Create a new INI section for you PIP (you may
    choose any valid INI section name)
 #. To PIP INI section add the ``parserClass`` property with the value
    ``org.glite.authz.pep.pip.provider.StaticPIPIniConfigurationParser``
@@ -677,7 +677,7 @@ Configuration
 To define your static attribute files, repeat the following steps for
 each static attribute you wish to define:
 
-#. Create a new `INI section <AuthZINIFile>`__ for you PIP (you may
+#. Create a new INI section for you PIP (you may
    choose any valid INI section name)
 #. Define the property ``id`` with the value of the ID of the attribute
 #. Optionally define the property ``datatype`` with the datatype of the

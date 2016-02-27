@@ -35,7 +35,7 @@ Configuration
 
 #. Create the account and group `mapping files <AuthZMapFile>`__
    appropriate for your environment
-#. Create a new `INI section <AuthZINIFile>`__ for your handler (you may
+#. Create a new INI section for your handler (you may
    choose any valid INI section name)
 #. To handler INI section add the ``parserClass`` property with the
    value
