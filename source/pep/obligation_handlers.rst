@@ -1,3 +1,4 @@
+.. _argus_pep_obligation_handlers:
 
 Argus PEP Server Obligation Handlers
 ====================================
@@ -6,6 +7,8 @@ Obligation handlers are plugins used by the authorization service in
 order to adjust the environment, under which an action will run, to a
 state that meets a particular set of obligations. Obligation are things
 like "write output to directory X" or "perform all work as user 1".
+
+.. _argus_pep_gridmap_obligation_handler:
 
 Grid Map POSIX Account Mapping Obligation Handler
 -------------------------------------------------

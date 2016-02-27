@@ -37,7 +37,7 @@ while other will need addition information.
 Obligation Handler Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each Obligation Handler (OH) is configured in its own INI section,
+Each :ref:`Obligation Handler <argus_pep_obligation_handlers>` (OH) is configured in its own INI section,
 referenced in the ``SERVICE`` section under the ``obligationHandlers``
 property.
 
@@ -45,8 +45,8 @@ The configuration properties needed by each Obligation Handler is
 specific to that given OH. Some will not require any properties beyond
 the standard set while other will need addition information.
 
-\* See the `Obligation Handler <AuthZOH>`__ documentation for more
-information: \* `Gridmap Account Mapping Obligation Handler <AuthZOH>`__
+See the :ref:`Obligation Handler <argus_pep_obligation_handlers>` documentation for more
+information, in particular the :ref:`Gridmap Account Mapping Obligation Handler <argus_pep_gridmap_obligation_handler>`.
 
 Basic Configuration Options
 ---------------------------
@@ -71,7 +71,7 @@ SERVICE section
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+----------------------------------------------------------------------------------------------------------------+
 | pips                 | This is a space separated list of the INI section names that configure policy information points (PIP) that the PEP will invoke upon the arrival of every request. PIPs are executed in the order listed by this property. See the `policy information point <AuthZPEPPIP>`__ documentation for more information.   | N           | None                                                                                                           |
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+----------------------------------------------------------------------------------------------------------------+
-| obligationHandlers   | This is a space separated list of the INI section names that configure obligations handlers that the PEP will use to fulfill obligation requirements sent back by the PDP. See the `obligation handler <AuthZOH>`__ documentation for more information.                                                             | N           | None                                                                                                           |
+| obligationHandlers   | This is a space separated list of the INI section names that configure obligations handlers that the PEP will use to fulfill obligation requirements sent back by the PDP. See the :ref:`obligation handler <argus_pep_obligation_handlers>` documentation for more information.                                    | N           | None                                                                                                           |
 +----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+----------------------------------------------------------------------------------------------------------------+
 
 PDP section

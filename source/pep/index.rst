@@ -23,3 +23,4 @@ available: C client, Java client, GSI PEP Callout client, ...
 
    gsi_pep_callout
 
+   obligation_handlers
