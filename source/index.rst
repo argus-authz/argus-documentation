@@ -17,6 +17,7 @@ Contents:
    argus_introduction
    argus_concepts
    pap/index
+   pdp/index
    gsi_pep_callout
 
    twiki_pages/index

@@ -20,8 +20,9 @@ Prerequisites
    -  The service will be started with the ``java`` command available on
       the command path of the user executing the start script.
 
--   LCG trusted Certificate Authorities certificates installed. In SL4,
+-  LCG trusted Certificate Authorities certificates installed. In SL4,
    the ``lcg-ca`` package provides those certificates.
+
 -  a valid PEM-encoded X509 private key and certificate issued by a
    trusted CA
 
