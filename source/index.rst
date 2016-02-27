@@ -15,6 +15,7 @@ Contents:
    :includehidden:
 
    argus_introduction
+   argus_concepts
    pap_config
    gsi_pep_callout
 

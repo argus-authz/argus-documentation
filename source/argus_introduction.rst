@@ -48,8 +48,8 @@ found in the following `Service
 Components <AuthorizationFramework#Service_Components>`__ and `Enabled
 Applications <AuthorizationFramework#Enabled_Applications>`__ sections.
 
-Before you continue it is recommend that you read this `introduction to
-the Argus system <AuthZIntro>`__. This will provide you with a better
+Before you continue it is recommend that you read this :ref:`introduction to
+the Argus system <argus_concepts>`. This will provide you with a better
 understanding of how the components work together, what information
 passes between the components and how policies are formed.
 
