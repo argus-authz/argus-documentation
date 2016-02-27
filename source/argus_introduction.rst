@@ -128,9 +128,10 @@ In Argus, the PEP itself has a client/server architecture
     requests from the application side, and to enforce decision locally. There are
     two variants available:
 
-    - PEP Client C API: :ref:`Programming Interface (API) <argus_pepc_api>`,
-      :ref:`Command Line (pepcli) <argus_pepc_cli>`
-    - PEP Client Java API: :ref:`Installation <argus_pepj_installation>`, :ref:`Programming Interface (API) <argus_pepj_api>`
+    - PEP Client C API: :ref:`Programming Interface (API) <argus_pepc_api>`
+    - PEP Client Java API: :ref:`Programming Interface (API) <argus_pepj_api>`
+
+:ref:`PEP command-line clients <argus_pepc_cli>` are also available
 
 
 .. _argus_intro_enabled_applications:
