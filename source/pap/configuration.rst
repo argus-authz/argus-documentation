@@ -24,9 +24,7 @@ Section: [paps]
 ~~~~~~~~~~~~~~~
 
 This section contains configuration about paps. The information in this
-section should be set via the command line interface (see the
-`#Pap\_management\_commands <#Pap_management_commands>`__ commands
-group).
+section should be set via the :ref:`PAP CLI <argus_pap_cli>`.
 
 A paps can be defined by providing the following information (the R
 value in the Required? column indicates information that is required
@@ -124,6 +122,8 @@ Access control rules are configured through the
 ``pap_authorization.ini`` configuration file. Authorization is based on
 off of the Subject DN or VOMS attribute within the client certificate
 used to authenticate to the PAP.
+
+.. _argus_pap_permissions:
 
 PAP permissions
 ~~~~~~~~~~~~~~~

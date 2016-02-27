@@ -470,8 +470,7 @@ Add a remote or local pap.
 -  ``dn``: DN of the remote pap
 
 A just added pap is disabled by default (its policies are not sent to
-the PDP), use the command ``enable-pap`` to enable it (see
-`#Command\_enable\_pap <#Command_enable_pap>`__).
+the PDP), use the command :ref:`enable-pap <argus_pap_cli_enable_pap>` to enable it.
 
 By default a pap is considered to be private (use the ``--public``
 option to set the pap as public). Policies defined in a public pap can
@@ -557,6 +556,8 @@ Command specific options:
 
 -  ``-l``: use a long list format (displays all the information of a
    pap).
+
+.. _argus_pap_cli_enable_pap:
 
 Command: enable-pap
 ~~~~~~~~~~~~~~~~~~~
@@ -710,10 +711,9 @@ where:
 
 -  ``principal`` can be either an X509 DN or a VOMS FQAN. ``ANYONE`` can
    be used to assign permissions to any authenticated user.
--  ``permissions`` is a \| separated list of PAP permissions that will
+-  ``permissions`` is a ``|`` separated list of :ref:`PAP permissions <argus_pap_permissions>` that will
    be assigned to ``principal``. The ``ALL`` shortcut can be used to
-   assign all permission. Valid permissions values are defined
-   `here <#PAP_permissions>`__.
+   assign all permission.
 
 Example:
 
