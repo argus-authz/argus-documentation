@@ -200,10 +200,9 @@ Nagios plugins are available to monitor an Argus server.
 Development Information
 -----------------------
 
-Argus Product Team
-~~~~~~~~~~~~~~~~~~
-
-Argus is an open-source product hosted on `GitHub <https://github.com/argus-authz>`__
+Argus is an open-source product hosted on `GitHub <https://github.com/argus-authz>`__. In addition to this
+user-oriented documentation, you can find a description of Argus architecture and main components at Argus
+`main site <http://argus-authz.github.io>`__.
 
 Specifications
 ~~~~~~~~~~~~~~
