@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1300281231"
-format="1.1" reprev="1.10" version="1.10"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _AuthZPEPGSIConfig:
 
 Argus GSI PEP Callout Configuration
 ===================================

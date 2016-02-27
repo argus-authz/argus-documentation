@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1272278059"
-format="1.1" version="1.2"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _AuthZPEPGSIInstall:
 
 Argus: GSI PEP Callout: Installation
 ====================================

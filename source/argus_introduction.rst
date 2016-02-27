@@ -158,28 +158,27 @@ style="padding-left: 10px; padding-right: 15px;"></td> </tr> </table>
 Enabled Applications
 --------------------
 
-The following application contain an Argus PEP client and can make
+The following applications contain an Argus PEP client and can make
 authorization requests to the Argus service.
 
-<table border="0"> <tr> <th style="padding-right: 15px;">GSI PEP
-Callout</th> <th style="padding-right: 15px;">gLExec with PEP
-Plug-in</th> </tr> <tr> <td style="padding-left: 10px; padding-right:
-15px;">\ `Module Description <AuthZPEPGSIInfo>`__\ </td> <td
-style="padding-left: 10px; padding-right:
-15px;">\ `Introduction <https://wiki.nikhef.nl/grid/GLExec_Argus_Quick_Installation_Guide#Introduction>`__\ </td>
-</tr> <tr> <td style="padding-left: 10px; padding-right:
-15px;">\ `Installation <AuthZPEPGSIInstall>`__\ </td> <td
-style="padding-left: 10px; padding-right:
-15px;">\ `Installation <https://wiki.nikhef.nl/grid/GLExec_Argus_Quick_Installation_Guide#Package_installation>`__\ </td>
-</tr> <tr> <td style="padding-left: 10px; padding-right:
-15px;">\ `Configuration <AuthZPEPGSIConfig>`__\ </td> <td
-style="padding-left: 10px; padding-right:
-15px;">\ `Configuration <https://wiki.nikhef.nl/grid/GLExec_Argus_Quick_Installation_Guide#Manual_configuration>`__\ </td>
-</tr> <tr> <td style="padding-left: 10px; padding-right:
-15px;">\ `Troubleshooting <AuthZPEPGSITroubleshooting>`__\ </td> <td
-style="padding-left: 10px; padding-right:
-15px;">\ `Troubleshooting <https://wiki.nikhef.nl/grid/GLExec_Argus_Quick_Installation_Guide#Debugging_hints>`__\ </td>
-</tr> </table>
+.. list-table:: Argus-enabled Applications
+   :header-rows: 0
+   :stub-columns: 1
+
+   *
+     - GSI PEP Callout
+     - `Introduction <gsi_pep_callout>`__
+     - `Installation <AuthZPEPGSIInstall>`__
+     - `Configuration <AuthZPEPGSIConfig>`__
+     - `Troubleshooting <AuthZPEPGSITroubleshooting>`__
+
+   *
+     - gLExec with PEP Plugin
+     - `Introduction <https://wiki.nikhef.nl/grid/GLExec_Argus_Quick_Installation_Guide#Introduction>`__
+     - `Installation <https://wiki.nikhef.nl/grid/GLExec_Argus_Quick_Installation_Guide#Package_installation>`__
+     - `Configuration <https://wiki.nikhef.nl/grid/GLExec_Argus_Quick_Installation_Guide#Manual_configuration>`__
+     - `Troubleshooting <https://wiki.nikhef.nl/grid/GLExec_Argus_Quick_Installation_Guide#Debugging_hints>`__
+
 
 Support and Monitoring
 ----------------------

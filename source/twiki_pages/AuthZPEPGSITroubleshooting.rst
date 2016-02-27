@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1300442750"
-format="1.1" reprev="1.7" version="1.7"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _AuthZPEPGSITroubleshooting:
 
 Argus: GSI PEP Callout: Troubleshooting
 =======================================
