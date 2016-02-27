@@ -26,16 +26,13 @@ The configuration properties needed by each PIP is specific to that
 given PIP. Some will not require any properties beyond the standard set
 while other will need addition information.
 
--  See the `Policy Information Point <AuthZPEPPIP>`__ documentation for
+-  See the :ref:`Policy Information Point <argus_pep_pip>` documentation for
    more information:
 
-   -  `Request Validator PIP <AuthZPEPPIP#Request_Validator_PIP>`__
-   -  `OpenSSL Subject Converter
-      PIP <AuthZPEPPIP#OpenSSL_Subject_Converter_PIP>`__
-   -  `gLite Grid Authorization Profile
-      PIP <AuthZPEPPIP#gLite_Grid_Authorization_Profile>`__
-   -  `Common XACML Authorization Profile
-      PIP <AuthZPEPPIP#Common_XACML_Authorization_Profi>`__
+   - :ref:`Request Validator PIP <argus_pep_pip_request_validator>`
+   - :ref:`OpenSSL Subject Converter PIP <argus_pep_pip_subject_converter>`
+   - :ref:`gLite Grid Authorization Profile PIP <argus_pep_pip_grid_authz_profile>`
+   - :ref:`Common XACML Authorization Profile PIP <argus_pep_pip_common_xacml_authz_profile>`
 
 Obligation Handler Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -182,18 +179,46 @@ SERVICE section
 PDP section
 ~~~~~~~~~~~
 
-\| **Property** \| **Description** \| **Required?** \| **Default Value**
-\| \| maximumRequests \| The maximum number of simultaneous requests
-that will be made to the PDP. Additional requests will wait until a free
-request slot becomes available. \| N \| 200 \| \| cachedResponseTTL \|
-The length of time, in seconds, for which a response will be cached. \|
-N \| 600 seconds (10 minutes) \| \| connectionTimeout \| This is the
-length of time, in seconds, the PDP client will wait for the PDP to send
-information before it considers the request timed out. \| N \| 30
-seconds \| \| receiveBufferSize \| This is the size, in bytes, that will
-be allocated to the PDP client send buffer. \| N \| 16384 (16kb) \| \|
-sendBufferSize \| This is the size, in bytes, that will be allocated to
-the PDP client request buffer. \| N \| 16384 (16kb) \|
+.. list-table::
+    :header-rows: 1
+
+    *
+        - Property
+        - Description
+        - Required
+        - Default Value
+
+    *
+        - maximumRequests
+        - The maximum number of simultaneous requests that will be made to the PDP. Additional requests will wait
+          until a free request slot becomes available
+        - No
+        - 200
+
+    *
+        - cachedResponseTTL
+        - The length of time, in seconds, for which a response will be cached
+        - No
+        - 600 (10 minutes)
+
+    *
+        - connectionTimeout
+        - This is the length of time, in seconds, the PDP client will wait for the PDP to send
+          information before it considers the request timed out
+        - No
+        - 30
+
+    *
+        - receiveBufferSize
+        - This is the size, in bytes, that will be allocated to the PDP client send buffer
+        - None
+        - 16384 (16 KB)
+
+    *
+        - sendBufferSize
+        - This is the size, in bytes, that will be allocated to the PDP client request buffer
+        - None
+        - 16384 (16 KB)
 
 SECURITY section
 ~~~~~~~~~~~~~~~~

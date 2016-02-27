@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1360943640"
-format="1.1" reprev="1.22" version="1.22"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _argus_pep_pip:
 
 Argus PEP Server Policy Information Points (PIP)
 ================================================
@@ -9,6 +7,8 @@ Policy Information Points (PIPs) are plugins to the authorization
 service that help populate and/or complete an authorization request.
 PIPs may rely on information already within the request or they may
 simply be able to self generate the data that they will add.
+
+.. _argus_pep_pip_request_validator:
 
 Request Validator PIP
 ---------------------
@@ -73,6 +73,10 @@ resource and one action, all with non-empty or null attributes values.
     validateRequestAction = true
     validateRequestEnvironment = false
 
+
+
+.. _argus_pep_pip_subject_converter:
+
 OpenSSL Subject Converter PIP
 -----------------------------
 
@@ -134,8 +138,11 @@ oneline format into the RFC2253 format.
     opensslSubjectAttributeIDs = http://glite.org/xacml/attribute/subject-issuer urn:oasis:names:tc:xacml:1.0:subject:subject-id
     opensslSubjectAttributeDatatypes = http://www.w3.org/2001/XMLSchema#string
 
-gLite Grid Authorization Profile PIP
-------------------------------------
+
+.. _argus_pep_pip_grid_authz_profile:
+
+Grid Authorization Profile PIP
+------------------------------
 
 **NOTE: This is the default profile supported starting from Argus 1.2.**
 
@@ -298,6 +305,9 @@ profiles.
     parserClass = org.glite.authz.pep.pip.provider.GLiteAuthorizationProfilePIPIniConfigurationParser
     vomsInfoDir = /etc/grid-security/vomsdir
     acceptedProfileIDs = http://glite.org/xacml/profile/grid-ce/1.0 http://glite.org/xacml/profile/grid-wn/1.0
+
+
+.. _argus_pep_pip_common_xacml_authz_profile:
 
 Common XACML Authorization Profile PIP
 --------------------------------------
@@ -471,19 +481,19 @@ Authorization profile.
     acceptedProfileIDs = http://dci-sec.org/xacml/profile/common-authz/1.1 
 
 Other Policy Information Points (PIP)
-=====================================
+-------------------------------------
 
 Here are other PIPs that you can configure for testing or debugging
 purpose
 
 Attribute White List PIP
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 This PIP can be used to filter out attributes that should not be
 accepted within a request.
 
 Configuration
-^^^^^^^^^^^^^
++++++++++++++
 
 #. Create a new `INI section <AuthZINIFile>`__ for you PIP (you may
    choose any valid INI section name. e.g. WHITELIST\_PIP)
@@ -493,7 +503,7 @@ Configuration
 #. Configure which request attributes are to be accepted
 
 PIP Configuration Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+++++++++++++++++++++++++++++
 
 +---------------------------------+----------------------------------------------------------------------------------+-------------+-----------------+
 | Property                        | Description                                                                      | Required?   | Default Value   |
@@ -511,7 +521,7 @@ PIP Configuration Properties
 section (i.e. action, environment, resource, or subject) are accepted.**
 
 Example Configuration
-^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++
 
 The following example shows a PEP Server configuration with the
 whitelist PIP enabled, accepting only the *key-info* attribute from the
@@ -537,7 +547,7 @@ as is.
     acceptedSubjectAttributes = urn:oasis:names:tc:xacml:1.0:subject:key-info
 
 Environment Time PIP
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 This PIP populates a few time-related attributes within the
 **environment** portion of the request.
@@ -546,7 +556,7 @@ This PIP populates a few time-related attributes within the
 PEP Server as will make every request different.
 
 Configuration
-^^^^^^^^^^^^^
++++++++++++++
 
 #. Create a new `INI section <AuthZINIFile>`__ for you PIP (you may
    choose any valid INI section name. e.g. TIME\_PIP)
@@ -556,12 +566,12 @@ Configuration
    the ``SERVICE`` section
 
 Prerequisite Request Attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++
 
 None.
 
 Populate Effective Request Attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++++++++++++++
 
 This PIP will populate the following attributes within the environment
 portion of the request.
@@ -597,7 +607,7 @@ portion of the request.
       request was issued
 
 Example Configuration
-^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++
 
 The following example shows a PEP Server configuration with the
 Environment Time PIP enabled:
@@ -615,317 +625,8 @@ Environment Time PIP enabled:
     [TIME_PIP]
     parserClass = org.glite.authz.pep.pip.provider.EnvironmentTimePIPIniConfigurationParser
 
-Grid Worker Node Authorization Profile PIP
-------------------------------------------
-
-**NOTE: The use of the profile is deprecated and should not be used
-anymore**, use the `gLite Grid Authorization Profile
-PIP <#gLite_Grid_Authorization_Profile_PIP>`__ instead
-
-This PIP takes an X.509, version 3, certificate that was used to
-authenticate a person and pulls various pieces of information from it.
-If this PIP is configured to support VOMS attribute certificates, and
-the end-entity certificate contains an attribute certificate then
-information from it will also be added to the request.
-
-This PIP supports only the `XACML Grid Worker Node Authorization Profile
-(v.1.0) <https://edms.cern.ch/document/1058175>`__ specification.
-
-Configuration
-^^^^^^^^^^^^^
-
-#. Create a new `INI section <AuthZINIFile>`__ for you PIP (you may
-   choose any valid INI section name)
-#. To PIP INI section add the ``parserClass`` property with the value
-   ``org.glite.authz.pep.pip.provider.WorkerNodeProfileV1IniConfigurationParser``
-#. To enable VOMS attribute certificate support add the ``vomsInfoDir``
-   property with a value corresponding to the absolute path of the VOMS
-   ``vomsdir``, traditionally ``/etc/grid-security/vomsdir``.
-#. If, in the ``SECURITY`` section, the ``trustInfoDir`` property is not
-   already set, add it with a value of the absolute filesystem path of
-   your IGTF trust bundle.
-#. Add the name of the created PIP INI section to the list of PIPs in
-   the ``SERVICE`` section
-
-Configuration Properties
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-+-------------------+--------------------------------------------------------------------------+-------------+-----------------+
-| Property          | Description                                                              | Required?   | Default Value   |
-+===================+==========================================================================+=============+=================+
-| vomsInfoDir       | The absolute path to the VOMS ``vomsdir`` directory.                     | Y           | None.           |
-+-------------------+--------------------------------------------------------------------------+-------------+-----------------+
-| vomsInfoRefresh   | The refresh interval time in minutes of the ``vomsInfoDir`` directory.   | No          | 60              |
-+-------------------+--------------------------------------------------------------------------+-------------+-----------------+
-
-Required Request Attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-This PIP requires that the request environment contains a *profile-id*
-attribute with the profile identifier
-``http://glite.org/xacml/profile/grid-wn/1.0``, and that the request
-subject contains the certificate, and its chain, that were used to
-authenticate to the service, in the *key-info* attribute:
-
--  The Profile Identifier
-
-   -  **type:** Environment
-   -  **id:** http://glite.org/xacml/attribute/profile-id
-   -  **data type:** http://www.w3.org/2001/XMLSchema#string
-   -  **multiple values allowed:** no
-   -  **description:** Identifier that indicates the request is meant to
-      be processed acorrding to the Grid Worker Node, version 1
-      specification. The value of this attribute must be
-      ``http://glite.org/xacml/profile/grid-wn/1.0``
-
--  The Certificate Chain
-
-   -  **type:** Subject
-   -  **id:** urn:oasis:names:tc:xacml:1.0:subject:key-info
-   -  **data type:** http://www.w3.org/2001/XMLSchema#string
-   -  **multiple values allowed:** no
-   -  **description:** The PEM encoded certificate chain. No certificate
-      order is assumed however all certificates must be version 3
-      certificates. Zero or one VOMS attribute certificate may also be
-      included.
-
-Populated Effective Request Attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-This PIP will populate the following attributes
-
--  The Subject Identifier
-
-   -  **type:** Subject
-   -  **id:** urn:oasis:names:tc:xacml:1.0:subject:subject-id
-   -  **data type:** urn:oasis:names:tc:xacml:1.0:data-type:x500Name
-   -  **multiple values allowed:** no
-   -  **description:** This is the Subject DN as given in the end-entity
-      certificate. It is in RFC2253 format.
-
--  The End-entity Certificate Issuer
-
-   -  **type:** Subject
-   -  **id:** http://glite.org/xacml/attribute/subject-issuer
-   -  **data type:** urn:oasis:names:tc:xacml:1.0:data-type:x500Name
-   -  **multiple values allowed:** yes
-   -  **description:** This is the Subject DN of the root CA and all
-      subordinate CAs that signed within the end-entity certificate
-      chain. It is in RFC2253 format.
-
-If VOMS support is enabled and a VOMS certificate is included within a
-user's proxy certificate, the following attributes will be populated
-within the request:
-
--  The VO Name
-
-   -  **type:** Subject
-   -  **id:** http://glite.org/xacml/attribute/virtual-organization
-   -  **data type:** http://www.w3.org/2001/XMLSchema#string
-   -  **multiple values allowed:** yes
-   -  **description:** The names of the VOs to which the user is a
-      member. Currently there is only ever one value.
-
--  The VOMS Primary FQAN
-
-   -  **type:** Subject
-   -  **id:** http://glite.org/xacml/attribute/fqan/primary
-   -  **data type:** http://glite.org/xacml/datatype/fqan
-   -  **issuer:** DN of the attribute certificate issuer
-   -  **multiple values allowed:** no
-   -  **description:** The primary Fully Qualified Attribute Name (FQAN)
-      for the subject
-
--  The VOMS FQANs
-
-   -  **type:** Subject
-   -  **id:** http://glite.org/xacml/attribute/fqan
-   -  **data type:** http://glite.org/xacml/datatype/fqan
-   -  **multiple values allowed:** yes
-   -  **description:** All the Fully Qualified Attribute Name (FQAN)s
-      for the subject
-
-Example Configuration
-^^^^^^^^^^^^^^^^^^^^^
-
-The following example shows a PEP Server configuration with the X509 PIP
-enabled:
-
-::
-
-    [SERVICE]
-    entityId = https://example.org/pep
-    hostname = example.org
-    pips = GRID_WN_AUTHZ_PIP
-
-    [PDP]
-    pdps = http://localhost:8152/authz
-
-    [SECURITY]
-    trustInfoDir = /etc/grid-security/certificates
-
-    [GRID_WN_AUTHZ_PIP]
-    parserClass =org.glite.authz.pep.pip.provider.WorkerNodeProfileV1IniConfigurationParser
-    vomsInfoDir = /etc/grid-security/vomsdir
-
-Authorization Interoperabilty Profile PIP
------------------------------------------
-
-**NOTE: The use of the profile is deprecated and should not be used
-anymore.**
-
-This PIP takes an X.509, version 3, certificate that was used to
-authenticate a person and pulls various pieces of information from it.
-If this PIP is configured to support VOMS attribute certificates, and
-the end-entity certificate contains an attribute certificate then
-information from it will also be added to the request.
-
-This PIP supports the `Site Central Authorization Service
-(SCAS) <https://www.nikhef.nl/pub/projects/grid/gridwiki/index.php/SCAS>`__
-and implements the `XACML Attribute and Obligation Profile for
-Authorization Interoperablity in Grids Profile (v.
-1.1) <https://edms.cern.ch/document/929867>`__ specifications. This
-profile is also used by OSG.
-
-Configuration
-^^^^^^^^^^^^^
-
-#. Create a new `INI section <AuthZINIFile>`__ for you PIP (you may
-   choose any valid INI section name)
-#. To PIP INI section add the ``parserClass`` property with the value
-   ``org.glite.authz.pep.pip.provider.SCASSLegacyPIPIniConfigurationParser``
-#. To enables VOMS attribute certificate support add the ``vomsInfoDir``
-   property with a value corresponding to the absolute path of the VOMS
-   ``vomsdir``, traditionally ``/etc/grid-security/vomsdir``.
-#. If, in the ``SECURITY`` section, the ``trustInfoDir`` property is not
-   already set, add it with a value of the absolute filesytem path of
-   your IGTF trust bundle.
-#. Add the name of the created PIP INI section to the list of PIPs in
-   the ``SERVICE`` section
-
-Configuration Properties
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-+-------------------+--------------------------------------------------------------------------+-------------+-----------------+
-| Property          | Description                                                              | Required?   | Default Value   |
-+===================+==========================================================================+=============+=================+
-| vomsInfoDir       | The absolute path to the VOMS ``vomsdir`` directory.                     | Y           | None.           |
-+-------------------+--------------------------------------------------------------------------+-------------+-----------------+
-| vomsInfoRefresh   | The refresh interval time in minutes of the ``vomsInfoDir`` directory.   | No          | 60              |
-+-------------------+--------------------------------------------------------------------------+-------------+-----------------+
-
-Prerequisite
-^^^^^^^^^^^^
-
-This PIP requires that the certificate, and its chain, that were used to
-authenticate to the service be placed in the following attribute:
-
--  The Certificate Chain
-
-   -  **type:** Subject
-   -  **id:** http://authz-interop.org/xacml/subject/cert-chain
-   -  **data type:** http://www.w3.org/2001/XMLSchema#base64Binary
-   -  **issuer:** any
-   -  **multiple values allowed:** no
-   -  **description:** The PEM encoded certificate chain. No certificate
-      order is assumed however all certificates must be version 3
-      certificates. The end-entity certificate may contain at most one
-      VOMS attribute certificate, but need not include any.
-
-Populate Attributes
-^^^^^^^^^^^^^^^^^^^
-
-This PIP will populate the following attributes
-
--  The Subject Identifier
-
-   -  **type:** Subject
-   -  **id:** urn:oasis:names:tc:xacml:1.0:subject:subject-id
-   -  **data type:** urn:oasis:names:tc:xacml:1.0:data-type:x500Name
-   -  **issuer:** DN of the certificate issuer
-   -  **multiple values allowed:** no
-   -  **description:** This is the Subject DN as given in the end-entity
-      certificate. It is in RFC2253 format.
-
--  The End-entity Certificate Issuer
-
-   -  **type:** Subject
-   -  **id:** http://authz-interop.org/xacml/subject/subject-x509-issuer
-   -  **data type:** urn:oasis:names:tc:xacml:1.0:data-type:x500Name
-   -  **issuer:** none
-   -  **multiple values allowed:** no
-   -  **description:** This is the Subject DN as given in the
-      certificate that signed the end-entity certificate. It is in
-      RFC2253 format.
-
--  The End-entity Certificate Serial Number
-
-   -  **type:** Subject
-   -  **id:**
-      http://authz-interop.org/xacml/subject/certificate-serial-number
-   -  **data type:** http://www.w3.org/2001/XMLSchema#string
-   -  **issuer:** DN of the certificate issuer
-   -  **multiple values allowed:** no
-   -  **description:** This is the serial number end-entity certificate
-
-If VOMS support is enabled and a VOMS certificate is included within a
-user's proxy certificate, the following attributes will be populated
-within the request:
-
--  The VO Name
-
-   -  **type:** Subject
-   -  **id:** http://authz-interop.org/xacml/subject/vo
-   -  **data type:** http://www.w3.org/2001/XMLSchema#string
-   -  **issuer:** DN of the attribute certificate issuer
-   -  **multiple values allowed:** no
-   -  **description:** The name of the VO
-
--  The VOMS Primary FQAN
-
-   -  **type:** Subject
-   -  **id:** http://authz-interop.org/xacml/subject/primary-fqan
-   -  **data type:** http://www.w3.org/2001/XMLSchema#string
-   -  **issuer:** DN of the attribute certificate issuer
-   -  **multiple values allowed:** no
-   -  **description:** The primary Fully Qualified Attribute Name (FQAN)
-      for the subject
-
--  The VOMS FQANs
-
-   -  **type:** Subject
-   -  **id:** http://authz-interop.org/xacml/subject/voms-fqan
-   -  **data type:** http://www.w3.org/2001/XMLSchema#string
-   -  **issuer:** DN of the attribute certificate issuer
-   -  **multiple values allowed:** yes
-   -  **description:** All the Fully Qualified Attribute Name (FQAN)s
-      for the subject
-
-Example Configuration
-^^^^^^^^^^^^^^^^^^^^^
-
-The following example shows a PEP Server configuration with the X509 PIP
-enabled:
-
-::
-
-    [SERVICE]
-    entityId = https://example.org/pep
-    hostname = example.org
-    pips = AUTHZ_INTEROP_PIP
-
-    [PDP]
-    pdps = http://localhost:8152/authz
-
-    [SECURITY]
-    trustInfoDir = /etc/grid-security/certificates
-
-    [AUTHZ_INTEROP_PIP]
-    parserClass = org.glite.authz.pep.pip.provider.SCASSLegacyPIPIniConfigurationParser
-    vomsInfoDir = /etc/grid-security/vomsdir
-
 Static Attributes PIP
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 This PIP can populate the action, environment, resource, and subject of
 the request with a static set of attributes.
@@ -934,7 +635,7 @@ This PIP is very useful for testing as it allows for the creation of any
 arbitrary request.
 
 Configuration
-^^^^^^^^^^^^^
++++++++++++++
 
 #. Create a new `INI section <AuthZINIFile>`__ for you PIP (you may
    choose any valid INI section name)
@@ -989,12 +690,12 @@ each static attribute you wish to define:
    delimiter is defined the default delimiter is ',' (comma).
 
 Prerequisite
-^^^^^^^^^^^^
+++++++++++++
 
 None.
 
 Populate Attributes
-^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++
 
 This PIP will populate those attributes defined in the
 ``staticAttributesFile`` file and referenced by either the
@@ -1002,7 +703,7 @@ This PIP will populate those attributes defined in the
 ``resourceAttributes`` , or ``subjectAttributes`` properties.
 
 Example Configuration
-^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++
 
 The following example shows a PEP Server configuration with the Static
 Attributes PIP enabled:
@@ -1043,5 +744,3 @@ resource, or subject attributes:
     datatype = urn:oasis:names:tc:xacml:1.0:data-type:x500Name
     values = CN=foo
 
-%META:TOPICMOVED{by="chad\_2elajoie\_40switch\_2ech" date="1263197553"
-from="EGEE.AuthZPIP" to="EGEE.AuthZPEPPIP"}%

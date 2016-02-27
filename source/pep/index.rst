@@ -1,9 +1,7 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1254480074"
-format="1.1" reprev="1.1" version="1.1"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _argus_pep_index:
 
-Argus: Policy Enforcement Point Daemon
-======================================
+Argus: Policy Enforcement Point Daemon (PEP)
+============================================
 
 In the Argus authorization framework the Policy Enforcement Point is
 implemented as a client-server architecture. The PEP Daemon is the
@@ -17,6 +15,7 @@ available: C client, Java client, GSI PEP Callout client, ...
     pepd_configuration
     pepd_operation
     pepd_troubleshooting
+    pip
 
     gsi_pep_callout
 
