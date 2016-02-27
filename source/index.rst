@@ -12,10 +12,13 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+   :includehidden:
 
    argus_introduction
    pap_config
    gsi_pep_callout
+
+   twiki_pages/index
 
 .. toctree::
    :hidden:
