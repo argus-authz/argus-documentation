@@ -1,6 +1,5 @@
-%META:TOPICINFO{author="e7b2b7a4065459c4a7cf" date="1278606656"
-format="1.1" version="1.3"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _argus_pap_operation:
+
 
 Argus: Policy Administration Point (PAP): Operation
 ===================================================

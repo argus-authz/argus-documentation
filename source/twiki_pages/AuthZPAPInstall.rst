@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1305816515"
-format="1.1" version="1.9"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _argus_pap_installation:
 
 Argus Policy Administration Point (PAP) Installation
 ====================================================

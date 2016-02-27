@@ -1,3 +1,5 @@
+.. _argus_pap_configuration:
+
 Argus Policy Administration Point (PAP): Configuration
 ======================================================
 

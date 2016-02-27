@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="e7b2b7a4065459c4a7cf" date="1297588178"
-format="1.1" version="1.4"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _argus_pap_troubleshooting:
 
 Argus: Policy Administration Point (PAP): Troubleshooting
 =========================================================

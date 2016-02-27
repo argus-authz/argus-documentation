@@ -86,16 +86,17 @@ The Policy Administration Point (PAP) provides three major functions:
 -  Store and manage authored policies
 -  Provide managed policies to other authorization service components
 
-<table border="0"> <tr> <td style="padding-right:
-15px;">\ `Installation <AuthZPAPInstall>`__\ </td> <td
-style="padding-right: 15px;">\ `Configuration <AuthZPAPConfig>`__\ </td>
-<td style="padding-right:
-15px;">\ `Operation <AuthZPAPOperation>`__\ </td> <td
-style="padding-right: 15px;">\ `pap-admin CLI <AuthZPAPCLI>`__\ </td>
-<td style="padding-right: 15px;">\ `Simplified Policy
-Language <SimplifiedPolicyLanguage>`__\ </td> <td style="padding-right:
-15px;">\ `Troubleshooting <AuthZPAPTroubleshoot>`__\ </td> </tr>
-</table>
+.. list-table::
+   :header-rows: 0
+
+   *
+      - :ref:`Installation <argus_pap_installation>`
+      - :ref:`Configuration <argus_pap_configuration>`
+      - :ref:`Operation <argus_pap_operation>`
+      - :ref:`pap-admin CLI <argus_pap_cli>`
+      - :ref:`Simplified Policy Language <argus_simplified_policy_language>`
+      - :ref:`Troubleshooting <argus_pap_troubleshooting>`
+
 
 PDP: Policy Decision Point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

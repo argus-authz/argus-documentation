@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="e7b2b7a4065459c4a7cf" date="1276612363"
-format="1.1" reprev="1.12" version="1.12"}%
-%META:TOPICPARENT{name="AuthZPAP"}%
+.. _argus_simplified_policy_language:
 
 The Simplified Policy Language
 ==============================

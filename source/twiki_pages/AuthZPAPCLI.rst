@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="e7b2b7a4065459c4a7cf" date="1348133433"
-format="1.1" reprev="1.13" version="1.13"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _argus_pap_cli:
 
 Argus Policy Administration Point (PAP): Administration
 =======================================================
