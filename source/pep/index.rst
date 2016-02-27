@@ -17,8 +17,9 @@ available: C client, Java client, GSI PEP Callout client, ...
    pepd_troubleshooting
    pip
 
-   pep_cli
-   pepc_api
+   pepc_cli
+   pepc_c_api
+   pepc_java_api
 
    gsi_pep_callout
 
