@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1297357292"
-format="1.1" version="1.7"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _argus_pepc_installation:
 
 Argus: PEP C Client Library: Installation
 =========================================

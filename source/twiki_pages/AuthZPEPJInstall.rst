@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1297859992"
-format="1.1" reprev="1.7" version="1.7"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _argus_pepj_installation:
 
 Argus: PEP Java Client Library: Installation
 ============================================

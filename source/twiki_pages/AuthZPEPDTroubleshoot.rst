@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="chad\_2elajoie\_40switch\_2ech"
-date="1263402651" format="1.1" version="1.3"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _argus_pepd_troubleshooting:
 
 Argus: Policy Enforcement Point Daemon: Troubleshooting
 =======================================================

@@ -1,5 +1,4 @@
-%META:TOPICINFO{author="litmaath" date="1423673478" format="1.1"
-version="1.19"}% %META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _argus_pepd_configuration:
 
 Argus PEP Server: Configuration
 ===============================

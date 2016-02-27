@@ -124,34 +124,21 @@ result by allowing the request to proceed (in the case a positive
 authorization decision) or by denying the action (in the event of a
 negative decision).
 
-In Argus, the PEP is separated in a client/server architecture. The PEP
-Server handles the lightweight PEP client requests, and runs on the
-Argus node. Lightweight PEP client libraries are available to authorize
-requests from the application side, and to enforce decision locally.
+In Argus, the PEP itself has a client/server architecture
 
-<table border="0"> <tr> <th style="padding-right: 15px;">PEP Server</th>
-<th style="padding-right: 15px;">PEP Client C API</th> <th
-style="padding-right: 15px;">PEP Client Java API</th> </tr> <tr> <td
-style="padding-left: 10px; padding-right:
-15px;">\ `Installation <AuthZPEPDInstall>`__\ </td> <td
-style="padding-left: 10px; padding-right:
-15px;">\ `Installation <AuthZPEPCInstall>`__\ </td> <td
-style="padding-left: 10px; padding-right:
-15px;">\ `Installation <AuthZPEPJInstall>`__\ </td> </tr> <tr> <td
-style="padding-left: 10px; padding-right:
-15px;">\ `Configuration <AuthZPEPDConfig>`__\ </td> <td
-style="padding-left: 10px; padding-right: 15px;">\ `Programming
-Interface (API) <AuthZPEPCAPI>`__\ </td> <td style="padding-left: 10px;
-padding-right: 15px;">\ `Programming Interface
-(API) <AuthZPEPJavaAPI>`__\ </td> </tr> <tr> <td style="padding-left:
-10px; padding-right: 15px;">\ `Operation <AuthZPEPDOperation>`__\ </td>
-<td style="padding-left: 10px; padding-right: 15px;">\ `Command Line
-(pepcli) <AuthZPEPCCLI>`__\ </td> <td style="padding-left: 10px;
-padding-right: 15px;"></td> </tr> <tr> <td style="padding-left: 10px;
-padding-right:
-15px;">\ `Troubleshooting <AuthZPEPDTroubleshoot>`__\ </td> <td
-style="padding-left: 10px; padding-right: 15px;"></td> <td
-style="padding-left: 10px; padding-right: 15px;"></td> </tr> </table>
+  - The PEP Server handles the lightweight PEP client requests, and runs on the
+    Argus node. See the following links for more information on the PEP Server:
+    :ref:`Installation <argus_pepd_installation>`, :ref:`Configuration <argus_pepd_configuration>`,
+    :ref:`Operation <argus_pepd_operation>`, :ref:`Troubleshooting <argus_pepd_troubleshooting>`
+
+  - Lightweight PEP client libraries are available to authorize
+    requests from the application side, and to enforce decision locally. There are
+    two variants available:
+
+    - PEP Client C API: :ref:`Installation <argus_pepc_installation>`, :ref:`Programming Interface (API) <argus_pepc_api>`,
+      :ref:`Command Line (pepcli) <argus_pepc_cli>`
+    - PEP Client Java API: :ref:`Installation <argus_pepj_installation>`, :ref:`Programming Interface (API) <argus_pepj_api>`
+
 
 .. _argus_intro_enabled_applications:
 

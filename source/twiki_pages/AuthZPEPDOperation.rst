@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1361179383"
-format="1.1" reprev="1.9" version="1.9"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _argus_pepd_operation:
 
 Argus PEP Server: Operation
 ===========================
@@ -46,15 +44,18 @@ Service Endpoints
 
 This service contains the following endpoint URLs:
 
--   ``https://argus.example.org:8154/authz`` - This endpoint is the
+-  ``https://argus.example.org:8154/authz`` - This endpoint is the
    recipient of authorization requests and is reachable on the standard
    service host and port.
+
 -  ``http://127.0.0.1:8155/status`` - This endpoint provides current
    status information on the PEP daemon and is reachable on the standard
    admin host and port.
+
 -  ``http://127.0.0.1:8155/clearResponseCache`` - This endpoint
    instructs the PEP daemon to flush its PDP response cache. It is
    reachable on the standard admin host and port.
+
 -  ``http://127.0.0.1:8155/shutdown`` - This endpoint instructs the PEP
    daemon to shutdown and is reachable on the standard admin host and
    port.

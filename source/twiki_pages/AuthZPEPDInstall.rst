@@ -1,6 +1,4 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1305027842"
-format="1.1" version="1.11"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
+.. _argus_pepd_installation:
 
 Argus PEP Server Installation
 =============================
@@ -22,7 +20,7 @@ Prerequisites
    -  The service will be started with the ``java`` command available on
       the command path of the user executing the start script.
 
--   LCG trusted Certificate Authorities certificates installed. In SL4,
+-  LCG trusted Certificate Authorities certificates installed. In SL4,
    the ``lcg-ca`` package provides those certificates.
 
    -  If communications between the PEP clients and PEP daemon or
@@ -47,8 +45,10 @@ configuration set:
 
 -  the ``ARGUS_HOST`` property to the FQDN hostname of the machine on
    which you are installing
+
 -  the ``PAP_ADMIN_DN`` property to the subject DN of the user
    certificate of the individual who will maintain the PAP
+
 -  the ``USERS_CONF``, ``GROUP_CONF``, and ``VOS`` property to their
    appropriate values for your site 1 Run YAIM using the command
    ``yaim -c -s site-info.def -n ARGUS_server``
