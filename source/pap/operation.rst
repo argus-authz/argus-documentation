@@ -5,7 +5,7 @@ Argus: Policy Administration Point (PAP): Operation
 ===================================================
 
 Service Operation Commands
-==========================
+--------------------------
 
 The service can then be started using the
 ``PAP_HOME/bin/pap-standalone start`` command.
@@ -13,42 +13,14 @@ The service can then be started using the
 The service can be stopped using the
 ``PAP_HOME/bin/pap-standalone stop`` command.
 
-Service Information
-===================
-
 Service Ports
 -------------
-
-PAP version < 1.2.0
-~~~~~~~~~~~~~~~~~~~
-
--  Default standalone service port: 8150
--  Default standalone shutdown service port: 8151
--  Default tomcat service port: 8443 (it actually depends on how the
-   Tomcat SSL connector is configured)
-
-PAP version >= 1.2.0
-~~~~~~~~~~~~~~~~~~~~
 
 -  Default standalone service port: 8150
 -  Default standalone shutdown service and status port: 8151
 
 Service Endpoints
 -----------------
-
-PAP version < 1.2.0
-~~~~~~~~~~~~~~~~~~~
-
--  ``/pap/status`` : this endpoint provides current status information
-   on the PAP is reachable on the standard service host and port
--  ``/pap/services/ProvisioningService`` : this endpoint provides the
-   policy provisioning interface
--  ``/shutdown`` : this endpoint instructs the PAP standalone service to
-   shutdown and is reachable only from localhost on the configured
-   shutdown port
-
-PAP version >= 1.2.0
-~~~~~~~~~~~~~~~~~~~~
 
 -  ``/pap/services/ProvisioningService`` : this endpoint provides the
    policy provisioning interface

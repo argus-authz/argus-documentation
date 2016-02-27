@@ -17,5 +17,5 @@ The Policy Administration Point (PAP) provides three major functions:
    operation
    cli
    simplified_policy_language
-   troubleshooting
+   known_issues
 

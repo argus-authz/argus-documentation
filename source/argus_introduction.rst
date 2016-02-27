@@ -57,7 +57,7 @@ Argus EMI Deployment
 ~~~~~~~~~~~~~~~~~~~~
 
 For EMI, the Argus Service is installed with YUM, and configured with
-YAIM. Please follow the Argus :ref:`Deployment for EMI <ArgusEMIDeployment>` 
+YAIM. Please follow the Argus :ref:`Deployment for EMI <argus_emi_deployment>`
 documentation.
 
 gLExec Worker Node with Argus Deployment
@@ -80,22 +80,11 @@ use cases.
 PAP: Policy Administration Point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Policy Administration Point (PAP) provides three major functions:
+The :ref:`Policy Administration Point (PAP) <argus_pap_index>` provides three major functions:
 
 -  Provide the tools for authoring policies
 -  Store and manage authored policies
 -  Provide managed policies to other authorization service components
-
-.. list-table::
-   :header-rows: 0
-
-   *
-      - :ref:`Installation <argus_pap_installation>`
-      - :ref:`Configuration <argus_pap_configuration>`
-      - :ref:`Operation <argus_pap_operation>`
-      - :ref:`pap-admin CLI <argus_pap_cli>`
-      - :ref:`Simplified Policy Language <argus_simplified_policy_language>`
-      - :ref:`Troubleshooting <argus_pap_troubleshooting>`
 
 
 PDP: Policy Decision Point
