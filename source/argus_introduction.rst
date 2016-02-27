@@ -246,8 +246,6 @@ Specifications
    2.0 <http://docs.oasis-open.org/xacml/2.0/access_control-xacml-2.0-core-spec-os.pdf>`__
 -  `SAML 2.0 Profile of XACML, Version 2 (Working Draft
    5) <http://www.oasis-open.org/committees/download.php/24681/xacml-profile-saml2.0-v2-spec-wd-5-en.pdf>`__
--  `SOAP Profile for
-   XACML-SAML <http://www.switch.ch/grid/support/documents/xacmlsaml.pdf>`__
 -  XACML Profile for the gLite WN `XACML Grid Worker Node Authorization
    Profile (v. 1.0) <https://edms.cern.ch/document/1058175>`__
 -  XACML Profile for the gLite CE `XACML Grid Computing Element
