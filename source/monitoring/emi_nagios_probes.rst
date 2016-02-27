@@ -1,7 +1,7 @@
 .. _argus_emi_nagios_probes:
 
-Nagios Probes for Argus (EMI-2 & EMI-3)
-=======================================
+Nagios Probes for Argus (UMD)
+=============================
 
 Installation
 ------------
@@ -10,7 +10,7 @@ Prerequisites
 ~~~~~~~~~~~~~
 
 -  Python 2.4 or newer (not Python 3000)
--  EMI-2 or EMI-3 repository installed
+-  UMD-3 or later (or EMI-3) repository installed
 -  Host certificate & IGTF-bundle
 -  Nagios server
 
@@ -24,11 +24,8 @@ Where to install
 Install instructions
 ~~~~~~~~~~~~~~~~~~~~
 
-There is available a rpm called "nagios-plugins-argus",
-`nagios-plugins-argus - v. 1.0.0 (EMI
-2) <http://eticssoft.web.cern.ch/eticssoft/repository/emi/emi.argus.nagios-plugins/1.0.0/noarch/>`__
-& `nagios-plugins-argus - v. 1.1.0 (EMI
-3) <http://eticssoft.web.cern.ch/eticssoft/repository/emi/emi.argus.nagios-plugins/1.1.0/noarch/>`__.
+There is available a rpm called "nagios-plugins-argus", (`nagios-plugins-argus - v. 1.1.0 (EMI-3)
+<http://eticssoft.web.cern.ch/eticssoft/repository/emi/emi.argus.nagios-plugins/1.1.0/noarch/>`__.
 It can be installed as follows:
 
 ::
