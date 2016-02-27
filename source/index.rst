@@ -5,8 +5,8 @@
 
 .. image:: /images/argus_logo.png
 
-Welcome to ARGUS Documentation's documentation!
-===============================================
+Welcome to Argus Documentation
+==============================
 
 Contents:
 

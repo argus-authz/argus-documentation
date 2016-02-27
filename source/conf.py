@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'ARGUS Documentation'
+project = u'Argus Documentation'
 copyright = u'2015, Andrea Ceccanti, Valery Tschopp, Michel Jouvin'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -195,7 +195,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'ARGUSDocumentationdoc'
+htmlhelp_basename = 'ArgusDocumentationdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -217,7 +217,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'ARGUSDocumentation.tex', u'ARGUS Documentation Documentation',
+  ('index', 'ArgusDocumentation.tex', u'Argus Documentation',
    u'Andrea Ceccanti, Valery Tschopp, Michel Jouvin', 'manual'),
 ]
 
@@ -247,7 +247,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'argusdocumentation', u'ARGUS Documentation Documentation',
+    ('index', 'argusdocumentation', u'Argus Documentation',
      [u'Andrea Ceccanti, Valery Tschopp, Michel Jouvin'], 1)
 ]
 
@@ -261,8 +261,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'ARGUSDocumentation', u'ARGUS Documentation Documentation',
-   u'Andrea Ceccanti, Valery Tschopp, Michel Jouvin', 'ARGUSDocumentation', 'One line description of project.',
+  ('index', 'ArgusDocumentation', u'Argus Documentation',
+   u'Andrea Ceccanti, Valery Tschopp, Michel Jouvin', 'ArgusDocumentation', 'One line description of project.',
    'Miscellaneous'),
 ]
 
