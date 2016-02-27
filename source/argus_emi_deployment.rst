@@ -1,4 +1,4 @@
-.. _ArgusEMIDeployment:
+.. _argus_emi_deployment:
 
 Argus Service Deployment for EMI
 ================================

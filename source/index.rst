@@ -16,7 +16,7 @@ Contents:
 
    argus_introduction
    argus_concepts
-   pap_config
+   pap/index
    gsi_pep_callout
 
    twiki_pages/index
@@ -24,7 +24,7 @@ Contents:
 .. toctree::
    :hidden:
 
-   ArgusEMIDeployment
+   argus_emi_deployment
 
 
 Indices and tables
