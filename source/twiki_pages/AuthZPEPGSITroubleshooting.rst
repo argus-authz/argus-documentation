@@ -1,0 +1,62 @@
+%META:TOPICINFO{author="ad968f62f612332eff6b" date="1300442750"
+format="1.1" reprev="1.7" version="1.7"}%
+%META:TOPICPARENT{name="AuthorizationFramework"}%
+
+Argus: GSI PEP Callout: Troubleshooting
+=======================================
+
+Syslog
+======
+
+By default the GSI PEP Callout module logs info and error via syslog.
+
+The syslog facility used is ``local5`` and the identifier is
+``gsi_pep_callout``. These log messages are typically in
+``/var/log/messages``
+
+Enabling Debug Information
+==========================
+
+You can enable the debugging mode of the GSI PEP Callout module to
+troubleshoot your problem.
+
+Environment Variables
+---------------------
+
+You can set the following environment variables to enable debug mode:
+
+-  ``GSI_PEP_CALLOUT_DEBUG_LEVEL`` Set the debug level from ``0`` (none)
+   to ``9`` (lot of info). Default is ``0``.
+-  ``GSI_PEP_CALLOUT_DEBUG_FILE`` Set the file to log the debugging
+   information. Default is ``stderr``.
+
+Example
+-------
+
+This example shows how to start the GridFTP server in debug mode. The
+configuration files ``gsi-authz.conf`` and ``gsi-pep-callout.conf`` must
+be correctly configured as describe `here <AuthZPEPGSIConfig>`__.
+
+::
+
+    export GLOBUS_CALLOUT_DEBUG_LEVEL=5
+    # set the gsi-authz config to use (default /etc/grid-security/gsi-authz.conf)
+    export GSI_AUTHZ_CONF=/etc/grid-security/gsi-authz.conf
+    # set the gsi-pep-callout config to use (default /etc/grid-security/gsi-pep-callout.conf)
+    export GSI_PEP_CALLOUT_CONF=/etc/grid-security/gsi-pep-callout.conf
+    export GSI_PEP_CALLOUT_DEBUG_LEVEL=5
+
+    globus-gridftp-server -d 255 -p 9999 -debug
+
+The GridFTP server is now running and listening on port ``9999``. Use
+the ``uberftp`` client or ``globus-url-copy`` to connect to the server
+with your Grid credentials and obtain debugging information from the
+server:
+
+-  ``uberftp -P 9999 HOSTNAME``
+-  ``globus-url-copy file:///etc/passwd gsiftp://HOSTNAME:9999/tmp/e33``
+
+Common Errors and Solutions
+===========================
+
+TODO

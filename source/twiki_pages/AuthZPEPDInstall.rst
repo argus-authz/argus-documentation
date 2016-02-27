@@ -1,0 +1,67 @@
+%META:TOPICINFO{author="ad968f62f612332eff6b" date="1305027842"
+format="1.1" version="1.11"}%
+%META:TOPICPARENT{name="AuthorizationFramework"}%
+
+Argus PEP Server Installation
+=============================
+
+EMI Installation
+----------------
+
+To deploy the Argus PEP Server for EMI, Please follow the documentation
+`Argus Deployment for EMI <ArgusEMIDeployment>`__
+
+gLite 3.2 Installation
+----------------------
+
+Prerequisites
+~~~~~~~~~~~~~
+
+-  A working Java 5, or better, runtime environment.
+
+   -  The service will be started with the ``java`` command available on
+      the command path of the user executing the start script.
+
+-   LCG trusted Certificate Authorities certificates installed. In SL4,
+   the ``lcg-ca`` package provides those certificates.
+
+   -  If communications between the PEP clients and PEP daemon or
+      between the PEP daemon and the PDP are over SSL/TLS
+
+-  a valid PEM-encoded X509 private key and certificate issued by a
+   trusted CA if PEP connections
+
+   -  If communications between the PEP clients and PEP daemon are over
+      SSL/TLS
+
+YUM and YAIM Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The PAP, PDP, and PEPd are bundled as a single gLite node type
+``glite-ARGUS``.
+
+The PEP daemon component is installed in ``/opt/argus/pepd``.
+
+1 Execute the command: ``yum install glite-ARGUS`` 1 In your YAIM
+configuration set:
+
+-  the ``ARGUS_HOST`` property to the FQDN hostname of the machine on
+   which you are installing
+-  the ``PAP_ADMIN_DN`` property to the subject DN of the user
+   certificate of the individual who will maintain the PAP
+-  the ``USERS_CONF``, ``GROUP_CONF``, and ``VOS`` property to their
+   appropriate values for your site 1 Run YAIM using the command
+   ``yaim -c -s site-info.def -n ARGUS_server``
+
+Manual Installation
+~~~~~~~~~~~~~~~~~~~
+
+#. Download the latest `software
+   distribution <http://etics-repository.cern.ch:8080/repository/download/registered/org.glite/org.glite.authz.pep-daemon/>`__
+#. Expand the downloaded archive in to the ``/opt/argus`` directory.
+
+   -  The resulting installation directory ``/opt/argus/pepd`` will be
+      referred to, in documentation, as PEPD\_HOME
+
+#. Edit the configuration file located in the ``$PEPD_HOME/conf``
+   directory within the expanded archive
