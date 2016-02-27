@@ -1,7 +1,7 @@
 .. _twiki_page_index:
 
-Pages from Twiki site
-=====================
+Legacy Pages from Twiki site
+============================
 
 The pages below have been converted to the new conversion format without any specific review. They are coming from
 the former Argus |Twiki site| and are pending
