@@ -1,0 +1,35 @@
+%META:TOPICINFO{author="ad968f62f612332eff6b" date="1355496377" format="1.1" reprev="1.3" version="1.3"}%
+%META:TOPICPARENT{name="ArgusEMIDeployment"}%
+---+ Argus EMIR Publisher Configuration (EMI-3)
+
+You can use [[https://twiki.cern.ch/twiki/bin/view/EMI/SERP][EMIR-SERP]] to publish the Argus resource information to the [[https://twiki.cern.ch/twiki/bin/view/EMI/EMIRegistry][EMIR]]egisty. EMIR-SERP uses the information already available in the resource !BDII and publish it to an EMIR [[https://twiki.cern.ch/twiki/bin/view/EMI/DSR][DSR]] endpoint. 
+
+---++ Local Resource BDII
+
+Check that the local resource BDII is running and return service information:
+
+=ldapsearch -x -h localhost -p 2170 -b 'GLUE2GroupID=resource,o=glue' objectCLass=GLUE2Service=
+
+This query should return 1 entry for the Argus service. If it is not the case, something is fishy in the installtion...
+
+---++ Install and Configure EMIR SERP
+
+Install the EMIR SERP package:
+
+=yum install emir-serp=
+
+Edit the configuration file =/etc/emi/emir-serp/emir-serp.ini= and set the following:
+<verbatim>
+...
+url = http://emitbdsr1.cern.ch:9126
+...
+[servicesFromResourceBDII]
+resource_bdii_url = ldap://localhost:2170/GLUE2GroupID=resource,o=glue
+...
+</verbatim>
+
+And start the EMIR-SERP service:
+
+=/sbin/service emir-serp start=
+
+You can verifiy that the information is correctly published by browsing: [[http://emitbdsr1.cern.ch:9126/services]]

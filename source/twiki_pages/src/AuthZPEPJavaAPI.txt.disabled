@@ -1,0 +1,95 @@
+%META:TOPICINFO{author="ad968f62f612332eff6b" date="1355997819" format="1.1" version="1.21"}%
+%META:TOPICPARENT{name="AuthorizationFramework"}%
+---+!! Argus: PEP Java Client: Programming Interface
+%TOC%
+
+---+ PEP Java Client API
+
+The Argus PEP Java client library is use to communicate with the Argus PEP
+daemon. It authorizes request and receives response back from Argus.
+
+---++ Javadoc
+
+Javadoc for the PEP Java client API: [[http://argus-authz.github.com/argus-pep-api-java/javadoc/2.X/index.html]]
+
+---++ PEP XACML Object Model
+
+The PEP client XACML object model implemented in the package =org.glite.authz.common.model= follow this schema:
+
+     <img src="%ATTACHURLPATH%/Argus_PEP_ObjectModel.png" alt="Argus_PEP_ObjectModel.png" width='600' />
+
+
+---++ Basic Example
+
+This is a very simplified example, omitting all the error handling, on how to create a PEP client, a request, and then authorize the request and process the response.
+
+1. Create a PEP client configuration and initialize it:
+<verbatim>
+PEPClientConfiguration config= new PEPClientConfiguration();
+config.addPEPDaemonEndpoint("https://argus.example.org:8154/authz");
+// trust and key material for the HTTPS connection with client authentication
+config.setTrustMaterial("/etc/grid-security/certificates");
+config.setKeyMaterial("/etc/grid-security/hostcert.pem", "/etc/grid-security/hostkey.pem", "keystore_password");
+</verbatim>
+
+2. Create the PEP client based on the config:
+<verbatim>
+PEPClient pep=  new PEPClient(config);
+</verbatim>
+
+At this point you have a multi-threaded PEP client that can be *reuse* to submit many authorization requests to the PEP server.
+
+3. Create an authorization request for a user proxy certificate, based on a profile:
+<verbatim>
+// read the user proxy
+PEMFileReader reader= new PEMFileReader();
+X509Certificate[] userproxy= reader.readCertificates("/tmp/x509up_u959");
+// create the request for a given profile
+AuthorizationProfile profile= GridWNAuthorizationProfile.getInstance();
+Request request= profile.createRequest(userproxy,
+                                       "http://example.org/wn/cluster1", 
+                                        GridWNAuthorizationProfile.ACTION_EXECUTE);
+</verbatim>
+
+4. Authorize the request with the Argus PEP daemon:
+<verbatim>
+Response response= pep.authorize(request);
+</verbatim>
+
+5. Extract the user mapping information from the response:
+<verbatim>
+// will throw an exception if the authorization response is not *Permit*, or if the obligation is not present
+Obligation posixMappingObligation= profile.getObligationPosixMapping(response);
+String userId= profile.getAttributeAssignmentUserId(posixMappingObligation);
+String groupId= profile.getAttributeAssignmentPrimaryGroupId(posixMappingObligation);
+List<String> groupIds= profile.getAttributeAssignmentGroupIds(posixMappingObligation);
+</verbatim>
+
+---++ Processing Authorization Decision
+
+The PEP client MUST abide by the authorization decision as described in here:
+
+   * If the decision is =Permit=, then the PEP client SHALL permit access. If *obligations* accompany the decision, then the PEP client SHALL permit access *only if it understands and it can and will enforce* those obligations.
+   * If the decision is =Deny=, then the PEP client SHALL deny access.
+   * If the decision is =NotApplicable=, meaning that no policy apply, then the PEP client SHALL deny access.
+   * If the decision is =Inderterminate=, then the PEP client SHALL deny access. The decision status message and status code should be used to produce an error message. 
+
+---++ GUI
+
+There is also a Java-based GUI available for sending requests to a PEPd. Just click on the following image which will download the application to your desktop and start it. Once you've downloaded it you can restart it by double-clicking the Argus-PEP-Client.jnlp file.
+
+[[%ATTACHURL%/Argus-Pep-Client.jnlp][<img src="%ATTACHURLPATH%/Pep-Client-Gui-Screenshot.png" alt="Pep-Client-Gui-Screenshot.png" width='497' height='218' />]]
+
+%META:FILEATTACHMENT{name="Argus_PEP_ObjectModel.png" attachment="Argus_PEP_ObjectModel.png" attr="" comment="PEP XACML Object Model" date="1290186203" path="Argus_PEP_ObjectModel.png" size="351476" stream="Argus_PEP_ObjectModel.png" tmpFilename="/usr/tmp/CGItemp24158" user="ad968f62f612332eff6b" version="1"}%
+%META:FILEATTACHMENT{name="bcprov-jdk15-1.45.jar" attachment="bcprov-jdk15-1.45.jar" attr="h" comment="Part of the Argus PEP Client Gui" date="1307362374" path="bcprov-jdk15-1.45.jar" size="1662569" stream="bcprov-jdk15-1.45.jar" tmpFilename="/usr/tmp/CGItemp12053" user="joel_2ecasutt_40cern_2ech" version="6"}%
+%META:FILEATTACHMENT{name="commons-codec-1.2.jar" attachment="commons-codec-1.2.jar" attr="h" comment="Part of the Argus PEP Client Gui" date="1307362391" path="commons-codec-1.2.jar" size="32658" stream="commons-codec-1.2.jar" tmpFilename="/usr/tmp/CGItemp12231" user="joel_2ecasutt_40cern_2ech" version="6"}%
+%META:FILEATTACHMENT{name="commons-httpclient-3.0.1.jar" attachment="commons-httpclient-3.0.1.jar" attr="h" comment="Part of the Argus PEP Client Gui" date="1307362405" path="commons-httpclient-3.0.1.jar" size="290810" stream="commons-httpclient-3.0.1.jar" tmpFilename="/usr/tmp/CGItemp12832" user="joel_2ecasutt_40cern_2ech" version="6"}%
+%META:FILEATTACHMENT{name="commons-logging-1.1.jar" attachment="commons-logging-1.1.jar" attr="h" comment="Part of the Argus PEP Client Gui" date="1307362419" path="commons-logging-1.1.jar" size="56348" stream="commons-logging-1.1.jar" tmpFilename="/usr/tmp/CGItemp12452" user="joel_2ecasutt_40cern_2ech" version="6"}%
+%META:FILEATTACHMENT{name="log4j-1.2.13.jar" attachment="log4j-1.2.13.jar" attr="h" comment="Part of the Argus PEP Client Gui" date="1307362436" path="log4j-1.2.13.jar" size="380024" stream="log4j-1.2.13.jar" tmpFilename="/usr/tmp/CGItemp11544" user="joel_2ecasutt_40cern_2ech" version="6"}%
+%META:FILEATTACHMENT{name="pep-common-2.1.0.jar" attachment="pep-common-2.1.0.jar" attr="h" comment="Part of the Argus PEP Client Gui" date="1307362474" path="pep-common-2.1.0.jar" size="306321" stream="pep-common-2.1.0.jar" tmpFilename="/usr/tmp/CGItemp11945" user="joel_2ecasutt_40cern_2ech" version="6"}%
+%META:FILEATTACHMENT{name="pep-java-2.0.1.jar" attachment="pep-java-2.0.1.jar" attr="h" comment="Part of the Argus PEP Client Gui" date="1307362491" path="pep-java-2.0.1.jar" size="54362" stream="pep-java-2.0.1.jar" tmpFilename="/usr/tmp/CGItemp11697" user="joel_2ecasutt_40cern_2ech" version="6"}%
+%META:FILEATTACHMENT{name="voms-api-java-1.9.18.jar" attachment="voms-api-java-1.9.18.jar" attr="h" comment="Part of the Argus PEP Client Gui" date="1307362505" path="voms-api-java-1.9.18.jar" size="137601" stream="voms-api-java-1.9.18.jar" tmpFilename="/usr/tmp/CGItemp12267" user="joel_2ecasutt_40cern_2ech" version="6"}%
+%META:FILEATTACHMENT{name="Pep-Client-Gui-Screenshot.png" attachment="Pep-Client-Gui-Screenshot.png" attr="h" comment="A screenshot of the PEP-Client's Gui" date="1306389472" path="Pep-Client-Gui-Screenshot.png" size="53354" stream="Pep-Client-Gui-Screenshot.png" tmpFilename="/usr/tmp/CGItemp20372" user="joel_2ecasutt_40cern_2ech" version="1"}%
+%META:FILEATTACHMENT{name="Argus-Pep-Client.jnlp" attachment="Argus-Pep-Client.jnlp" attr="" comment="Argus PEP Client Gui - Java Web Start" date="1307362359" path="Argus-Pep-Client.jnlp" size="1099" stream="Argus-Pep-Client.jnlp" tmpFilename="/usr/tmp/CGItemp12254" user="joel_2ecasutt_40cern_2ech" version="4"}%
+%META:FILEATTACHMENT{name="pep-client-1.1.0.jar" attachment="pep-client-1.1.0.jar" attr="h" comment="Part of the Argus PEP Client Gui" date="1307362457" path="pep-client-1.1.0.jar" size="53391" stream="pep-client-1.1.0.jar" tmpFilename="/usr/tmp/CGItemp11889" user="joel_2ecasutt_40cern_2ech" version="2"}%
+%META:FILEATTACHMENT{name="peacock.gif" attachment="peacock.gif" attr="h" comment="" date="1307362518" path="peacock.gif" size="4147" stream="peacock.gif" tmpFilename="/usr/tmp/CGItemp8450" user="joel_2ecasutt_40cern_2ech" version="1"}%

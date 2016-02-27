@@ -1,0 +1,63 @@
+%META:TOPICINFO{author="mischa_2esalle_40cern_2ech" date="1346071025" format="1.1" version="1.4"}%
+%META:TOPICPARENT{name="AuthorizationFramework"}%
+---+!! THIS PAGE IS OUTDATED.
+*Please go to the new [[https://wiki.nikhef.nl/grid/GLExec_Argus_Quick_Installation_Guide][GLExec Argus Quick Installation Guide]]*
+
+-- Main.OscarKoeroo - 23-Oct-2009
+
+---+!! Argus: gLExec with LCMAPS C PEP Plug-in: Installation
+
+%TOC%
+
+---+ Manual Installation
+
+This is describing a very brief manual installation of gLExec on the worker node using the LCMAPS C PEP Plug-in to contact the Argus framework. The example installation instructions will involve a Scientific Linux (CERN) version 5 x86_64 architecture operating system specific packages. This example also holds for CentOS 5 x86_64 and other RedHat Enterprise version 5 derivative operating systems.
+
+Newer version of all the libraries might be available. These are the listed packages that are certified by SA3 t the time of Friday 23 October 2009.
+
+
+---++ Library dependencies
+
+Install the following (3rd party) RPMS for a basic gLExec installation (or newer):
+
+   * [[http://etics-repository.cern.ch:8080/repository/download/registered/org.glite/org.glite.security.voms-api-c/1.8.12/sl5_x86_64_gcc412][glite-security-voms-api-c-1.8.12-1.sl5.x86_64.rpm]]
+   * [[http://etics-repository.cern.ch:8080/repository/download/registered/org.glite/org.glite.security.voms-api-cpp/1.8.12/sl5_x86_64_gcc412][glite-security-voms-api-cpp-1.8.12-1.sl5.x86_64.rpm]]
+   * [[http://glitesoft.cern.ch/EGEE/gLite/R3.2//glite-GENERIC/sl5/x86_64/RPMS.externals/][vdt_globus_essentials-VDT1.10.1x86_64_rhap_5-3.x86_64.rpm]] (direct [[http://glitesoft.cern.ch/EGEE/gLite/R3.2//glite-GENERIC/sl5/x86_64/RPMS.externals/vdt_globus_essentials-VDT1.10.1x86_64_rhap_5-3.x86_64.rpm][RPM]])
+
+
+---++ Basic gLExec packages
+
+Install the following RPMS for a basic gLExec installation:
+
+   * [[http://etics-repository.cern.ch/repository/download/registered/org.glite/org.glite.security.glexec/0.7.0/sl5_x86_64_gcc412][glite-security-glexec-0.7.0-2.sl5.x86_64.rpm]]
+   * [[http://etics-repository.cern.ch:8080/repository/download/registered/org.glite/org.glite.security.lcas/1.3.11/sl5_x86_64_gcc412][glite-security-lcas-1.3.11-3.sl5.x86_64.rpm]]
+   * [[http://etics-repository.cern.ch:8080/repository/download/registered/org.glite/org.glite.security.lcas-interface/1.3.11/sl5_x86_64_gcc412][glite-security-lcas-interface-1.3.11-1.sl5.x86_64.rpm]]
+   * [[http://etics-repository.cern.ch:8080/repository/download/registered/org.glite/org.glite.security.lcas-plugins-basic/1.3.2/sl5_x86_64_gcc412][glite-security-lcas-plugins-basic-1.3.2-3.sl5.x86_64.rpm]]
+   * [[http://etics-repository.cern.ch/repository/download/registered/org.glite/org.glite.security.lcmaps/1.4.11/sl5_x86_64_gcc412][glite-security-lcmaps-1.4.11-2.sl5.x86_64.rpm]]
+   * [[http://etics-repository.cern.ch/repository/download/registered/org.glite/org.glite.security.lcmaps-plugins-verify-proxy/1.4.7/sl5_x86_64_gcc412][glite-security-lcmaps-plugins-verify-proxy-1.4.7-1.sl5.x86_64.rpm]]
+   * [[http://etics-repository.cern.ch/repository/download/registered/org.glite/org.glite.security.lcmaps-plugins-basic/1.4.0/sl5_x86_64_gcc412][glite-security-lcmaps-plugins-basic-1.4.0-1.sl5.x86_64.rpm]]
+
+
+----++ The packages for the LCMAPS C PEP plug-in
+
+   * [[http://etics-repository.cern.ch/repository/download/registered/org.glite/org.glite.security.lcmaps-plugins-c-pep/1.0.4/sl5_x86_64_gcc412][glite-security-lcmaps-plugins-c-pep-1.0.4-2.sl5.x86_64.rpm]]
+   * [[http://etics-repository.cern.ch:8080/repository/download/registered/org.glite/org.glite.authz.pep-c/1.3.0/sl5_x86_64_gcc412][glite-authz-pep-c-1.3.0-2.sl5.x86_64.rpm]]
+
+
+----++ Optional packages
+
+   * [[http://etics-repository.cern.ch:8080/repository/download/registered/org.glite/org.glite.security.glexec-wrapper-scripts/0.0.3/noarch][glexec-wrapper-scripts-0.0.3-1.noarch.rpm]]
+   * [[http://etics-repository.cern.ch:8080/repository/download/registered/org.glite/org.glite.security.lcas-plugins-check-executable/1.2.1/sl5_x86_64_gcc412][glite-security-lcas-plugins-check-executable-1.2.1-3.sl5.x86_64.rpm]]
+   * [[http://etics-repository.cern.ch/repository/download/registered/org.glite/org.glite.yaim.glexec-wn/2.0.3/noarch][glite-yaim-glexec-wn-2.0.3-0.noarch.rpm]]
+
+
+---+ YUM Installation
+
+Use the following repository: http://glitesoft.cern.ch/EGEE/gLite/R3.2/glite-GENERIC/sl5/x86_64/RPMS.updates/
+
+
+---+ Configuration
+
+Please move forward to the [[AuthZPEPgLExecConfig][gLExec with LCMAPS C PEP Plug-in configuration guide]] for all options.
+
+It is advised to install gLExec with Argus support from YAIM and use the YAIM manual pages for help in the configuration of YAIM.

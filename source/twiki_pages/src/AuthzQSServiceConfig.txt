@@ -1,0 +1,11 @@
+%META:TOPICINFO{author="chad_2elajoie_40switch_2ech" date="1257249650" format="1.1" version="1.1"}%
+%META:TOPICPARENT{name="AuthzQSManInstall"}%
+---+!! Argus: Quick Start: Manual Configuration
+%TOC%
+
+_TODO_
+
+
+---
+
+Configuration is now complete, proceed to [[AuthzQSPolicySetup][setting up your site policies]].

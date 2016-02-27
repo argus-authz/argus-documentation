@@ -1,0 +1,23 @@
+%META:TOPICINFO{author="ad968f62f612332eff6b" date="1272278059" format="1.1" version="1.2"}%
+%META:TOPICPARENT{name="AuthorizationFramework"}%
+---+!! Argus: GSI PEP Callout: Installation
+
+%TOC%
+
+---+ Manual Installation
+
+The GSI PEP Callout module (Argus 1.1) requires the following RPM: 
+
+   * [[http://etics-repository.cern.ch/repository/download/registered/org.glite/org.glite.authz.gsi-pep-callout/1.1.0/sl5_x86_64_gcc412/glite-authz-gsi-pep-callout-1.1.0-3.sl5.x86_64.rpm][glite-authz-gsi-pep-callout-1.1.0-3.sl5.x86_64.rpm]]
+
+The package includes the shared library implementing the GSI authorization and mapping module. 
+
+---++ Dependencies
+
+   * [[http://etics-repository.cern.ch/repository/download/registered/org.glite/org.glite.authz.pep-c/1.3.0/sl5_x86_64_gcc412/glite-authz-pep-c-1.3.0-4.sl5.x86_64.rpm][glite-authz-pep-c-1.3.0-4.sl5.x86_64.rpm]]
+   * vdt_globus_essentials >= VDT1.10.1x86_64_rhap_5 
+
+
+---+ ETICS Installation
+
+TODO

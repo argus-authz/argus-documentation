@@ -1,0 +1,51 @@
+%META:TOPICINFO{author="mischa_2esalle_40cern_2ech" date="1346071058" format="1.1" version="1.6"}%
+%META:TOPICPARENT{name="AuthorizationFramework"}%
+---+!! THIS PAGE IS OUTDATED.
+*Please go to the new [[https://wiki.nikhef.nl/grid/GLExec_Argus_Quick_Installation_Guide][GLExec Argus Quick Installation Guide]]*
+
+-- Main.OscarKoeroo - 23-Oct-2009
+
+---+!! Argus: gLExec LCMAPS C PEP Plug-in: Troubleshooting
+
+%TOC%
+
+---+ Quick test
+
+Two environment variables MUST be setup before trying gLExec:
+   * X509_USER_PROXY : Contains the path to the proxy file of the gLExec calling identity. This is the pilot job executor identity.
+   * GLEXEC_CLIENT_CERT : Contains the path to the proxy file of the identity that must get authorized and subsequently mapped by gLExec. This is the pilot job payload identity.
+
+
+
+Run gLExec with the following command in order to perform a quick test:
+
+<verbatim>
+export X509_USER_PROXY=${X509_USER_PROXY:-"/tmp/x509up_`id -u`"}
+export GLEXEC_CLIENT_CERT=${GLEXEC_CLIENT_CERT:-$X509_USER_PROXY}
+
+/opt/glite/sbin/glexec /usr/bin/id; echo $?
+</verbatim>
+
+The expected output is:
+<verbatim>
+uid=40205(testuseraccount) gid=2013(testusergroup)
+0
+</verbatim>
+
+
+
+---+ Checking the output of the gLExec command
+
+Check the output and also the return code of gLExec. Upon successful execution of a program, the return value from gLExec will simply be the return value of the program that was executed.  Otherwise, gLExec quits with the following limited range of return values:
+
+   * 201 - Client error: Something went wrong and the user is able to resolve the problem
+   * 202 - Internal gLExec error: This might be an installation, configuration or initialization error. The system administrator will have to resolve this problem. Hence no other output is provided on the command line.
+   * 203 - Authorization error: Everything went ok, but the user is not authorized.
+   * 204 - Child return value overlap: This error code is triggered when gLExec is in linger mode (activated by default) and when the called child process returns an exit code that overlaps with one of the error code numbers 201, 202, 203 and 204.
+
+   * 126 - Shell returns that the executable can’t be executed: This  error  code  is  triggered when the execv() call failed to execute the command, because of permission, execution or system problems found during the call for the executable that was tried to be set up. The shell code is not caught, but forwarded as an error code from the actual child process.
+
+
+---+ gLExec specific troubleshooting
+
+More detailed installation and troubleshooting hints can be found on the [[https://www.nikhef.nl/pub/projects/grid/gridwiki/index.php/GLExec][Nikhef GridWiki for gLExec]].

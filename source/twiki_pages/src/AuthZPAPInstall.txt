@@ -1,0 +1,37 @@
+%META:TOPICINFO{author="ad968f62f612332eff6b" date="1305816515" format="1.1" version="1.9"}%
+%META:TOPICPARENT{name="AuthorizationFramework"}%
+---+!! Argus Policy Administration Point (PAP) Installation
+
+%TOC%
+
+---++ EMI Installation
+
+To deploy the Argus PAP for EMI, Please follow the documentation [[ArgusEMIDeployment][Argus Deployment for EMI]]
+
+
+---++ gLite 3.2 Installation
+
+---+++ Prerequisites
+In order to run the PAP service you will need the following:
+   * A working Java 5 installation. Use =java -version= to determine your Java version.
+   * a recent version of openssl (&gt;0.9.7) installed on your system
+   * LCG trusted Certificate Autorities certificates installed. In SL4, the =lcg-ca= package provides those certificates.
+   * a valid, PEM encoded !X509 certificate issued by a trusted CA.
+
+---+++ gLite 3.2 Installation
+The PAP, PDP, and PEPd are bundled as a single gLite node type =glite-ARGUS=.  
+
+The PAP component is installed in =/opt/argus/pap=.
+
+   1 Execute the command: =yum install glite-ARGUS=
+   1 In your YAIM site-info.def configuration set:
+      * the =ARGUS_HOST= property to the hostname of the machine on which you are installing
+      * the =PAP_ADMIN_DN= property to the subject DN of the user certificate of the individual who will maintain the PAP and use the =pap-admin= command
+      * the =USERS_CONF=, =GROUP_CONF=, and =VOS= property to their appropriate values for your site
+   1 Run YAIM using the command =yaim -c -s site-info.def -n ARGUS_server=
+
+---+++ Manual Installation
+   1 [[http://etics-repository.cern.ch:8080/repository/download/registered/org.glite/org.glite.authz.pap-service/][Download]] the latest version version of the software.
+   1 Expand the downloaded archive to the =/opt/argus= directory.
+      * This resulting installation directory =/opt/argus/pap= will be referred to, in the documentation, as PAP_HOME
+   1 Add the =PAP_HOME/bin= to your =PATH= in order to use the PAP startup and administration scripts
