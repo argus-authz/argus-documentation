@@ -1,6 +1,6 @@
 
-Argus: Quick Start: Site Policy Setup
-=====================================
+Argus Quick Start: Site Policy Setup
+====================================
 
 Policy Basics
 -------------
@@ -8,8 +8,8 @@ Policy Basics
 A site's policies are maintained using the command
 ``/opt/argus/pap/bin/pap-admin``. Initially the PAP contains an empty
 policy for the site so no one will be permitted to do anything. The
-command ``pap-admin list-policies`` lists policies, in the `simplified
-policy language notation <SimplifiedPolicyLanguage>`__, currently active
+command ``pap-admin list-policies`` lists policies, in the :ref:`simplified
+policy language notation <argus_simplified_policy_language>`, currently active
 in the PAP.
 
 The policies you add will be evaluated from most to least recent and the
@@ -17,14 +17,14 @@ first policy that matches is the result returned by Argus. So, if you
 added a policy that would deny a user and then added one that would
 permit the user the result of an authorization request will be permit
 since the permit policy is most recent. While not covered here, the
-exhaustive `PAP command line interface reference <AuthZPAPCLI>`__
+exhaustive PAP command line interface :ref:`reference <argus_pap_cli>`
 provides information for how to re-order policies.
 
 To begin, you will need to create permit policies, for individuals
 users, VOs, and FQANs, which reflect your site's access policy. Each of
 the commands listed require a resource ID and action ID which are
 deployment and application specific, respectively. These ID were
-described in the `introduction to the Argus system <AuthZIntro>`__. For
+described in the :ref:`introduction <argus_introduction>` to the Argus system. For
 the purposes of this quick-start we'll use ``http://example.org`` as the
 resource ID and ``http://example.org/action`` as the action ID. At this
 point you do not need to worry about what the correct values would be
@@ -121,8 +121,8 @@ creating and testing policies.
 To test the policies you can use the command ``pepcli``. This debugging
 tool can be used in two different ways. First you can supply it the cert
 of a user or you can mock up a request by specifying a subject DN and
-primary and second FQANs. See the `pepcli
-documentation <AuthZPEPCCLI>`__ for complete list of options or use the
+primary and second FQANs. See the ``pepcli``
+:ref:`documentation <argus_pepc_cli>` for complete list of options or use the
 examples below.
 
 This command provides the result that the user, represented by the given
