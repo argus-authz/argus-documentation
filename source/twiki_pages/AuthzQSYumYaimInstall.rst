@@ -1,6 +1,3 @@
-%META:TOPICINFO{author="joel\_2ecasutt\_40cern\_2ech" date="1311164000"
-format="1.1" reprev="1.17" version="1.17"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
 
 Quick Start: glite 3.2 Argus Installation
 =========================================

@@ -1,6 +1,3 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1271340916"
-format="1.1" version="1.7"}%
-%META:TOPICPARENT{name="AuthzQSYumYaimInstall"}%
 
 Argus: Quick Start: Site Policy Setup
 =====================================

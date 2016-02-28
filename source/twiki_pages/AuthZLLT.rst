@@ -1,6 +1,3 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1254385015"
-format="1.1" version="1.3"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
 
 Authorization Service: Load and Lifetime Testing
 ================================================

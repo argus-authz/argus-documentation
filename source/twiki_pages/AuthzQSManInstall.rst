@@ -1,6 +1,3 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1257252646"
-format="1.1" reprev="1.2" version="1.2"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
 
 Argus: Quick Start: Manual Installation
 =======================================

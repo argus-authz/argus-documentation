@@ -1,6 +1,3 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1340980935"
-format="1.1" version="1.12"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
 
 Argus Services (EMI-1) Fine Tuning
 ==================================

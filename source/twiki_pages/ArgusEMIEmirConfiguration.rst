@@ -1,6 +1,3 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1355496377"
-format="1.1" reprev="1.3" version="1.3"}%
-%META:TOPICPARENT{name="ArgusEMIDeployment"}%
 
 Argus EMIR Publisher Configuration (EMI-3)
 ==========================================

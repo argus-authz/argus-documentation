@@ -1,6 +1,3 @@
-%META:TOPICINFO{author="ad968f62f612332eff6b" date="1271254649"
-format="1.1" reprev="1.1" version="1.1"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
 
 GGUS User Support for Argus
 ===========================

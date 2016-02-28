@@ -1,6 +1,3 @@
-%META:TOPICINFO{author="joel\_2ecasutt\_40cern\_2ech" date="1320850921"
-format="1.1" version="1.7"}%
-%META:TOPICPARENT{name="AuthorizationFramework"}%
 
 Authorization Services Testing Summary
 ======================================
