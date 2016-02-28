@@ -14,8 +14,11 @@ API: http://argus-authz.github.com/argus-pep-api-c/doc/modules.html
 PEP XACML Object Model
 ----------------------
 
-<img src="%ATTACHURLPATH%/Argus\_PEP\_ObjectModel.png"
-alt="Argus\_PEP\_ObjectModel.png" width='600' />
+
+.. figure:: /images/Argus_PEP_ObjectModel.png
+   :align: center
+   :scale: 25%
+
 
 Basic Example
 -------------
