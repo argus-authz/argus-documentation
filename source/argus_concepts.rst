@@ -188,7 +188,7 @@ system.
 Example Requests and Policies
 +++++++++++++++++++++++++++++
 
-Look at the `dedicated page <argus_rquest_and_policy_examples>` for request and policy examples.
+Look at the :ref:`dedicated page <argus_request_and_policy_examples>` for request and policy examples.
 
 Identifiers within Argus
 ------------------------

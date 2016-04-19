@@ -23,7 +23,7 @@ Installation
 ^^^^^^^^^^^^
 
 The ``pepcli`` command is by default installed with the ``emi-argus``
-metapackage, see :ref:`Argus EMI Deployment <argus_emi_deployment>`.
+metapackage, see :ref:`Argus Deployment <argus-deployment>`.
 But you can also install it separately on your host for testing purpose.
 To install it with YUM:
 

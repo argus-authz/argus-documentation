@@ -1,3 +1,4 @@
+.. _argus-emir-configuration:
 
 Argus EMIR Publisher Configuration (EMI-3)
 ==========================================

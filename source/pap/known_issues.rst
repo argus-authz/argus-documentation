@@ -1,6 +1,6 @@
 .. _argus_pap_known_issues:
 
-Argus: Policy Administration Point (PAP): Kown Issues
-=====================================================
+Argus: Policy Administration Point (PAP): Known Issues
+======================================================
 
-There is no know issues.
+There is no known issues.

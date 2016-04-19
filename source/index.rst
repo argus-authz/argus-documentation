@@ -28,7 +28,9 @@ Contents:
 .. toctree::
    :hidden:
 
-   misc/argus_emi_deployment
+   misc/argus_deployment
+   misc/manual_configuration
+   misc/configuration_with_yaim
    misc/grid_map_file
    misc/emi_yaim_configuration
 

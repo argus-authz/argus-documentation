@@ -1,3 +1,4 @@
+.. _argus-development-tools:
 
 Argus Development Tools
 =======================

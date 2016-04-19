@@ -1,3 +1,4 @@
+.. _argus-testing-summary-130:
 
 Authorization Services Testing Summary
 ======================================
@@ -17,7 +18,7 @@ For the perfomance and aging tests, we installed:
    -  4 hosts running the Grinder framework
 
 Update: Results for the 1.3.1 update using the same Hardware
-                                                            
+
 
 There is a significant drop in memory consumption coming with the 1.3.1
 update for the pepd and the pdp server. Find some load test using those
@@ -41,7 +42,7 @@ This is the most common case, since the default configuration with YAIM
 results in a PEPd with SSL enabled
 
 On the Argus Server
-                   
+
 
 The default configuration was used, only the cache-size was lowered to
 200 requests
@@ -58,7 +59,7 @@ The obligations needed for this test were added to the PAP
    --resource "ce2\_.\*"
 
 The Test-Scripts
-                
+
 
 To assure that not only cached requests are used by the PEPd, but that
 the PEPd also sends requests to the PDP, more than 200 different
@@ -66,7 +67,7 @@ requests need to be defined in the properties file. This can easily be
 done by changing the resource (e.g. ce1\_100, ce1\_101, ...)
 
 Results and Metrics
-                   
+
 
 -  Test ran for about 16h without interruption
 -  1'698'886 authorization requests processed
@@ -83,7 +84,7 @@ Results and Metrics
    width='596' height='234' />
 
 Results and Metrics for the 1.3.1-update
-                                        
+
 
 -  Test ran for about 63h without interruption
 -  ~6.9 M authorization requests processed

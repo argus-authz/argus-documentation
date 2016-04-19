@@ -1,3 +1,4 @@
+.. _argus-emi-fine-tuning:
 
 Argus Services (EMI-1) Fine Tuning
 ==================================

@@ -7,8 +7,8 @@ The CLI (Command Line Interface) allows to perform all of the policy
 management operations as well as to set most of the configuration
 information of the PAP including authorization settings. All these
 operations are accessible by means of (sub)commands of the PAP CLI and
-they are divided in three sections: *policy management*, *pap
-management* and *authorization management*.
+they are divided in three sections: *policy management*, *pap management*
+and *authorization management*.
 
 The command to invoke the CLI is ``pap-admin``.
 
@@ -50,11 +50,11 @@ Global options:
 -  ``--host <arg>``: specifies the target PAP hostname (default is
    localhost). This option defines the PAP endpoint to be contacted as
    follows:
-   `https://arg:port/pap/services/ <https://arg:port/pap/services/>`__;
+   ``https://arg:port/pap/services/ <https://arg:port/pap/services/>``;
 -  ``--port <arg>``: specifies the port on which the target PAP is
    listening (default is 8150);
 -  ``--url <arg>``: specifies the full target PAP endpoint (default:
-   https://localhost:8150/pap/services/);
+   ``https://localhost:8150/pap/services/``);
 -  ``--cert <arg>``: specifies non-standard user certificate;
 -  ``--key <arg>``: specifies non-standard user private key;
 -  ``--password <arg>``: specifies the password used to decrypt the
@@ -79,22 +79,27 @@ Exit status
 
 Each command returns 0 for success or non-zero in case of error.
 
-X509 authentication A valid X509 certificate or proxy certificate is needed in order to run the ``pap-admin`` client. The certificate to be used by the command is found as follows:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+X509 authentication
+~~~~~~~~~~~~~~~~~~~
+
+A valid X509 certificate or proxy certificate is needed in order to run the ``pap-admin`` client.
+The certificate to be used by the command is found as follows:
 
 1. if the user is *root* then the client looks for host certificate at
-the usual location, i.e. ``/etc/grid-security/hostcert.pem`` and
-``/etc/grid-security/hostkey.pem``. These locations can be overridden by
-setting the ``X509_USER_CERT`` and ``X509_USER_KEY`` environment
-variables. 2. if the user is not *root*, then the client looks for a
-proxy certificate at the usual location, i.e.,
-``/tmp/x509up_u%GREEN%<uid>%ENDCOLOR%``. The default proxy location can
-be overridden using the ``X509_USER_PROXY`` environment variable. If no
-proxy is found, then the client looks for a certificate (and the
-relative private key) at the usual location, i.e.,
-``$HOME/.globus/usercert.pem`` and ``$HOME/.globus/userkey.pem``. These
-locations can be overriden by setting the ``X509_USER_CERT`` and
-``X509_USER_KEY`` environment variables.
+   the usual location, i.e. ``/etc/grid-security/hostcert.pem`` and
+   ``/etc/grid-security/hostkey.pem``. These locations can be overridden by
+   setting the ``X509_USER_CERT`` and ``X509_USER_KEY`` environment
+   variables.
+
+2. if the user is not *root*, then the client looks for a
+   proxy certificate at the usual location, i.e.,
+   ``/tmp/x509up_u<uid>``. The default proxy location can
+   be overridden using the ``X509_USER_PROXY`` environment variable. If no
+   proxy is found, then the client looks for a certificate (and the
+   relative private key) at the usual location, i.e.,
+   ``$HOME/.globus/usercert.pem`` and ``$HOME/.globus/userkey.pem``. These
+   locations can be overriden by setting the ``X509_USER_CERT`` and
+   ``X509_USER_KEY`` environment variables.
 
 This behaviour can be overridden by specifying the ``--cert``, ``--key``
 and ``--proxy`` command line options.
@@ -105,13 +110,13 @@ Client configuration (since version 1.3.0)
 The ``pap-admin.properties`` file, found in ``/etc/argus/pap`` (EMI) or
 ``/opt/argus/pap/conf`` (gLite), allows to set the following properties:
 
-+------------+--------------------------------------------------------------------------------------------------------------------------+-----------------+
-| Property   | Description                                                                                                              | Default Value   |
-+============+==========================================================================================================================+=================+
-| host       | The PAP host that will be contacted by the pap-admin CLI if no host is explicitly specified with the ``--host`` option   | localhost       |
-+------------+--------------------------------------------------------------------------------------------------------------------------+-----------------+
-| port       | The remote PAP service port number                                                                                       | 8150            |
-+------------+--------------------------------------------------------------------------------------------------------------------------+-----------------+
++----------+------------------------------------------------------------------------------------------------------------------------+---------------+
+| Property | Description                                                                                                            | Default Value |
++==========+========================================================================================================================+===============+
+| host     | The PAP host that will be contacted by the pap-admin CLI if no host is explicitly specified with the ``--host`` option | localhost     |
++----------+------------------------------------------------------------------------------------------------------------------------+---------------+
+| port     | The remote PAP service port number                                                                                     | 8150          |
++----------+------------------------------------------------------------------------------------------------------------------------+---------------+
 
 This property file is expecially useful when administering a PAP
 installed on a remote machine.
@@ -120,13 +125,13 @@ Policy Management Commands
 --------------------------
 
 This set of commands allows to perform policy management operations. All
-the commands in this section modifies the *default* pap. In order to
-target another local pap use the option ``--pap <alias>``.
+the commands in this section modifies the *default* PAP. In order to
+target another local PAP use the option ``--pap <alias>``.
 
 Command: list-policies
 ~~~~~~~~~~~~~~~~~~~~~~
 
-List policies. By default the policies of the *default* pap are listed
+List policies. By default the policies of the *default* PAP are listed
 unless option ``--pap`` is specified.
 
 ::
@@ -135,9 +140,9 @@ unless option ``--pap`` is specified.
 
 Command specific options:
 
--  ``--pap <alias>``: list policies of pap "alias" ( *default* pap is
+-  ``--pap <alias>``: list policies of PAP "alias" ( *default* PAP is
    assumed if this option is missing);
--  ``--all``: list policies of all the defined paps;
+-  ``--all``: list policies of all the defined PAPs;
 -  ``-srai,--show-ra-ids``: show resource and action ids;
 -  ``-sai,--show-all-ids``: show all ids (resource, action and rule
    ids);
@@ -172,7 +177,7 @@ Command specific options:
 -  ``-a,--action <value>``: specify an action value (default is ".\*")
 -  ``-r,--resource <value>``: specify a resource value (default is
    ".\*")
--  ``--pap <alias>``: add the policy to the pap "alias" ( *default* pap
+-  ``--pap <alias>``: add the policy to the PAP "alias" ( *default* PAP
    is assumed if this option is missing)
 -  ``--private``: set the policy as private
 -  ``--public``: set the policy as public
@@ -221,8 +226,8 @@ Command specific options:
 -  ``-a,--action <value>``: specify an action value (default is ".\*")
 -  ``-r,--resource <value>``: specify a resource value (default is
    ".\*")
--  ``--pap <alias>``: remove the ban policy from the pap *alias* (
-   *default* pap is assumed if this option is missing)
+-  ``--pap <alias>``: remove the ban policy from the PAP *alias* (
+   *default* PAP is assumed if this option is missing)
 
 **Semantic of the command**: the target *resource* and *action* to
 search the deny rule for are chosen as follows:
@@ -273,7 +278,7 @@ is present.
 
 Command specific options:
 
--  ``--pap <alias>``: add the policy to the pap "alias" ( *default* pap
+-  ``--pap <alias>``: add the policy to the PAP "alias" ( *default* PAP
    is assumed if this option is missing);
 -  ``--action-id <action-id>``: specify an action id;
 -  ``--rule-id <rule-id>``: specify a rule id (requires option
@@ -312,8 +317,8 @@ specified).
 
 Command specific options:
 
--  ``--pap <alias>``: add the policies to the pap "alias" ( *default*
-   pap is assumed if this option is missing);
+-  ``--pap <alias>``: add the policies to the PAP "alias" ( *default*
+   PAP is assumed if this option is missing);
 -  ``--pivot <id>``: insert before <id>;
 -  ``--after``: modifies the behavior of the ``--pivot`` option in
    insert after <id>.
@@ -340,12 +345,12 @@ action, for example:
 
     action ".*" {
         rule deny { subject="/DC=ch/DC=cern/OU=Organic  Units/OU=Users/CN=user/CN=111111/CN=user name" }
-    } 
+    }
 
 Command specific options:
 
--  ``--pap <alias>``: update the policies for pap "alias" ( *default*
-   pap is assumed if this option is missing);
+-  ``--pap <alias>``: update the policies for PAP "alias" ( *default*
+   PAP is assumed if this option is missing);
 
 Command: remove-policy
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -361,13 +366,13 @@ Remove policy by id.
 
 Command specific options:
 
--  ``--pap <alias>``: remove policies of pap "alias" ( *default* pap is
+-  ``--pap <alias>``: remove policies of PAP "alias" ( *default* PAP is
    assumed if this option is missing);
 
 Command: remove-all-policies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Remove all policies of a pap. Use option ``--pap`` to specify a pap
+Remove all policies of a PAP. Use option ``--pap`` to specify a PAP
 different than the default one.
 
 ::
@@ -376,7 +381,7 @@ different than the default one.
 
 Command specific options:
 
--  ``--pap <alias>``: remove the policies of pap "alias" ( *default* pap
+-  ``--pap <alias>``: remove the policies of PAP "alias" ( *default* PAP
    is assumed if this option is missing);
 
 Command: move
@@ -398,7 +403,7 @@ respectively, a resource, action or rule id.
 
 Command specific options:
 
--  ``--pap <alias>``: move the policy of pap "alias" ( *default* pap is
+-  ``--pap <alias>``: move the policy of PAP "alias" ( *default* PAP is
    assumed if this option is missing);
 -  ``--after``: move *id* after *pivotId*.
 
@@ -418,8 +423,8 @@ Adds on obligation to an existing resource or action policy.
 
 Command specific options:
 
--  ``--pap <alias>``: add on policies defined in the pap "alias" (
-   *default* pap is assumed if this option is missing);
+-  ``--pap <alias>``: add on policies defined in the PAP "alias" (
+   *default* PAP is assumed if this option is missing);
 
 Command: remove-obligation (**since version 1.2.0**)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -437,8 +442,8 @@ Removes an obligation from an existing resource or action policy.
 
 Command specific options:
 
--  ``--pap <alias>``: add on policies defined in the pap "alias" (
-   *default* pap is assumed if this option is missing);
+-  ``--pap <alias>``: add on policies defined in the PAP "alias" (
+   *default* PAP is assumed if this option is missing);
 
 PAP Management Commands
 -----------------------
@@ -458,26 +463,26 @@ Ping a PAP and return version information.
 Command: add-pap
 ~~~~~~~~~~~~~~~~
 
-Add a remote or local pap.
+Add a remote or local PAP.
 
 ::
 
     usage: pap-admin [global-options] add-pap [options] <alias> [<endpoint> <dn>]
 
--  ``alias``: a friendly (unique) name used to identify the pap
--  ``endpoint``: endpoint of the remote pap in the form:
-   <verbatim>[<protocol>://]<host>:[<port>/[path]]</verbatim>
--  ``dn``: DN of the remote pap
+-  ``alias``: a friendly (unique) name used to identify the PAP
+-  ``endpoint``: endpoint of the remote PAP in the form:
+   ``<verbatim>[<protocol>://]<host>:[<port>/[path]]</verbatim>``
+-  ``dn``: DN of the remote PAP
 
-A just added pap is disabled by default (its policies are not sent to
+A just added PAP is disabled by default (its policies are not sent to
 the PDP), use the command :ref:`enable-pap <argus_pap_cli_enable_pap>` to enable it.
 
-By default a pap is considered to be private (use the ``--public``
-option to set the pap as public). Policies defined in a public pap can
+By default a PAP is considered to be private (use the ``--public``
+option to set the PAP as public). Policies defined in a public PAP can
 be fetched from other remote PAPs, while this is not allowed when the
 PAP is set to private.
 
-If ``endpoint`` and ``dn`` are present the pap is considered to be
+If ``endpoint`` and ``dn`` are present the PAP is considered to be
 remote (unless option ``--local`` is specified), otherwise it is local.
 For the endpoint the only required parameter is the hostname, these are
 the default values:
@@ -486,13 +491,13 @@ the default values:
 -  *port*: 8150
 -  *service path*: pap/services
 
-When a new pap is added, the PAP service tries immediately to fetch its
-policies. If the remote pap is not reachable, the pap-admin command
-prints an error message clarifying that the pap was successfully added,
+When a new PAP is added, the PAP service tries immediately to fetch its
+policies. If the remote PAP is not reachable, the ``pap-admin`` command
+prints an error message clarifying that the PAP was successfully added,
 but the fetching of the policies failed.
 
 If the option ``--no-policies`` is given, the policies are not fetched
-at pap creation time but automatically by the server every
+at PAP creation time but automatically by the server every
 ``polling interval`` seconds or manually when the a ``refresh-cache``
 command is sent to the server.
 
@@ -506,10 +511,10 @@ Examples of endpoint are:
 
 Command specific options:
 
--  ``-l,--local``: set the pap as local;
--  ``--remote``: set the pap as remote;
--  ``--private``: set the pap as private;
--  ``--public``: set the pap as public;
+-  ``-l,--local``: set the PAP as local;
+-  ``--remote``: set the PAP as remote;
+-  ``--private``: set the PAP as private;
+-  ``--public``: set the PAP as public;
 -  ``--no-policies``: do not fetch the policies now.
 
 Example:
@@ -521,32 +526,32 @@ Example:
 Command: update-pap
 ~~~~~~~~~~~~~~~~~~~
 
-Update pap information.
+Update PAP information.
 
 ::
 
     usage: pap-admin [global-options] update-pap [options] <alias> [<endpoint> <dn>]
 
 The input is the same as for the "add-pap" command, the effect is to
-update old information with the new one. The *alias* of a pap cannot be
-modified. In the case of a remote pap the policies are fetched
+update old information with the new one. The *alias* of a PAP cannot be
+modified. In the case of a remote PAP the policies are fetched
 immediately unless option ``--no-policies`` is given.
 
 Command: remove-pap
 ~~~~~~~~~~~~~~~~~~~
 
-Remove a pap and delete its policies.
+Remove a PAP and delete its policies.
 
 ::
 
     usage: pap-admin [global-options] remove-pap <alias>
 
--  ``alias``: alias of the pap to remove
+-  ``alias``: alias of the PAP to remove
 
 Command: list-paps
 ~~~~~~~~~~~~~~~~~~
 
-List all defined paps.
+List all defined PAPs.
 
 ::
 
@@ -555,14 +560,14 @@ List all defined paps.
 Command specific options:
 
 -  ``-l``: use a long list format (displays all the information of a
-   pap).
+   PAP).
 
 .. _argus_pap_cli_enable_pap:
 
 Command: enable-pap
 ~~~~~~~~~~~~~~~~~~~
 
-Set a pap as enabled (i.e. PDPs will get its policies).
+Set a PAP as enabled (i.e. PDPs will get its policies).
 
 ::
 
@@ -571,7 +576,7 @@ Set a pap as enabled (i.e. PDPs will get its policies).
 Command: disable-pap
 ~~~~~~~~~~~~~~~~~~~~
 
-Set a pap as disabled (i.e. PDPs won't get its policies).
+Set a PAP as disabled (i.e. PDPs won't get its policies).
 
 ::
 
@@ -580,59 +585,59 @@ Set a pap as disabled (i.e. PDPs won't get its policies).
 Command: get-paps-order
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Get paps ordering.
+Get PAPs ordering.
 
 ::
 
     usage: pap-admin [global-options] get-paps-order
 
 If no ordering is defined the output message is:
-``No ordering has been defined``. If the *default* pap is not listed in
+``No ordering has been defined``. If the *default* PAP is not listed in
 the ordering (like in the no ordering defined case) by default it is
 placed for first.
 
 Command: set-paps-order
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Define paps ordering.
+Define PAPs ordering.
 
 ::
 
     usage: pap-admin [global-options] set-paps-order [alias]...
 
--  ``alias``: a valid pap alias.
+-  ``alias``: a valid PAP alias.
 
 All the aliases must be valid (existing). If no arguments are given then
 the current ordering (if there's any defined) is deleted.
 
 | Example:
-|  The remote pap *osct* contains banning policies and we want that
+|  The remote PAP *osct* contains banning policies and we want that
   policies to be evaluated for first. This is command to issue:
 
 ::
 
     pap-admin set-paps-order osct default
 
-If the PAP service contains other paps beyond the *osct*, then their
-policies are evaluated after the *osct* and *default* pap policies.
-Since the ordering contains only the *osct* and the *default* paps it is
+If the PAP service contains other PAPs beyond the *osct*, then their
+policies are evaluated after the *osct* and *default* PAP policies.
+Since the ordering contains only the *osct* and the *default* PAPs it is
 not guaranteed a special order for the evaluation of the policies of all
-the other paps (except that they are evaluated after these two paps).
+the other PAPs (except that they are evaluated after these two PAPs).
 
 Command: refresh-cache
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Invalidates the local policy cache and retrieves policies from remote
-paps.
+PAPs.
 
 ::
 
     usage: pap-admin [global-options] refresh-cache [alias]...
 
--  ``alias``: a valid pap alias.
+-  ``alias``: a valid PAP alias.
 
-The arguments identify the paps that will be contacted. If no arguments
-are given, all the defined remote paps are contacted.
+The arguments identify the PAPs that will be contacted. If no arguments
+are given, all the defined remote PAPs are contacted.
 
 Command: get-polling-interval
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -647,11 +652,11 @@ Command: set-polling-interval
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Invalidates the local policy cache and retrieves policies from remote
-paps.
+PAPs.
 
 ::
 
-    usage: pap-admin [global-options] set-polling-interval <seconds> 
+    usage: pap-admin [global-options] set-polling-interval <seconds>
 
 -  ``seconds``: polling interval in seconds.
 
@@ -719,7 +724,7 @@ Example:
 
 ::
 
-    pap add-ace '/atlas/Role=VO-Admin' 'ALL'
+    pap-admin add-ace '/atlas/Role=VO-Admin' 'ALL'
 
 Required permissions: ``CONFIGURATION_READ|CONFIGURATION_WRITE``
 
@@ -743,6 +748,6 @@ Example:
 
 ::
 
-    pap remove-ace '/atlas/Role=VO-Admin'
+    pap-admin remove-ace '/atlas/Role=VO-Admin'
 
 Required permissions: ``CONFIGURATION_READ|CONFIGURATION_WRITE``
