@@ -1,7 +1,7 @@
 .. _argus_pepd_troubleshooting:
 
 Argus PEP Server: Troubleshooting
-=======================================================
+=================================
 
 PEP Daemon Returns "Stale" Results
 ----------------------------------
@@ -34,7 +34,7 @@ Here is an example of using the C command line tool to test a job
 submission. It specifies the PEPd service, resource ID, action ID,
 user's DN, and primary FQAN.
 
-::
+.. code-block:: bash
 
     /opt/glite/bin/pepcli  -v -x \
        -p http://vesta.switch.ch:8154/authz \

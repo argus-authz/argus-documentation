@@ -80,29 +80,20 @@ decision is ``Permit``.
 
 .. _pep_gsi_callout_installation:
 
-Argus: GSI PEP Callout: Installation
-====================================
+Argus GSI PEP Callout: Installation
+===================================
 
 Manual Installation
 ===================
 
-The GSI PEP Callout module (Argus 1.1) requires the following RPM:
+The GSI PEP Callout module requires the following RPM:
 
--  `glite-authz-gsi-pep-callout-1.1.0-3.sl5.x86\_64.rpm <http://etics-repository.cern.ch/repository/download/registered/org.glite/org.glite.authz.gsi-pep-callout/1.1.0/sl5_x86_64_gcc412/glite-authz-gsi-pep-callout-1.1.0-3.sl5.x86_64.rpm>`__
+.. code-block:: bash
+
+   yum install argus-gsi-pep-callout
 
 The package includes the shared library implementing the GSI
 authorization and mapping module.
-
-Dependencies
-------------
-
--  `glite-authz-pep-c-1.3.0-4.sl5.x86\_64.rpm <http://etics-repository.cern.ch/repository/download/registered/org.glite/org.glite.authz.pep-c/1.3.0/sl5_x86_64_gcc412/glite-authz-pep-c-1.3.0-4.sl5.x86_64.rpm>`__
--  vdt\_globus\_essentials >= VDT1.10.1x86\_64\_rhap\_5
-
-ETICS Installation
-==================
-
-TODO
 
 
 .. _pep_gsi_callout_configuration:
@@ -121,9 +112,8 @@ module must be configured.
 Globus Authorization Callouts Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configuration file and configuration directives for the `Globus
-Authorization
-Callouts <http://www.globus.org/toolkit/security/callouts/>`__ to enable
+Configuration file and configuration directives for the
+`Globus Authorization Callouts <http://www.globus.org/toolkit/security/callouts/>`__ to enable
 the GSI PEP Callout module.
 
 Configuration File
@@ -273,7 +263,7 @@ This example shows how to start the GridFTP server in debug mode. The
 configuration files ``gsi-authz.conf`` and ``gsi-pep-callout.conf`` must
 be correctly configured as :ref:`previously described<pep_gsi_callout_configuration>`.
 
-::
+.. code-block:: bash
 
     export GLOBUS_CALLOUT_DEBUG_LEVEL=5
     # set the gsi-authz config to use (default /etc/grid-security/gsi-authz.conf)
@@ -284,10 +274,13 @@ be correctly configured as :ref:`previously described<pep_gsi_callout_configurat
 
     globus-gridftp-server -d 255 -p 9999 -debug
 
+
 The GridFTP server is now running and listening on port ``9999``. Use
 the ``uberftp`` client or ``globus-url-copy`` to connect to the server
 with your Grid credentials and obtain debugging information from the
 server:
 
--  ``uberftp -P 9999 HOSTNAME``
--  ``globus-url-copy file:///etc/passwd gsiftp://HOSTNAME:9999/tmp/e33``
+.. code-block:: bash
+
+   uberftp -P 9999 HOSTNAME
+   globus-url-copy file:///etc/passwd gsiftp://HOSTNAME:9999/tmp/e33

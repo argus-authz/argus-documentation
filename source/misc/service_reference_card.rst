@@ -50,17 +50,17 @@ Service Reference Card
    * PAP:
       * *Logging directory:* ``/var/log/argus/pap``
       * *Logging configuration:* ``/etc/argus/pap/logging/standalone/logback.xml``
-      * *Example:* `logback.xml <https://raw.github.com/argus-authz/argus-pap/master/src/main/config/logging/standalone/logback.xml>`_
+      * *Example:* `PAP logback.xml <https://raw.github.com/argus-authz/argus-pap/master/src/main/config/logging/standalone/logback.xml>`_
       * *Status handler:* ``https://HOSTNAME:8150/pap/status``
    * PDP:
       * *Logging directory:* ``/var/log/argus/pdp``
       * *Logging configuration:* ``/etc/argus/pdp/logging.xml``
-      * *Example:* `logging.xml <https://raw.github.com/argus-authz/argus-pdp/EMI-3/src/main/config/logging.xml>`_
+      * *Example:* `PDP logging.xml <https://raw.github.com/argus-authz/argus-pdp/EMI-3/src/main/config/logging.xml>`_
       * *Status handler:* ``https://HOSTNAME:8152/status``
    * PEP Server:
       * *Logging directory:* ``/var/log/argus/pepd``
       * *Logging configuration:* ``/etc/argus/pepd/logging.xml``
-      * *Example:* `logging.xml <https://raw.github.com/argus-authz/argus-pep-server/EMI-3/src/main/config/logging.xml>`_
+      * *Example:* `PEP logging.xml <https://raw.github.com/argus-authz/argus-pep-server/EMI-3/src/main/config/logging.xml>`_
       * *Status handler:* ``https://HOSTNAME:8154/status``
 
 **Open ports:**

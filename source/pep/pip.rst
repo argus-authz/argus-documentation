@@ -24,7 +24,7 @@ Configuration
 ^^^^^^^^^^^^^
 
 #. Create a new INI section for you PIP (you may
-   choose any valid INI section name. e.g. REQVALIDATOR\_PIP)
+   choose any valid INI section name. e.g. ``REQVALIDATOR_PIP``)
 #. Into the PIP INI section add the ``parserClass`` property with the
    value
    ``org.glite.authz.pep.pip.provider.RequestValidatorPIPIniConfigurationParser``
@@ -33,17 +33,17 @@ Configuration
 PIP Configuration Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+------------------------------+-----------------------------------------------------------------+-------------+-----------------+
-| Property                     | Description                                                     | Required?   | Default Value   |
-+==============================+=================================================================+=============+=================+
-| validateRequestSubjects      | Require at least one subject with non-empty attribute values    | N           | ``true``        |
-+------------------------------+-----------------------------------------------------------------+-------------+-----------------+
-| validateRequestResources     | Require at least one resource with non-empty attribute values   | N           | ``true``        |
-+------------------------------+-----------------------------------------------------------------+-------------+-----------------+
-| validateRequestAction        | Require one action with non-empty attribute values              | N           | ``true``        |
-+------------------------------+-----------------------------------------------------------------+-------------+-----------------+
-| validateRequestEnvironment   | Require one environment with non-empty attribute values         | N           | ``false``       |
-+------------------------------+-----------------------------------------------------------------+-------------+-----------------+
++----------------------------+---------------------------------------------------------------+-----------+---------------+
+| Property                   | Description                                                   | Required? | Default Value |
++============================+===============================================================+===========+===============+
+| validateRequestSubjects    | Require at least one subject with non-empty attribute values  | N         | ``true``      |
++----------------------------+---------------------------------------------------------------+-----------+---------------+
+| validateRequestResources   | Require at least one resource with non-empty attribute values | N         | ``true``      |
++----------------------------+---------------------------------------------------------------+-----------+---------------+
+| validateRequestAction      | Require one action with non-empty attribute values            | N         | ``true``      |
++----------------------------+---------------------------------------------------------------+-----------+---------------+
+| validateRequestEnvironment | Require one environment with non-empty attribute values       | N         | ``false``     |
++----------------------------+---------------------------------------------------------------+-----------+---------------+
 
 Example Configuration
 ^^^^^^^^^^^^^^^^^^^^^
@@ -92,7 +92,7 @@ Configuration
 ^^^^^^^^^^^^^
 
 #. Create a new INI section for you PIP (you may
-   choose any valid INI section name. e.g. OPENSSLSUBJECT\_PIP)
+   choose any valid INI section name. e.g. ``OPENSSLSUBJECT_PIP``)
 #. Into the PIP INI section add the ``parserClass`` property with the
    value
    ``org.glite.authz.pep.pip.provider.OpenSSLSubjectPIPIniConfigurationParser``
@@ -102,13 +102,13 @@ Configuration
 PIP Configuration Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+------------------------------------+--------------------------------------------------------------------------------------------------+-------------+-----------------------------------------------------------------------------------------------------------+
-| Property                           | Description                                                                                      | Required?   | Default Value                                                                                             |
-+====================================+==================================================================================================+=============+===========================================================================================================+
-| opensslSubjectAttributeIDs         | The space separated list of subject attribute IDs containing an OpenSSL value to convert         | No          | ``urn:oasis:names:tc:xacml:1.0:subject:subject-id`` ``http://glite.org/xacml/attribute/subject-issuer``   |
-+------------------------------------+--------------------------------------------------------------------------------------------------+-------------+-----------------------------------------------------------------------------------------------------------+
-| opensslSubjectAttributeDatatypes   | The space separated list of subject attribute datatypes containing an OpenSSL value to convert   | No          | ``http://www.w3.org/2001/XMLSchema#string``                                                               |
-+------------------------------------+--------------------------------------------------------------------------------------------------+-------------+-----------------------------------------------------------------------------------------------------------+
++----------------------------------+------------------------------------------------------------------------------------------------+-----------+---------------------------------------------------------------------------------------------------------+
+| Property                         | Description                                                                                    | Required? | Default Value                                                                                           |
++==================================+================================================================================================+===========+=========================================================================================================+
+| opensslSubjectAttributeIDs       | The space separated list of subject attribute IDs containing an OpenSSL value to convert       | No        | ``urn:oasis:names:tc:xacml:1.0:subject:subject-id`` ``http://glite.org/xacml/attribute/subject-issuer`` |
++----------------------------------+------------------------------------------------------------------------------------------------+-----------+---------------------------------------------------------------------------------------------------------+
+| opensslSubjectAttributeDatatypes | The space separated list of subject attribute datatypes containing an OpenSSL value to convert | No        | ``http://www.w3.org/2001/XMLSchema#string``                                                             |
++----------------------------------+------------------------------------------------------------------------------------------------+-----------+---------------------------------------------------------------------------------------------------------+
 
 Example Configuration
 ^^^^^^^^^^^^^^^^^^^^^
@@ -176,19 +176,19 @@ Configuration
 PIP Configuration Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+----------------------+----------------------------------------------------------------------------------------+-------------+-----------------+
-| Property             | Description                                                                            | Required?   | Default Value   |
-+======================+========================================================================================+=============+=================+
-| acceptedProfileIDs   | The space separated list of accepted authorization profile IDs                         | No          | None.           |
-+----------------------+----------------------------------------------------------------------------------------+-------------+-----------------+
-| vomsInfoDir          | The absolute path to the VOMS ``vomsdir`` directory.                                   | Y           | None.           |
-+----------------------+----------------------------------------------------------------------------------------+-------------+-----------------+
-| vomsInfoRefresh      | The refresh interval time in minutes of the ``vomsInfoDir`` directory.                 | No          | 60              |
-+----------------------+----------------------------------------------------------------------------------------+-------------+-----------------+
-| requireCertificate   | The request Subject attribute key-info MUST be present in the incoming request.        | No          | ``true``        |
-+----------------------+----------------------------------------------------------------------------------------+-------------+-----------------+
-| requireProxy         | The request Subject attribute key-info MUST to be a proxy (PEM encoded proxy chain).   | No          | ``false``       |
-+----------------------+----------------------------------------------------------------------------------------+-------------+-----------------+
++--------------------+--------------------------------------------------------------------------------------+-----------+---------------+
+| Property           | Description                                                                          | Required? | Default Value |
++====================+======================================================================================+===========+===============+
+| acceptedProfileIDs | The space separated list of accepted authorization profile IDs                       | No        | None.         |
++--------------------+--------------------------------------------------------------------------------------+-----------+---------------+
+| vomsInfoDir        | The absolute path to the VOMS ``vomsdir`` directory.                                 | Y         | None.         |
++--------------------+--------------------------------------------------------------------------------------+-----------+---------------+
+| vomsInfoRefresh    | The refresh interval time in minutes of the ``vomsInfoDir`` directory.               | No        | 60            |
++--------------------+--------------------------------------------------------------------------------------+-----------+---------------+
+| requireCertificate | The request Subject attribute key-info MUST be present in the incoming request.      | No        | ``true``      |
++--------------------+--------------------------------------------------------------------------------------+-----------+---------------+
+| requireProxy       | The request Subject attribute key-info MUST to be a proxy (PEM encoded proxy chain). | No        | ``false``     |
++--------------------+--------------------------------------------------------------------------------------+-----------+---------------+
 
 **NOTE: If the ``acceptedProfileIDs`` is not defined, then all profile
 IDs present in the request environment *profile-id* attribute are
@@ -344,19 +344,19 @@ Configuration
 PIP Configuration Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+----------------------+----------------------------------------------------------------------------------------+-------------+-----------------+
-| Property             | Description                                                                            | Required?   | Default Value   |
-+======================+========================================================================================+=============+=================+
-| acceptedProfileIDs   | The space separated list of accepted authorization profile IDs                         | No          | None.           |
-+----------------------+----------------------------------------------------------------------------------------+-------------+-----------------+
-| vomsInfoDir          | The absolute path to the VOMS ``vomsdir`` directory.                                   | YES         | None.           |
-+----------------------+----------------------------------------------------------------------------------------+-------------+-----------------+
-| vomsInfoRefresh      | The refresh interval time in minutes of the ``vomsInfoDir`` directory.                 | No          | 60              |
-+----------------------+----------------------------------------------------------------------------------------+-------------+-----------------+
-| requireCertificate   | The request Subject attribute key-info MUST be present in the incoming request.        | No          | ``false``       |
-+----------------------+----------------------------------------------------------------------------------------+-------------+-----------------+
-| requireProxy         | The request Subject attribute key-info MUST to be a proxy (PEM encoded proxy chain).   | No          | ``false``       |
-+----------------------+----------------------------------------------------------------------------------------+-------------+-----------------+
++--------------------+--------------------------------------------------------------------------------------+-----------+---------------+
+| Property           | Description                                                                          | Required? | Default Value |
++====================+======================================================================================+===========+===============+
+| acceptedProfileIDs | The space separated list of accepted authorization profile IDs                       | No        | None.         |
++--------------------+--------------------------------------------------------------------------------------+-----------+---------------+
+| vomsInfoDir        | The absolute path to the VOMS ``vomsdir`` directory.                                 | YES       | None.         |
++--------------------+--------------------------------------------------------------------------------------+-----------+---------------+
+| vomsInfoRefresh    | The refresh interval time in minutes of the ``vomsInfoDir`` directory.               | No        | 60            |
++--------------------+--------------------------------------------------------------------------------------+-----------+---------------+
+| requireCertificate | The request Subject attribute key-info MUST be present in the incoming request.      | No        | ``false``     |
++--------------------+--------------------------------------------------------------------------------------+-----------+---------------+
+| requireProxy       | The request Subject attribute key-info MUST to be a proxy (PEM encoded proxy chain). | No        | ``false``     |
++--------------------+--------------------------------------------------------------------------------------+-----------+---------------+
 
 **NOTE: If the ``acceptedProfileIDs`` is not defined, then all profile
 IDs present in the request environment *profile-id* attribute are
@@ -478,7 +478,7 @@ Authorization profile.
     [COMMONXACMLPROFILE_PIP]
     parserClass = org.glite.authz.pep.pip.provider.CommonXACMLAuthorizationProfilePIPIniConfigurationParser
     vomsInfoDir = /etc/grid-security/vomsdir
-    acceptedProfileIDs = http://dci-sec.org/xacml/profile/common-authz/1.1 
+    acceptedProfileIDs = http://dci-sec.org/xacml/profile/common-authz/1.1
 
 Other Policy Information Points (PIP)
 -------------------------------------
@@ -505,17 +505,17 @@ Configuration
 PIP Configuration Properties
 ++++++++++++++++++++++++++++
 
-+---------------------------------+----------------------------------------------------------------------------------+-------------+-----------------+
-| Property                        | Description                                                                      | Required?   | Default Value   |
-+=================================+==================================================================================+=============+=================+
-| acceptedActionAttributes        | spaced delimited list attribute IDs that may appear in the request action        | N           | None.           |
-+---------------------------------+----------------------------------------------------------------------------------+-------------+-----------------+
-| acceptedEnvrionmentAttributes   | spaced delimited list attribute IDs that may appear in the request environment   | N           | None.           |
-+---------------------------------+----------------------------------------------------------------------------------+-------------+-----------------+
-| acceptedResourceAttributes      | spaced delimited list attribute IDs that may appear in the request resource      | N           | None.           |
-+---------------------------------+----------------------------------------------------------------------------------+-------------+-----------------+
-| acceptedSubjectAttributes       | spaced delimited list attribute IDs that may appear in the request subject       | N           | None.           |
-+---------------------------------+----------------------------------------------------------------------------------+-------------+-----------------+
++-------------------------------+--------------------------------------------------------------------------------+-----------+---------------+
+| Property                      | Description                                                                    | Required? | Default Value |
++===============================+================================================================================+===========+===============+
+| acceptedActionAttributes      | spaced delimited list attribute IDs that may appear in the request action      | N         | None.         |
++-------------------------------+--------------------------------------------------------------------------------+-----------+---------------+
+| acceptedEnvrionmentAttributes | spaced delimited list attribute IDs that may appear in the request environment | N         | None.         |
++-------------------------------+--------------------------------------------------------------------------------+-----------+---------------+
+| acceptedResourceAttributes    | spaced delimited list attribute IDs that may appear in the request resource    | N         | None.         |
++-------------------------------+--------------------------------------------------------------------------------+-----------+---------------+
+| acceptedSubjectAttributes     | spaced delimited list attribute IDs that may appear in the request subject     | N         | None.         |
++-------------------------------+--------------------------------------------------------------------------------+-----------+---------------+
 
 **NOTE: if a property is not given then all attributes within the
 section (i.e. action, environment, resource, or subject) are accepted.**
@@ -583,7 +583,7 @@ portion of the request.
    -  **data type:** http://www.w3.org/2001/XMLSchema#time
    -  **issuer:** any
    -  **multiple values allowed:** no
-   -  **description:** The time, in the UTC timezeon, the request was
+   -  **description:** The time, in the UTC timezone, the request was
       issued
 
 -  The Current Date
@@ -593,7 +593,7 @@ portion of the request.
    -  **data type:** http://www.w3.org/2001/XMLSchema#date
    -  **issuer:** any
    -  **multiple values allowed:** no
-   -  **description:** The date, in the UTC timezeon, the request was
+   -  **description:** The date, in the UTC timezone, the request was
       issued
 
 -  The Current Date and Time

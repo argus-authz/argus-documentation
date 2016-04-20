@@ -44,20 +44,22 @@ Argus Service Installation
 The following section provides instructions for setting up an Argus
 environment quickly. It does not provide an exhaustive description of
 every possible deployment model or configuration option, that can be
-found in the following :ref:`Service
-Components <argus_intro_service_components>` and :ref:`Enabled
-Applications <argus_intro_enabled_applications>` sections.
+found in the following :ref:`Service Components <argus_intro_service_components>` and
+:ref:`Enabled Applications <argus_intro_enabled_applications>` sections.
 
-Before you continue it is recommend that you read this :ref:`introduction to
-the Argus system <argus_concepts>`. This will provide you with a better
+Before you continue it is recommend that you read this
+:ref:`introduction to the Argus system <argus_concepts>`. This will provide you with a better
 understanding of how the components work together, what information
 passes between the components and how policies are formed.
 
 Argus Deployment
 ~~~~~~~~~~~~~~~~
 
-For EMI, the Argus Service is installed with YUM, and configured with
-YAIM. Please follow the Argus :ref:`Deployment for version 1.7 <argus-deployment>`
+The Argus Service is installed with YUM.
+For the version 1.7, there isn't an automatic configuration tool.
+Older version are configured with YAIM.
+
+Please follow the Argus :ref:`Deployment for version 1.7 <argus-deployment>`
 documentation.
 
 gLExec Worker Node with Argus Deployment
@@ -195,7 +197,7 @@ Nagios Monitoring
 
 Nagios plugins are available to monitor an Argus server.
 
--  **EMI**: :ref:`EMI Argus Nagios Probes Documentation <argus_emi_nagios_probes>`
+-  **UMD**: :ref:`Argus Nagios Probes Documentation <argus_emi_nagios_probes>`
 
 Development Information
 -----------------------
@@ -224,33 +226,19 @@ Requirements
 Presentations
 ~~~~~~~~~~~~~
 
--  `20110531-EMI\_AllHands\_2011-Argus\_Integration.ppt <https://twiki.cern.ch/twiki/pub/EGEE/AuthorizationFramework/20110531-EMI_AllHands_2011-Argus_Integration.ppt>`__:
-   Argus - EMI Authorization Integration (EMI AH 2011, 31 May 2011,
-   Lund)
--  `20110412-EGI\_UF\_2011-Argus.ppt <https://twiki.cern.ch/twiki/pub/EGEE/AuthorizationFramework/20110412-EGI_UF_2011-Argus.ppt>`__:
-   Argus - EMI Authorization Service (EGI UF 2011, 12 April 2011,
-   Vilnus)
--  `20100917\_EGI-TF\_ArgusSecurity.ppt <https://twiki.cern.ch/twiki/pub/EGEE/AuthorizationFramework/20100917_EGI-TF_ArgusSecurity.ppt>`__:
-   Argus Security (EGI TF 2010 Security Session, 17 Sept. 2010,
-   Amsterdam)
--  `introduction\_authz\_service.ppt <https://twiki.cern.ch/twiki/pub/EGEE/AuthorizationFramework/introduction_authz_service.ppt>`__:
-   General introduction to the authorization service
--  `100602\_argus\_intro\_rod.ppt <https://twiki.cern.ch/twiki/pub/EGEE/AuthorizationFramework/100602_argus_intro_rod.ppt>`__:
-   Introduction to Argus for ROD (EGI ROD Workshop, 2 June 2010,
-   Amsterdam)
+-  :download:`Argus - EMI Authorization Integration <docs/20110531-EMI_AllHands_2011-Argus_Integration.ppt>` (EMI AH 2011, 31 May 2011, Lund)
+-  :download:`Argus - EMI Authorization Service <docs/20110412-EGI_UF_2011-Argus.ppt>` (EGI UF 2011, 12 April 2011, Vilnus)
+-  :download:`Argus Security <docs/20100917_EGI-TF_ArgusSecurity.ppt>` (EGI TF 2010 Security Session, 17 Sept. 2010, Amsterdam)
+-  :download:`General introduction to the authorization service <docs/introduction_authz_service.ppt>`
+-  :download:`Introduction to Argus for ROD <docs/100602_argus_intro_rod.ppt>` (EGI ROD Workshop, 2 June 2010, Amsterdam)
 
 Souce Code Information
 ~~~~~~~~~~~~~~~~~~~~~~
 
-We have migrated the Argus source code to
-`GitHub <http://github.com>`__.
+We have migrated the Argus source code to `GitHub <http://github.com>`__.
 
 -  Argus Authorization Service: https://github.com/argus-authz
 
-The source code was previousely stored in the CERN subversion server.
-**Please do not use the SVN repository anymore**
-
--  WebSVN View: https://svnweb.cern.ch/world/wsvn/glxa
 
 Development Tools
 ~~~~~~~~~~~~~~~~~
@@ -268,7 +256,12 @@ specific needs. Please have a look at the :ref:`Argus Service Fine Tuning <argus
 Perfomance and Load Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Results and metrics of the performance and load testing can be found
+Argus provides a load testsuite, based on Grider framework.
+
+More information can be found on `Argus load testsuite <https://github.com/argus-authz/load-testsuite>`__.
+
+
+For older version, results and metrics of the performance and load testing can be found
 here:
 
 -  For a physical machine:

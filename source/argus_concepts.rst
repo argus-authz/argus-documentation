@@ -50,20 +50,29 @@ In an identity based system a user (more properly known as a subject)
 might have the identity 'jsmith'. In an attribute based system the
 subject might be identified by the following attributes:
 
--  ``id``: subject-id, ``datatype``: string, ``value``: jsmith
--  ``id``: org, ``datatype``: string, ``value``: CERN
--  ``id``: affiliation, ``datatype``: string, ``value``: employee
--  ``id``: vo, ``datatype``: string, ``value``: lhcb, cms, atlas
+===========   ========   =====
+id            datatype   value
+===========   ========   =====
+subject-id    string     jsmith
+org           string     CERN
+affiliation   string     emplyee
+vo            string     lhcb, cms, atlas
+===========   ========   =====
+
 
 In another example an action in an identity based access control system
 might be identified by the string 'submit-job'. In an attribute based
 system the action might be identified with the following attributes:
 
--  ``id``: action-id, ``datatype``: string, ``value``: submit-job
--  ``id``: pilot-job, ``datatype``: boolean, ``value``: false
--  ``id``: executable, ``datatype``: string, ``value``: /usr/bin/myexec
--  ``id``: expected-execution-duration, ``datatype``: integer,
-   ``value``: 10
+===========================   ========   =====
+id                            datatype   value
+===========================   ========   =====
+action-id                     string     submit-job
+pilot-job                     boolean    false
+executable                    string     /usr/bin/myexec
+expected-execution-duration   integer    10
+===========================   ========   =====
+
 
 The exact attributes available within a request are determined by the
 application seeking an authorization decision. Obviously each unique

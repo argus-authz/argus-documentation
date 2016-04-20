@@ -74,7 +74,10 @@ Generate Argus Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Run YAIM to generate the Argus configuration for your site:
-``/opt/glite/yaim/bin/yaim -c -s site-info.def -n ARGUS_server``
+
+.. code-block:: bash
+
+   /opt/glite/yaim/bin/yaim -c -s site-info.def -n ARGUS_server
 
 At this point, the Argus services (PAP, PDP and PEP Server) must be
 configured, up and running.

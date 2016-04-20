@@ -7,25 +7,21 @@ Argus: Policy Administration Point (PAP): Operation
 Service Operation Commands
 --------------------------
 
-The service can then be started using the command:
+Start the PAP service
+   ========   ===========
+   Platform   Command
+   ========   ===========
+   EL6        ``service argus-pap start``
+   EL7        ``systemctl start argus-pap``
+   ========   ===========
 
-EL6::
-
-   service argus-pap start
-
-EL7::
-
-   systemctl start argus-pap
-
-The service can be stopped using the command.
-
-EL6::
-
-   service argus-pap stop
-
-EL7::
-
-   systemctl stop argus-pap
+Stop the PAP service
+   ========   ===========
+   Platform   Command
+   ========   ===========
+   EL6        ``service argus-pap start``
+   EL7        ``systemctl start argus-pap``
+   ========   ===========
 
 Service Ports
 -------------

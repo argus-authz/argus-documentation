@@ -3,27 +3,54 @@
 Argus PEP Server: Operation
 ===========================
 
-EMI
----
 
-For EMI Argus (v1.6) , see the `Argus Service Reference
-Card <https://twiki.cern.ch/twiki/bin/view/EMI/ArgusSRC>`__
+For more Argus details, see the :ref:`Argus Service Reference Card <service-reference-card>`.
 
-Starting & Stopping the Service
--------------------------------
+Service Operation Commands
+--------------------------
 
-``$PEPD_HOME/sbin/pdpctl.sh start``
-    starts the service
+Start the PEP service
+   ========   ===========
+   Platform   Command
+   ========   ===========
+   EL6        ``service argus-pepd start``
+   EL7        ``systemctl start argus-pepd``
+   ========   ===========
 
-``$PEPD_HOME/sbin/pdpctl.sh stop``
-    stops the services
+Stop the PEP service
+   ========   ===========
+   Platform   Command
+   ========   ===========
+   EL6        ``service argus-pepd stop``
+   EL7        ``systemctl stop argus-pepd``
+   ========   ===========
 
-``$PEPD_HOME/sbin/pdpctl.sh status``
-    provides service status data
+Restart the PEP service
+   ========   ===========
+   Platform   Command
+   ========   ===========
+   EL6        ``service argus-pepd restart``
+   EL7        ``systemctl restart argus-pepd``
+   ========   ===========
 
-``$PEPD_HOME/sbin/pepdctl.sh clearResponseCache``
-    causes the currently cached responses from the PDP can be flushed
-    from memory
+PEP service status information
+   ========   ===========
+   Platform   Command
+   ========   ===========
+   EL6        ``service argus-pepd status``
+   EL7        ``systemctl status argus-pepd``
+   ========   ===========
+
+Clear PEP service response cache
+   Causes the currently cached responses from the PDP can be flushed from memory
+
+   ========   ===========
+   Platform   Command
+   ========   ===========
+   EL6        ``pepdctl clearResponseCache``
+   EL7        ``pepdctl clearResponseCache``
+   ========   ===========
+
 
 Service Information
 -------------------
@@ -44,24 +71,26 @@ Service Endpoints
 
 This service contains the following endpoint URLs:
 
--  ``https://argus.example.org:8154/authz`` - This endpoint is the
-   recipient of authorization requests and is reachable on the standard
+``https://argus.example.org:8154/authz``
+   This endpoint is the recipient of authorization requests and is reachable on the standard
    service host and port.
 
--  ``http://127.0.0.1:8155/status`` - This endpoint provides current
-   status information on the PEP daemon and is reachable on the standard
+``http://127.0.0.1:8155/status``
+   This endpoint provides current status information on the PEP daemon and is reachable on the standard
    admin host and port.
 
--  ``http://127.0.0.1:8155/clearResponseCache`` - This endpoint
-   instructs the PEP daemon to flush its PDP response cache. It is
+``http://127.0.0.1:8155/clearResponseCache``
+   This endpoint instructs the PEP daemon to flush its PDP response cache. It is
    reachable on the standard admin host and port.
 
--  ``http://127.0.0.1:8155/shutdown`` - This endpoint instructs the PEP
+``http://127.0.0.1:8155/shutdown``
+   This endpoint instructs the PEP
    daemon to shutdown and is reachable on the standard admin host and
    port.
 
-**Note:** Admin services may be password protected and thus not
-invokable without this password.
+.. note::
+   Admin services may be password protected and thus not
+   invokable without this password.
 
 Logging and Logs
 ----------------
@@ -77,23 +106,26 @@ every 5 minutes.
 Enable Debug Logging
 ~~~~~~~~~~~~~~~~~~~~
 
-To enable debug logging follow: 1 Locate the line that contains
-``logger name="org.glite.authz"`` (line 10 in the default logging
-config) 1 On the following line, change ``INFO`` to ``DEBUG``
+To enable debug logging follow:
+
+1. Locate the line that contains ``logger name="org.glite.authz"`` (line 10 in the default logging config)
+2. On the following line, change ``INFO`` to ``DEBUG``
 
 In some cases it may be helpful to see the incoming and outgoing
-messages. To do this: 1 Locate the line that contains
-``org.glite.authz.message.protocol`` (line 15 in the default logging
-config) 1 On the following line, change ``INFO`` to ``DEBUG``
+messages. To do this:
 
-**NOTE** always change your logging levels back to their original values
-once you are done debugging a problem. Keeping the system on the debug
-logging level could fill up your disk partition in a short time.
+1. Locate the line that contains ``org.glite.authz.message.protocol`` (line 15 in the default logging config)
+2. On the following line, change ``INFO`` to ``DEBUG``
+
+.. note::
+   Always change your logging levels back to their original values
+   once you are done debugging a problem. Keeping the system on the debug
+   logging level could fill up your disk partition in a short time.
 
 Service Logs
 ~~~~~~~~~~~~
 
-The service writes three different logs, located in $PEPD\_HOME/logs:
+The service writes three different logs, located in ``$PEPD_HOME/logs``:
 
 -  **process.log** - This log file contains the normal, human-oriented
    logging messages that the system generates while in operation. This

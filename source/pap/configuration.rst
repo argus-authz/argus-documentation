@@ -8,7 +8,7 @@ Configuration Files
 
 The PAP is configured through the use of two files:
 ``pap_configuration.ini`` and ``pap_authorization.ini``, located in the
-``/etc/argus/pap`` (EMI), or ``$PAP_HOME/conf`` (gLite), directory. Most
+``/etc/argus/pap`` directory. Most
 of the information contained in these files can also be set through the
 command line interface (which is the **recommended** way to do
 configuration on the PAP).

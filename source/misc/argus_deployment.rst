@@ -53,21 +53,22 @@ Verify fetch-crl
 The Argus metapackage install the ``fetch-crl`` cron job;
 run it once, and verify that the cron job is enabled and started:
 
-::
+.. code-block:: bash
 
     # run it immediately (it can take some time...)
-    /usr/sbin/fetch-crl
+    fetch-crl
+
     # enable the periodic fetch-crl cron job
-    /sbin/chkconfig fetch-crl-cron on
-    /sbin/service fetch-crl-cron start
+    chkconfig fetch-crl-cron on
+    service fetch-crl-cron start
 
 
 For EL7 system, enable ``fetch-crl`` cron job with:
 
-::
+.. code-block:: bash
 
-   /usr/bin/systemctl start fetch-crl-cron
-   /usr/bin/systemctl enable fetch-crl-cron
+   systemctl start fetch-crl-cron
+   systemctl enable fetch-crl-cron
 
 
 Install the Argus Metapackage

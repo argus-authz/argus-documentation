@@ -6,33 +6,49 @@ Argus Policy Decision Point (PDP): Operation
 Service Operation Commands
 --------------------------
 
-EMI - Argus 1.3
-~~~~~~~~~~~~~~~
+Start the PDP service
+   ========   ===========
+   Platform   Command
+   ========   ===========
+   EL6        ``service argus-pdp start``
+   EL7        ``systemctl start argus-pdp``
+   ========   ===========
 
-``/etc/init.d/argus-pdp start``
-    Start the PDP service
-``/etc/init.d/argus-pdp stop``
-    Stop the PDP service
-``/etc/init.d/argus-pdp restart``
-    Restart the PDP service
-``/etc/init.d/argus-pdp status``
-    Provides PDP service status information
-``/etc/init.d/argus-pdp reloadpolicy``
-    Causes the currently cached copy of the policies received from the
-    PAP can be flushed from memory, and retrieved anew from the PAP
+Stop the PDP service
+   ========   ===========
+   Platform   Command
+   ========   ===========
+   EL6        ``service argus-pdp stop``
+   EL7        ``systemctl stop argus-pdp``
+   ========   ===========
 
-gLite 3.2 - Argus 1.2
-~~~~~~~~~~~~~~~~~~~~~
+Restart the PDP service
+   ========   ===========
+   Platform   Command
+   ========   ===========
+   EL6        ``service argus-pdp restart``
+   EL7        ``systemctl restart argus-pdp``
+   ========   ===========
 
-``$PDP_HOME/sbin/pdpctl.sh start``
-    starts the service
-``$PDP_HOME/sbin/pdpctl.sh stop``
-    stops the services
-``$PDP_HOME/sbin/pdpctl.sh status``
-    provides service status data
-``$PDP_HOME/sbin/pdpctl.sh reloadPolicy``
-    causes the currently cached copy of the policy received from the PAP
-    can be flushed from memory, and retrieved anew from the PAP
+PDP service status information
+   ========   ===========
+   Platform   Command
+   ========   ===========
+   EL6        ``service argus-pdp status``
+   EL7        ``systemctl status argus-pdp``
+   ========   ===========
+
+Reload PDP policies
+   Causes the currently cached copy of the policies received from the
+   PAP can be flushed from memory, and retrieved a new from the PAP.
+
+   ========   ===========
+   Platform   Command
+   ========   ===========
+   EL6        ``pdpctl reloadPolicy``
+   EL7        ``pdpctl reloadPolicy``
+   ========   ===========
+
 
 Service Information
 -------------------
@@ -53,18 +69,25 @@ Service Endpoint URLs
 
 This service contains the following endpoint URLs:
 
--  ``https://HOSTNAME:8152/authz`` - This endpoint is the recipient of
-   authorization requests.
--  ``http://127.0.0.1:8153/status`` - This endpoint provides current
-   status information on the PDP. This endpoint is password protected.
--  ``http://127.0.0.1:8153/reloadPolicy`` - This endpoint instructs the
-   PDP to flush, and retrieve anew, its policy from the PAP. This
-   endpoint is password protected.
--  ``http://127.0.0.1:8153/shutdown`` - This endpoint instructs the PDP
-   to shutdown. This endpoint is password protected.
+``https://HOSTNAME:8152/authz``
+   This endpoint is the recipient of authorization requests.
 
-**Note:** Admin services may be password protected and thus not
-invokable without this password.
+``http://127.0.0.1:8153/status``
+   This endpoint provides current status information on the PDP.
+   This endpoint is password protected.
+
+``http://127.0.0.1:8153/reloadPolicy``
+   This endpoint instructs the PDP to flush,
+   and retrieve anew, its policy from the PAP.
+   This endpoint is password protected.
+
+``http://127.0.0.1:8153/shutdown``
+   This endpoint instructs the PDP to shutdown.
+   This endpoint is password protected.
+
+.. note::
+   Admin services may be password protected and thus not
+   invokable without this password.
 
 Logging and Logs
 ----------------
@@ -80,23 +103,27 @@ every 5 minutes.
 Enable Debug Logging
 ~~~~~~~~~~~~~~~~~~~~
 
-To enable debug logging follow: 1 Locate the line that contains
-``logger name="org.glite.authz"`` (line 10 in the default logging
-config) 1 On the following line, change ``INFO`` to ``DEBUG``
+To enable debug logging follow:
+
+1. Locate the line that contains ``logger name="org.glite.authz"`` (line 10 in the default logging config)
+2. On the following line, change ``INFO`` to ``DEBUG``
 
 In some cases it may be helpful to see the policy being evaluated for
-each request. To do this: 1 Locate the line that contains
-``org.glite.authz.message.policy`` (line 22 in the default logging
-config) 1 On the following line, change ``INFO`` to ``DEBUG``
+each request. To do this:
+
+1. Locate the line that contains ``org.glite.authz.message.policy`` (line 22 in the default logging config)
+2. On the following line, change ``INFO`` to ``DEBUG``
 
 In some cases it may be helpful to see the incoming and outgoing
-messages. To do this: 1 Locate the line that contains
-``org.glite.authz.message.protocol`` (line 27 in the default logging
-config) 1 On the following line, change ``INFO`` to ``DEBUG``
+messages. To do this:
 
-**NOTE** always change your logging levels back to their original values
-once you are done debugging a problem. Keeping the system on the debug
-logging level could fill up your disk partition in a short time.
+1. Locate the line that contains ``org.glite.authz.message.protocol`` (line 27 in the default logging config)
+2. On the following line, change ``INFO`` to ``DEBUG``
+
+.. note::
+   always change your logging levels back to their original values
+   once you are done debugging a problem. Keeping the system on the debug
+   logging level could fill up your disk partition in a short time.
 
 Service Logs
 ~~~~~~~~~~~~

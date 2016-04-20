@@ -22,6 +22,7 @@ Contents:
    monitoring/index
    quick_start/index
    misc/examples
+   misc/service_reference_card
 
    twiki_pages/index
 
@@ -33,6 +34,7 @@ Contents:
    misc/configuration_with_yaim
    misc/grid_map_file
    misc/emi_yaim_configuration
+   misc/old_version_known_issues
 
 
 Indices and tables

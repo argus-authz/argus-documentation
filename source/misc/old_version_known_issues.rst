@@ -48,10 +48,9 @@ Workaround
 Completely disabling the PDP responses caching mechanism in the PEP
 Server configuration solves the performance issue. To disable the cache:
 
-#. edit the ``/etc/argus/pepd/pepd.ini`` file 2. add the parameter
-   =maximumCachedResponses = 0= in the ``[PDP]`` section (see example)
-   3. restart PEP Server: ``/etc/init.d/argus-pepd restart`` (or
-   increase the memory settings, then restart)
+1. edit the ``/etc/argus/pepd/pepd.ini`` file
+2. add the parameter ``maximumCachedResponses = 0`` in the ``[PDP]`` section (see example)
+3. restart PEP Server: ``/etc/init.d/argus-pepd restart`` (or increase the memory settings, then restart)
 
 Example:
 
@@ -67,9 +66,10 @@ Example:
 Allocating 1GB of memory for the Argus PEP Server solves the performance
 issue. To increase the default memory:
 
-#. edit the ``/etc/sysconfig/argus-pepd`` file 2. set the line
-   ``PEPD_JOPTS="-Xmx1024M"`` 3. restart PEP Server:
-   ``/etc/init.d/argus-pepd restart``
+1. edit the ``/etc/sysconfig/argus-pepd`` file
+2. set the line ``PEPD_JOPTS="-Xmx1024M"``
+3. restart PEP Server: ``/etc/init.d/argus-pepd restart``
+
 
 Problem the EMI-3 update and Argus PEP Server v.1.6.1
 -----------------------------------------------------
@@ -83,9 +83,10 @@ Workaround
 
 After the update (``yum update``), restart the Argus PEP Server by hand:
 
-::
+.. code-block:: bash
 
     root# /sbin/service argus-pepd restart
+
 
 Problem with Argus 1.6 (EMI-3) and ``fetch-crl``
 ------------------------------------------------
@@ -101,22 +102,24 @@ Workaround
 **Prior** to installing the ``emi-argus`` metapackage, install the the
 ``fetch-crl`` package by hand, and run it at least once:
 
-::
+.. code-block:: bash
 
     root# yum install fetch-crl
     root# fetch-crl -v
+
 
 If you have **already** installed and configured Argus, just install the
 ``fetch-crl`` package by hand, run it at least once, and restart the
 Argus services:
 
-::
+.. code-block:: bash
 
     root# yum install fetch-crl
     root# fetch-crl -v
     root# service argus-pap restart
     root# service argus-pdp restart
     root# service argus-pepd restart
+
 
 Problem with Nagios plugins for Argus and TMP directory permission
 ------------------------------------------------------------------
@@ -131,10 +134,11 @@ Workaround
 
 To fix the temp directory ownership to ``nagios``, please do:
 
-::
+.. code-block:: bash
 
     root# yum install nagios-plugins-argus
     root# chown -R nagios:nagios  /var/lib/grid-monitoring/nagios-plugins-argus
+
 
 Problem with Argus 1.5 (EMI-2) and CREAM
 ----------------------------------------
@@ -150,9 +154,9 @@ Workaround
 Disabling the PDP responses caching mechanism in the PEP Server
 configuration solve this issue. To disable the cache:
 
-#. edit ``/etc/argus/pepd/pepd.ini`` 2. add the parameter
-   =maximumCachedResponses = 0= in the ``[PDP]`` section (see example
-   below) 3. restart PEP Server: ``/etc/init.d/argus-pepd restart``
+1. edit ``/etc/argus/pepd/pepd.ini``
+2. add the parameter ``maximumCachedResponses = 0`` in the ``[PDP]`` section (see example below)
+3. restart PEP Server: ``/etc/init.d/argus-pepd restart``
 
 Example:
 
@@ -162,6 +166,7 @@ Example:
     pdps = https://chaos.switch.ch:8152/authz
     # disabling the cache
     maximumCachedResponses = 0
+
 
 Problem with upgrade from Argus 1.4 (EMI-1) to Argus 1.5 (EMI-2)
 ----------------------------------------------------------------
@@ -176,7 +181,7 @@ Workaround
 Simply reinstalling the components with YUM just after the upgrade
 solves the issue:
 
-::
+.. code-block:: bash
 
     yum upgrade
     (argus is upgraded...)
