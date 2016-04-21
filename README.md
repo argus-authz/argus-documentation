@@ -9,10 +9,15 @@ The main contents lives are the `master` branch. Tags are used to define the Arg
 
 ## Building and Contributing to the Documentation
 
-If you want to build locally the documentation, install  on your machine, fork/clone
-this repository and in the `source` directory, enter:
+If you want to build locally the documentation, first install on your machine the ReadTheDocs theme,
 
-```[Sphinx](http://www.sphinx-doc.org)
+```bash
+# pip install sphinx_rtd_theme
+```
+
+The fork/clone this repository and in the `source` directory, enter:
+
+```bash
 make html
 ```
 

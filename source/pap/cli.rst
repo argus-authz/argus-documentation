@@ -17,7 +17,7 @@ Running the pap-admin client
 
 Type:
 
-::
+.. code-block:: bash
 
     pap-admin --help
 
@@ -37,7 +37,7 @@ The general usage is the following:
 
 Type:
 
-::
+.. code-block:: bash
 
     pap-admin <command> --help
 
@@ -241,7 +241,7 @@ search the deny rule for are chosen as follows:
 
 Example:
 
-::
+.. code-block:: bash
 
     pap-admin un-ban subject "CN=host.test.foo.it, L=FOO, OU=Host, O=ORGANIZATION, C=IT"
 
@@ -471,7 +471,7 @@ Add a remote or local PAP.
 
 -  ``alias``: a friendly (unique) name used to identify the PAP
 -  ``endpoint``: endpoint of the remote PAP in the form:
-   ``<verbatim>[<protocol>://]<host>:[<port>/[path]]</verbatim>``
+   ``[<protocol>://]<host>:[<port>/[path]]``
 -  ``dn``: DN of the remote PAP
 
 A just added PAP is disabled by default (its policies are not sent to
@@ -519,7 +519,7 @@ Command specific options:
 
 Example:
 
-::
+.. code-block:: bash
 
     pap-admin add-pap cnaf_pap test.cnaf.infn.it "/C=IT/O=INFN/OU=Host/L=CNAF/CN=test.cnaf.infn.it"
 
@@ -614,7 +614,7 @@ the current ordering (if there's any defined) is deleted.
 |  The remote PAP *osct* contains banning policies and we want that
   policies to be evaluated for first. This is command to issue:
 
-::
+.. code-block:: bash
 
     pap-admin set-paps-order osct default
 
@@ -674,7 +674,7 @@ authorization configuration of a running PAP.
 
 Typing:
 
-::
+.. code-block:: bash
 
     pap-admin list-acl
 
@@ -683,7 +683,7 @@ currently defined for the running PAP.
 
 Example:
 
-::
+.. code-block:: bash
 
     ~# pap-admin list-acl
 
@@ -708,7 +708,7 @@ by the ones specified in the command.
 
 Usage:
 
-::
+.. code-block:: bash
 
     pap-admin add-ace <principal> <permissions>
 
@@ -722,7 +722,7 @@ where:
 
 Example:
 
-::
+.. code-block:: bash
 
     pap-admin add-ace '/atlas/Role=VO-Admin' 'ALL'
 
@@ -735,7 +735,7 @@ The ``remove-ace`` command removes an ACE from the PAP ACL.
 
 Usage:
 
-::
+.. code-block:: bash
 
     pap-admin remove-ace <principal>
 
@@ -746,7 +746,7 @@ where:
 
 Example:
 
-::
+.. code-block:: bash
 
     pap-admin remove-ace '/atlas/Role=VO-Admin'
 
