@@ -9,7 +9,12 @@ PDP Uses "Old" Policies
 The PDP caches policies received from the PAP in order to avoid the cost
 of fetching and parsing them for every request. In cases where you know,
 or suspect, the policy used by the PDP is no longer in synch with the
-policy stored at the PAP you may use the ``pdpctl reloadPolicy`` command
+policy stored at the PAP you may use the command
+
+.. code-block:: bash
+
+   pdpctl reloadPolicy
+
 to force the PDP to flush its policy cache and retrieve the latest
 policy from the PAP.
 

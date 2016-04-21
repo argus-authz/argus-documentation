@@ -74,8 +74,9 @@ OH Configuration Properties
 | ``useSecondaryGroupNamesForMapping`` | The obligation handler will create lease file names containing the secondary groups of the user                                          | N         | ``true``                                                    | Argus 1.3.1 |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------------------------------------------------+-------------+
 
-**NOTE: the default ``preferDNForLoginName`` property value was *false*
-for Argus 1.0 and Argus 1.1. From Argus 1.2 the default is *true*.**
+.. note::
+   the default ``preferDNForLoginName`` property value was *false*
+   for Argus 1.0 and Argus 1.1. From Argus 1.2 the default is *true*.
 
 Required Response Obligation Trigger
 ++++++++++++++++++++++++++++++++++++
@@ -89,11 +90,12 @@ Required Request Attributes
 
 This obligation handler **requires** the following request attributes in
 order to correctly map the user. The attributes can be provided by the
-:ref:`Grid Authorization Profile PIP <argus_pep_pip_grid_authz_profile>`, or directly by
-the clients implementing the `XACML Grid Worker Node Authorization
-Profile (v.1.0) <https://edms.cern.ch/document/1058175>`__ or the `XACML
-Grid Computing Element Authorization Profile
-(v.1.0) <https://edms.cern.ch/document/1078881>`__ specifications.
+:ref:`Grid Authorization Profile PIP <argus_pep_pip_grid_authz_profile>`,
+or directly by the clients implementing the
+`XACML Grid Worker Node Authorization Profile (v.1.0) <https://edms.cern.ch/document/1058175>`__
+or the
+`XACML Grid Computing Element Authorization Profile (v.1.0) <https://edms.cern.ch/document/1078881>`__
+specifications.
 
 -  The Subject Identifier
 
@@ -235,8 +237,9 @@ Mapping Steps
 #. If the link count is 2 the mapping is complete. The user is mapped to
    the pool account corresponding to the given file.
 
-**Note:** In the case where no FQANs are available, this obligation
-handler only returns a login name. No group information is returned.
+.. note::
+   In the case where no FQANs are available, this obligation
+   handler only returns a login name. No group information is returned.
 
 DN Encoding Rules
 ^^^^^^^^^^^^^^^^^

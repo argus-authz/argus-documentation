@@ -149,10 +149,10 @@ The test import format is as follows:
 
 ::
 
-    [ \
-       ['ce1', 'submit', '/home/jsmith/.globus/usercert.pem', 'Permit'], \
-       ['ce2', 'submit', '/home/jsmith/.globus/usercert.pem', 'Deny'], \
-       ['ce3', 'submit', '/home/jsmith/.globus/usercert.pem', 'Not Applicable'],\
+    [
+       ['ce1', 'submit', '/home/jsmith/.globus/usercert.pem', 'Permit'],
+       ['ce2', 'submit', '/home/jsmith/.globus/usercert.pem', 'Deny'],
+       ['ce3', 'submit', '/home/jsmith/.globus/usercert.pem', 'Not Applicable'],
     ]
 
 The property value is contained in matching '[' and ']' brackets. Then
@@ -177,7 +177,9 @@ get measurements for application which maintain state between requests
 Configuration Option
 ~~~~~~~~~~~~~~~~~~~~
 
-\| **Property Name** \| **Value** \| **Required** \| \|
-authz.client.config \| Path to the `client configuration
-file <AuthZPEP#Configuration_AN1>`__. Relative paths are relative to
-``GF_HOME``. \| Yes \|
+
+   ===================   ==================================================================================   ========
+   Property Name          Value                                                                               Required
+   ===================   ==================================================================================   ========
+   authz.client.config   Path to the client configuration file. Relative paths are relative to ``GF_HOME``.   Yes
+   ===================   ==================================================================================   ========

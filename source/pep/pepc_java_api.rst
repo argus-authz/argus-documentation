@@ -102,9 +102,11 @@ GUI
 ---
 
 There is also a Java-based GUI available for sending requests to a PEPd.
-Just click on the following image which will download the application to
-your desktop and start it. Once you've downloaded it you can restart it
+Just download the application to your desktop and start it.
+Once you've downloaded it you can restart it
 by double-clicking the Argus-PEP-Client.jnlp file.
+
+:download:`Java-based GUI <../resources/Argus-Pep-Client.jnlp>`
 
 .. figure:: /images/Pep-Client-Gui-Screenshot.png
    :align: center

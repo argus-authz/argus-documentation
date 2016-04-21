@@ -6,11 +6,17 @@ Policy Basics
 -------------
 
 A site's policies are maintained using the command
-``/opt/argus/pap/bin/pap-admin``. Initially the PAP contains an empty
-policy for the site so no one will be permitted to do anything. The
-command ``pap-admin list-policies`` lists policies, in the
-:ref:`simplified policy language notation <argus_simplified_policy_language>`, currently active
-in the PAP.
+``pap-admin``. Initially the PAP contains an empty
+policy for the site so no one will be permitted to do anything.
+The command
+
+.. code-block:: bash
+
+   pap-admin list-policies
+
+lists policies, in the
+:ref:`simplified policy language notation <argus_simplified_policy_language>`,
+currently active in the PAP.
 
 The policies you add will be evaluated from most to least recent and the
 first policy that matches is the result returned by Argus. So, if you
@@ -88,8 +94,8 @@ Command:
 
 The provided FQAN must be in full canonical (long) form (e.g.
 ``/atlas/Role=Production/Capability=NULL`` or
-``/atlas/Role=NULL/Capability=NULL``). You may use `Java regular
-expression <http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html>`__
+``/atlas/Role=NULL/Capability=NULL``). You may use
+`Java regular expression <http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html>`__
 in this string.
 
 Here's an example that permits a user identified by their primary FQAN:
@@ -109,8 +115,8 @@ Command:
 
 The provided FQAN must be in full canonical (long) form (e.g.
 ``/atlas/Role=Production/Capability=NULL`` or
-``/atlas/Role=NULL/Capability=NULL``). You may use `Java regular
-expression <http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html>`__
+``/atlas/Role=NULL/Capability=NULL``). You may use
+`Java regular expression <http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html>`__
 in this string.
 
 Here's an example that permits a user identified by their secondary
@@ -140,9 +146,19 @@ Here are some examples:
 Removing Policies
 ~~~~~~~~~~~~~~~~~
 
-The command ``pap-admin remove-policy POLICY_ID`` will remove an
-existing policy from the PAP. The POLICY_ID is the ID for the policy
-shown by the ``pap-admin list-policies --show-all-ids`` command.
+The command
+
+.. code-block:: bash
+
+   pap-admin remove-policy POLICY_ID
+
+will remove an existing policy from the PAP. The POLICY_ID is the ID for the policy
+shown by the command
+
+.. code-block:: bash
+
+   pap-admin list-policies --show-all-ids
+
 
 Loading and Testing Policies
 ----------------------------
@@ -151,7 +167,7 @@ Now that you have some basic policy commands you should experiment with
 creating and testing policies.
 
 To test the policies you can use the command ``pepcli``. This debugging
-tool can be used in two different ways. First you can supply it the cert
+tool can be used in two different ways. First you can supply it the certificate
 of a user or you can mock up a request by specifying a subject DN and
 primary and second FQANs. See the ``pepcli``
 :ref:`documentation <argus_pepc_cli>` for complete list of options or use the

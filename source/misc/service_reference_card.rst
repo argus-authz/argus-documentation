@@ -79,6 +79,7 @@ Service Reference Card
 
 **Where is service state held (and can it be rebuilt):**
    The services (PAP, PDP, PEP Server) are stateless. However:
+
       * PAP: The XACML policies are stored locally in the ``/usr/share/argus/pap/repository`` directory.
       * PEP Server: The user pool account mapping leases are kept in the ``/etc/grid-security/gridmapdir`` directory.
 

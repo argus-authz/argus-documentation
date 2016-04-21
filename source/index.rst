@@ -24,7 +24,6 @@ Contents:
    misc/examples
    misc/service_reference_card
 
-   twiki_pages/index
 
 .. toctree::
    :hidden:
@@ -36,6 +35,7 @@ Contents:
    misc/emi_yaim_configuration
    misc/old_version_known_issues
 
+   twiki_pages/index
 
 Indices and tables
 ==================

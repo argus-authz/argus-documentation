@@ -3,11 +3,21 @@
 Argus Policy Decision Point (PDP): Configuration
 ================================================
 
+Configuration Files
+-------------------
+The PDP is configured through the use of the ``pdp.ini`` file,
+located in ``/etc/argus/pdp`` directory.
+
+There is also an :ref:`environment file <argus-pdp-conf-env-file>`,
+located in ``/etc/sysconfig/argus-pdp``,
+that contains environment variables used by the init script that manage the
+service.
+
+
 Configuration File Syntax
 -------------------------
 
-The PDP is configured through the use of the ``pdp.ini`` file. This file
-is a standard INI file  with three defined sections.
+The ``pdp.ini`` file is a standard INI file with three defined sections.
 The ``SERVICE`` section contains properties related the PDP service as a
 whole and how it listens for incoming requests. The ``POLICY`` section
 contains properties for the retrieval of policies from the Policy
@@ -194,3 +204,33 @@ SECURITY section
 +-----------------------+---------------------------------------------------------------------------------------------------------------+-----------+------------------+
 | clockSkew             | The allowance, in seconds, used when computing validity periods.                                              | N         | 30s              |
 +-----------------------+---------------------------------------------------------------------------------------------------------------+-----------+------------------+
+
+
+.. _argus-pdp-conf-env-file:
+
+Environment file
+----------------
+
+In the ``/etc/sysconfig/argus-pdp`` file are defined Argus PDP environment variables,
+described in the table below.
+
+   ===================   ============================================   =========
+   Variable              Default value                                  Meaning
+   ===================   ============================================   =========
+   ``JAVACMD``           ``/usr/bin/java``                              Absolute path of the JVM executable.
+   ``PDP_JOPTS``         ``-Xmx256M -Djdk.tls.trustNameService=true``   Optional parameters to pass to the JVM when PDP is started/stopped
+   ``PDP_START_JOPTS``   empty                                          Optional parameters to pass to the JVM only when PDP is started; useful to enable JMX or remote debug
+   ``PDP_HOME``          ``/usr/share/argus/pdp``                       Absolute path of PDP installation directory
+   ``PDP_CONF``          ``/etc/argus/pdp/pdp.ini``                     Absolute path of PDP configuration file.
+   ``PDP_CONFDIR``       ``/etc/argus/pdp``                             Absolute path of PDP configuration directory.
+   ``PDP_LOGDIR``        ``/var/log/argus/pdp``                         Absolute path of PDP logs directory.
+   ``PDP_LIBDIR``        ``/var/lib/argus/pdp/lib``                     Absolute path of PDP libraries.
+   ``PDP_ENDORSEDDIR``   ``/var/lib/argus/pdp/lib/endorsed``            Absolute path of PDP endorsed libraries.
+   ``PDP_PROVIDEDDIR``   ``/var/lib/argus/pdp/lib/provided``            Absolute path of PDP provided libraries.
+   ``PDP_PID``           ``/var/run/argus-pdp.pid``                     Absolute path of PDP PID file.
+   ===================   ============================================   =========
+
+.. attention::
+   The option ``-Djdk.tls.trustNameService=true`` is mandatory in Argus version 1.7 with TLS turned on.
+   This system property enforce the host name check to
+   avoid JDK bug https://bugs.openjdk.java.net/browse/JDK-8133196

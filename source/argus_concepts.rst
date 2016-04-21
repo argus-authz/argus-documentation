@@ -281,7 +281,9 @@ The identifier may be generated in one of two ways:
    identifier and thus make it a bit easier for policy writers.
 -  The application developer may generate an identifier. A reasonable
    formula for such an identifier is:
-   ``http://{application_domain_name}/{application_name}/action/{action_id} where the domain name is the domain component of the application's website and the action ID is a human readable string for the action (e.g. =readFile``,
+   ``http://{application_domain_name}/{application_name}/action/{action_id}``
+   where the domain name is the domain component of the application's
+   website and the action ID is a human readable string for the action (e.g. ``readFile``,
    ``addUser``)
 
 Attribute ID
