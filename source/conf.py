@@ -47,7 +47,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Argus Documentation'
-copyright = u'2015, Andrea Ceccanti, Valery Tschopp, Michel Jouvin'
+copyright = u'2015, Andrea Ceccanti, Valery Tschopp, Michel Jouvin, Marco Caberletti'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -223,7 +223,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', 'ArgusDocumentation.tex', u'Argus Documentation',
-   u'Andrea Ceccanti, Valery Tschopp, Michel Jouvin', 'manual'),
+   u'Andrea Ceccanti, Valery Tschopp, Michel Jouvin, Marco Caberletti', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -253,7 +253,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'argusdocumentation', u'Argus Documentation',
-     [u'Andrea Ceccanti, Valery Tschopp, Michel Jouvin'], 1)
+     [u'Andrea Ceccanti, Valery Tschopp, Michel Jouvin, Marco Caberletti'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -267,7 +267,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'ArgusDocumentation', u'Argus Documentation',
-   u'Andrea Ceccanti, Valery Tschopp, Michel Jouvin', 'ArgusDocumentation', 'One line description of project.',
+   u'Andrea Ceccanti, Valery Tschopp, Michel Jouvin, Marco Caberletti', 'ArgusDocumentation', 'One line description of project.',
    'Miscellaneous'),
 ]
 

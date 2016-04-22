@@ -3,7 +3,7 @@
 Manual configuration
 ====================
 
-This guide show how to configure Argus with a basic setup.
+This guide shows how to configure Argus with a basic setup.
 Basically configuration consist in:
 
 - set service host name in configuration files;
@@ -135,7 +135,7 @@ The content for the ``test.vo`` ``lsc`` file is:
    /C=IT/O=INFN/CN=INFN Certification Authority
 
 
-More information about VOMS can be found in `VOMS documentation <http://italiangrid.github.io/voms/documentation.html>`__.
+More information about VOMS can be found in `VOMS client documentation <http://italiangrid.github.io/voms/documentation/voms-clients-guide/3.0.3/#voms-trust>`__.
 
 Restart services
 ~~~~~~~~~~~~~~~~

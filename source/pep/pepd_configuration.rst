@@ -265,8 +265,10 @@ described in the table below.
    ====================   ============================================   =========
 
 .. attention::
-   The option ``-Djdk.tls.trustNameService=true`` is mandatory in Argus version 1.7 with TLS turned on.
-   This system property enforce the host name check to
-   avoid JDK bug https://bugs.openjdk.java.net/browse/JDK-8133196
+   | The option ``-Djdk.tls.trustNameService=true`` is mandatory in Argus version 1.7 with TLS turned on.
+   | This system property enforce the host name check to avoid JDK bug https://bugs.openjdk.java.net/browse/JDK-8133196
 
-
+.. attention::
+   | The Argus version 1.7 provides an environment file with the default values described above.
+   | In case of update from the previous version, a new file named ``/etc/sysconfig/argus-pepd.rpmnew`` will be created.
+   | Manually overwrite the file and restart the service.
