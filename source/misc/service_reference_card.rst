@@ -31,36 +31,36 @@ Service Reference Card
    * PEP Server: (Java application) ``org.glite.authz.pep.server.PEPDaemon``
 
 **Init scripts and options:**
-   * PAP: ``/etc/init.d/argus-pap {start|stop|status|restart}``
-   * PDP: ``/etc/init.d/argus-pdp {start|stop|restart|status|info|version|reloadpolicy}``
-   * PEP Server: ``/etc/init.d/argus-pepd {start|stop|restart|status|info|version|clearcache}``
+   * PAP: ``systemctl {start|stop|restart|status} argus-pap`` or ``service argus-pap {start|stop|restart|status}``
+   * PDP: ``systemctl {start|stop|restart|status} argus-pdp`` or ``service argus-pdp {start|stop|restart|status}``
+   * PEP Server: ``systemctl {start|stop|restart|status} argus-pepd`` or ``service argus-pepd {start|stop|restart|status}``
 
 **Configuration files location with example:**
    * PAP:
       * *Config directory:* ``/etc/argus/pap``
-      * *Config files:* `pap_configuration.ini <https://raw.github.com/argus-authz/argus-pap/master/src/main/config/pap_configuration.ini>`_ and `pap_authorization.ini <https://raw.github.com/argus-authz/argus-pap/master/src/main/config/pap_authorization.ini>`_
+      * *Config files:* `pap_configuration.ini <https://raw.github.com/argus-authz/argus-pap/1_7/src/main/config/pap_configuration.ini>`_ and `pap_authorization.ini <https://raw.github.com/argus-authz/argus-pap/1_7/src/main/config/pap_authorization.ini>`_
    * PDP:
       * *Config directory:* ``/etc/argus/pdp``
-      * *Config file:* `pdp.ini <https://raw.github.com/argus-authz/argus-pdp/EMI-3/src/main/config/pdp.ini>`_
+      * *Config file:* `pdp.ini <https://raw.github.com/argus-authz/argus-pdp/1_7/src/main/config/pdp.ini>`_
    * PEP Server:
       * *Config directory:* ``/etc/argus/pepd``
-      * *Config file:* `pepd.ini <https://raw.github.com/argus-authz/argus-pep-server/EMI-3/src/main/config/pepd.ini>`_
+      * *Config file:* `pepd.ini <https://raw.github.com/argus-authz/argus-pep-server/1_7/src/main/config/pepd.ini>`_
 
 **Logfile locations (and management) and other useful audit information:**
    * PAP:
       * *Logging directory:* ``/var/log/argus/pap``
       * *Logging configuration:* ``/etc/argus/pap/logging/standalone/logback.xml``
-      * *Example:* `PAP logback.xml <https://raw.github.com/argus-authz/argus-pap/master/src/main/config/logging/standalone/logback.xml>`_
+      * *Example:* `PAP logback.xml <https://raw.github.com/argus-authz/argus-pap/1_7/src/main/config/logging/standalone/logback.xml>`_
       * *Status handler:* ``https://HOSTNAME:8150/pap/status``
    * PDP:
       * *Logging directory:* ``/var/log/argus/pdp``
       * *Logging configuration:* ``/etc/argus/pdp/logging.xml``
-      * *Example:* `PDP logging.xml <https://raw.github.com/argus-authz/argus-pdp/EMI-3/src/main/config/logging.xml>`_
+      * *Example:* `PDP logging.xml <https://raw.github.com/argus-authz/argus-pdp/1_7/src/main/config/logging.xml>`_
       * *Status handler:* ``https://HOSTNAME:8152/status``
    * PEP Server:
       * *Logging directory:* ``/var/log/argus/pepd``
       * *Logging configuration:* ``/etc/argus/pepd/logging.xml``
-      * *Example:* `PEP logging.xml <https://raw.github.com/argus-authz/argus-pep-server/EMI-3/src/main/config/logging.xml>`_
+      * *Example:* `PEP logging.xml <https://raw.github.com/argus-authz/argus-pep-server/1_7/src/main/config/logging.xml>`_
       * *Status handler:* ``https://HOSTNAME:8154/status``
 
 **Open ports:**
@@ -99,9 +99,9 @@ Service Reference Card
    * Other security relevant comments
 
 **Utility scripts:**
-   * ``/usr/bin/pap-admin`` CLI to manage the PAP policies
-   * ``/etc/init.d/argus-pdp reloadpolicy`` forces the PDP to reload the policies from the PAP
-   * ``/etc/init.d/argus-pepd clearcache`` clears the PEP daemon response cache
+   * ``pap-admin`` CLI to manage the PAP policies
+   * ``pdpctl {reloadPolicy|version|status}`` forces the PDP to reload the policies from the PAP, print version, print status
+   * ``pepdctl {clearResponseCache|version|status}`` clears the PEP daemon response cache, print version, print status
 
 **Location of reference documentation for users:**
    Not applicable

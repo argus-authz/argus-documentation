@@ -85,20 +85,20 @@ X509 authentication
 A valid X509 certificate or proxy certificate is needed in order to run the ``pap-admin`` client.
 The certificate to be used by the command is found as follows:
 
-1. if the user is *root* then the client looks for host certificate at
+#. if the user is *root* then the client looks for host certificate at
    the usual location, i.e. ``/etc/grid-security/hostcert.pem`` and
    ``/etc/grid-security/hostkey.pem``. These locations can be overridden by
    setting the ``X509_USER_CERT`` and ``X509_USER_KEY`` environment
    variables.
 
-2. if the user is not *root*, then the client looks for a
+#. if the user is not *root*, then the client looks for a
    proxy certificate at the usual location, i.e.,
    ``/tmp/x509up_u<uid>``. The default proxy location can
    be overridden using the ``X509_USER_PROXY`` environment variable. If no
    proxy is found, then the client looks for a certificate (and the
    relative private key) at the usual location, i.e.,
    ``$HOME/.globus/usercert.pem`` and ``$HOME/.globus/userkey.pem``. These
-   locations can be overriden by setting the ``X509_USER_CERT`` and
+   locations can be overridden by setting the ``X509_USER_CERT`` and
    ``X509_USER_KEY`` environment variables.
 
 This behaviour can be overridden by specifying the ``--cert``, ``--key``
@@ -118,7 +118,7 @@ The ``pap-admin.properties`` file, found in ``/etc/argus/pap`` (EMI) or
 | port     | The remote PAP service port number                                                                                     | 8150          |
 +----------+------------------------------------------------------------------------------------------------------------------------+---------------+
 
-This property file is expecially useful when administering a PAP
+This property file is especially useful when administering a PAP
 installed on a remote machine.
 
 Policy Management Commands

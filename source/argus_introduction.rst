@@ -88,6 +88,14 @@ The :ref:`Policy Administration Point <argus_pap_index>` (PAP) provides three ma
 -  Store and manage authored policies
 -  Provide managed policies to other authorization service components
 
+.. list-table::
+   :header-rows: 0
+
+   *
+      - :ref:`Installation <argus_pap_installation>`
+      - :ref:`Configuration <argus_pap_configuration>`
+      - :ref:`Operation <argus_pap_operation>`
+
 
 PDP: Policy Decision Point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,9 +132,7 @@ negative decision).
 In Argus, the PEP itself has a client/server architecture
 
   - The PEP Server handles the lightweight PEP client requests, and runs on the
-    Argus node. See the following links for more information on the PEP Server:
-    :ref:`Installation <argus_pepd_installation>`, :ref:`Configuration <argus_pepd_configuration>`,
-    :ref:`Operation <argus_pepd_operation>`, :ref:`Troubleshooting <argus_pepd_troubleshooting>`
+    Argus node.
 
   - Lightweight PEP client libraries are available to authorize
     requests from the application side, and to enforce decision locally. There are
@@ -135,8 +141,18 @@ In Argus, the PEP itself has a client/server architecture
     - PEP Client C API: :ref:`Programming Interface (API) <argus_pepc_api>`
     - PEP Client Java API: :ref:`Programming Interface (API) <argus_pepj_api>`
 
-:ref:`PEP command-line clients <argus_pepc_cli>` are also available
 
+.. list-table::
+   :header-rows: 0
+
+   *
+      - :ref:`Installation <argus_pepd_installation>`
+      - :ref:`Configuration <argus_pepd_configuration>`
+      - :ref:`Operation <argus_pepd_operation>`
+      - :ref:`Troubleshooting <argus_pepd_troubleshooting>`
+
+
+:ref:`PEP command-line clients <argus_pepc_cli>` are also available
 
 .. _argus_intro_enabled_applications:
 
@@ -235,7 +251,7 @@ Presentations
 Souce Code Information
 ~~~~~~~~~~~~~~~~~~~~~~
 
-We have migrated the Argus source code to `GitHub <http://github.com>`__.
+The Argus source code is on `GitHub <http://github.com>`__.
 
 -  Argus Authorization Service: https://github.com/argus-authz
 
@@ -256,7 +272,7 @@ specific needs. Please have a look at the :ref:`Argus Service Fine Tuning <argus
 Perfomance and Load Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Argus provides a load testsuite, based on Grider framework.
+Argus provides a load testsuite, based on Grinder framework.
 
 More information can be found on `Argus load testsuite <https://github.com/argus-authz/load-testsuite>`__.
 
