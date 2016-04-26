@@ -156,3 +156,55 @@ In EL7-based systems, run:
 
 More details about service management can be found in :ref:`PAP operations <argus_pap_operation>`,
 :ref:`PDP operations <argus_pdp_operation>` and :ref:`PEP operation <argus_pepd_operation>`.
+
+
+BDII configuration
+~~~~~~~~~~~~~~~~~~
+
+Install BDII packages:
+
+.. code-block:: bash
+
+   yum install bdii glite-info-provider-service
+
+Move into directory ``/etc/glite/info/service`` and from the provided templates,
+create the files:
+
+- ``glite-info-glue2-argus-pap.conf``
+- ``glite-info-glue2-argus-pdp.conf``
+- ``glite-info-glue2-argus-pep.conf``
+- ``glite-info-glue2-service-argus.conf``
+
+The provided templates contains a default configuration: for a basic setup, rename the files striping the
+extension ``.template``.
+
+Into the directory ``/var/lib/bdii/gip/provider`` create a shell script,
+for example named ``glite-info-glue2-provider-service-argus``, with the content:
+
+.. code-block:: bash
+
+   #!/bin/sh
+
+   ##
+   # Argus services GLUE 2 info provider
+   ##
+
+   CONF_DIR=/etc/glite/info/service
+
+   /usr/bin/glite-info-glue2-multi \
+      $CONF_DIR/glite-info-glue2-argus-pap.conf,$CONF_DIR/glite-info-glue2-argus-pdp.conf,$CONF_DIR/glite-info-glue2-argus-pep.conf \
+      argus-site $CONF_DIR/glite-info-glue2-service-argus.conf
+
+Ensure that this file is owned by the user ``ldap`` and that it is readable and executable:
+
+.. code-block:: bash
+
+   chown ldap:ldap glite-info-glue2-provider-service-argus
+   chmod 0755 glite-info-glue2-provider-service-argus
+
+Restart the BDII service:
+
+.. code-block:: bash
+
+   systemctl restart bdii
+
