@@ -22,8 +22,8 @@ the user mapping.
 Installation
 ^^^^^^^^^^^^
 
-The ``pepcli`` command is by default installed with the ``emi-argus``
-metapackage, see :ref:`Argus EMI Deployment <argus_emi_deployment>`.
+The ``pepcli`` command is by default installed with the ``argus-authz``
+metapackage, see :ref:`Argus Deployment <argus-deployment>`.
 But you can also install it separately on your host for testing purpose.
 To install it with YUM:
 
@@ -92,7 +92,7 @@ authentication) for the resource identified by ``my_resource_id`` for
 the action ``my_action_id``, using the Grid proxy as credentials
 ``/tmp/x509up_u637``:
 
-::
+.. code-block:: bash
 
     $ pepcli --pepd https://argus.example.org:8154/authz --capath /etc/grid-security/certificate --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem  --keyinfo /tmp/x509up_u637--resourceid my_resource_id --actionid my_action_id
     Decision: Permit

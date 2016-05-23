@@ -30,7 +30,7 @@ names).
 
 This mapping is controlled by two :ref:`grid map files <authz_grid_map_file>`, one
 that provides the mapping of the subject to an account indicator (login
-name or pool account indicatior) and one that maps the subject to a set
+name or pool account indicator) and one that maps the subject to a set
 of group names (one primary and any number of secondary).
 
 Configuration
@@ -50,32 +50,33 @@ Configuration
 OH Configuration Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
-| Property                               | Description                                                                                                                                | Required?   | Default Value                                                 | Since         |
-+========================================+============================================================================================================================================+=============+===============================================================+===============+
-| ``accountMapFile``                     | The absolute path to the :ref:`map file <authz_grid_map_file>` used to map a subject to a POSIX login name.                                | Y           | None.                                                         | Argus 1.0     |
-+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
-| ``groupMapFile``                       | The absolute path to the :ref:`map file <authz_grid_map_file>` used to map a subject to a set of POSIX groups.                             | Y           | None.                                                         | Argus 1.0     |
-+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
-| ``gridMapDir``                         | The absolute path to the grid map directory.                                                                                               | Y           | None.                                                         | Argus 1.0     |
-+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
-| ``handledObligationId``                | The identifier of the obligation handled by the handler. The obligation handler is triggered only if the obligation ID match this value.   | N           | ``http://glite.org/xacml/obligation/local-environment-map``   | Argus 1.5     |
-+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
-| ``preferDNForLoginName``               | Indicates whether to prefer a DN based mapping for the login name mapping over a primary FQAN login name mapping.                          | N           | ``true``                                                      | Argus 1.1     |
-+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
-| ``preferDNForPrimaryGroupName``        | Indicates whether to prefer a DN based mapping for the primary group name mapping over a primary FQAN group name mapping                   | N           | ``true``                                                      | Argus 1.2     |
-+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
-| ``noPrimaryGroupNameIsError``          | Indicates that the failure to find a primary group mapping in the group map file cause the obligation handler to fail..                    | N           | ``false``                                                     | Argus 1.2     |
-+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
-| ``refreshPeriod``                      | The period, in minutes, between when the map files are checked, and if they have been changed, reread.                                     | N           | 15                                                            | Argus 1.0     |
-+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
-| ``requireSubjectKeyInfo``              | The obligation handler will only be applied if the request subject contains a *key-info* attribute (PEM encoded certificate)               | N           | ``true``                                                      | Argus 1.3.0   |
-+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
-| ``useSecondaryGroupNamesForMapping``   | The obligation handler will create lease file names containing the secondary groups of the user                                            | N           | ``true``                                                      | Argus 1.3.1   |
-+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+-------------+---------------------------------------------------------------+---------------+
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------------------------------------------------+-------------+
+| Property                             | Description                                                                                                                              | Required? | Default Value                                               | Since       |
++======================================+==========================================================================================================================================+===========+=============================================================+=============+
+| ``accountMapFile``                   | The absolute path to the :ref:`map file <authz_grid_map_file>` used to map a subject to a POSIX login name.                              | Y         | None.                                                       | Argus 1.0   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------------------------------------------------+-------------+
+| ``groupMapFile``                     | The absolute path to the :ref:`map file <authz_grid_map_file>` used to map a subject to a set of POSIX groups.                           | Y         | None.                                                       | Argus 1.0   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------------------------------------------------+-------------+
+| ``gridMapDir``                       | The absolute path to the grid map directory.                                                                                             | Y         | None.                                                       | Argus 1.0   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------------------------------------------------+-------------+
+| ``handledObligationId``              | The identifier of the obligation handled by the handler. The obligation handler is triggered only if the obligation ID match this value. | N         | ``http://glite.org/xacml/obligation/local-environment-map`` | Argus 1.5   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------------------------------------------------+-------------+
+| ``preferDNForLoginName``             | Indicates whether to prefer a DN based mapping for the login name mapping over a primary FQAN login name mapping.                        | N         | ``true``                                                    | Argus 1.1   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------------------------------------------------+-------------+
+| ``preferDNForPrimaryGroupName``      | Indicates whether to prefer a DN based mapping for the primary group name mapping over a primary FQAN group name mapping                 | N         | ``true``                                                    | Argus 1.2   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------------------------------------------------+-------------+
+| ``noPrimaryGroupNameIsError``        | Indicates that the failure to find a primary group mapping in the group map file cause the obligation handler to fail..                  | N         | ``false``                                                   | Argus 1.2   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------------------------------------------------+-------------+
+| ``refreshPeriod``                    | The period, in minutes, between when the map files are checked, and if they have been changed, reread.                                   | N         | 15                                                          | Argus 1.0   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------------------------------------------------+-------------+
+| ``requireSubjectKeyInfo``            | The obligation handler will only be applied if the request subject contains a *key-info* attribute (PEM encoded certificate)             | N         | ``true``                                                    | Argus 1.3.0 |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------------------------------------------------+-------------+
+| ``useSecondaryGroupNamesForMapping`` | The obligation handler will create lease file names containing the secondary groups of the user                                          | N         | ``true``                                                    | Argus 1.3.1 |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------------------------------------------------+-------------+
 
-**NOTE: the default ``preferDNForLoginName`` property value was *false*
-for Argus 1.0 and Argus 1.1. From Argus 1.2 the default is *true*.**
+.. note::
+   the default ``preferDNForLoginName`` property value was *false*
+   for Argus 1.0 and Argus 1.1. From Argus 1.2 the default is *true*.
 
 Required Response Obligation Trigger
 ++++++++++++++++++++++++++++++++++++
@@ -89,11 +90,12 @@ Required Request Attributes
 
 This obligation handler **requires** the following request attributes in
 order to correctly map the user. The attributes can be provided by the
-:ref:`Grid Authorization Profile PIP <argus_pep_pip_grid_authz_profile>`, or directly by
-the clients implementing the `XACML Grid Worker Node Authorization
-Profile (v.1.0) <https://edms.cern.ch/document/1058175>`__ or the `XACML
-Grid Computing Element Authorization Profile
-(v.1.0) <https://edms.cern.ch/document/1078881>`__ specifications.
+:ref:`Grid Authorization Profile PIP <argus_pep_pip_grid_authz_profile>`,
+or directly by the clients implementing the
+`XACML Grid Worker Node Authorization Profile (v.1.0) <https://edms.cern.ch/document/1058175>`__
+or the
+`XACML Grid Computing Element Authorization Profile (v.1.0) <https://edms.cern.ch/document/1078881>`__
+specifications.
 
 -  The Subject Identifier
 
@@ -235,8 +237,9 @@ Mapping Steps
 #. If the link count is 2 the mapping is complete. The user is mapped to
    the pool account corresponding to the given file.
 
-**Note:** In the case where no FQANs are available, this obligation
-handler only returns a login name. No group information is returned.
+.. note::
+   In the case where no FQANs are available, this obligation
+   handler only returns a login name. No group information is returned.
 
 DN Encoding Rules
 ^^^^^^^^^^^^^^^^^
@@ -263,7 +266,7 @@ DN Encoding Rules
 #. The entire name is converted to lower case using US localization
 #. The name is finally normalized using normalization form KD, as
    described in the Unicode Standard and UAX #15
-#. The DN is converted to the non-standard, openssl one line format
+#. The DN is converted to the non-standard, OpenSSL one line format
 #. The string is then URL-encoded
 
 .. note::

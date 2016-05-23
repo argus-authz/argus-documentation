@@ -44,20 +44,22 @@ Argus Service Installation
 The following section provides instructions for setting up an Argus
 environment quickly. It does not provide an exhaustive description of
 every possible deployment model or configuration option, that can be
-found in the following :ref:`Service
-Components <argus_intro_service_components>` and :ref:`Enabled
-Applications <argus_intro_enabled_applications>` sections.
+found in the following :ref:`Service Components <argus_intro_service_components>` and
+:ref:`Enabled Applications <argus_intro_enabled_applications>` sections.
 
-Before you continue it is recommend that you read this :ref:`introduction to
-the Argus system <argus_concepts>`. This will provide you with a better
+Before you continue it is recommend that you read this
+:ref:`introduction to the Argus system <argus_concepts>`. This will provide you with a better
 understanding of how the components work together, what information
 passes between the components and how policies are formed.
 
-Argus EMI Deployment
-~~~~~~~~~~~~~~~~~~~~
+Argus Deployment
+~~~~~~~~~~~~~~~~
 
-For EMI, the Argus Service is installed with YUM, and configured with
-YAIM. Please follow the Argus :ref:`Deployment for EMI <argus_emi_deployment>`
+The Argus Service is installed with YUM.
+For the version 1.7, there isn't an automatic configuration tool.
+Older version are configured with YAIM.
+
+Please follow the Argus :ref:`Deployment for version 1.7 <argus-deployment>`
 documentation.
 
 gLExec Worker Node with Argus Deployment
@@ -86,11 +88,19 @@ The :ref:`Policy Administration Point <argus_pap_index>` (PAP) provides three ma
 -  Store and manage authored policies
 -  Provide managed policies to other authorization service components
 
+.. list-table::
+   :header-rows: 0
+
+   *
+      - :ref:`Installation <argus_pap_installation>`
+      - :ref:`Configuration <argus_pap_configuration>`
+      - :ref:`Operation <argus_pap_operation>`
+
 
 PDP: Policy Decision Point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The :ref:`Policy Decision Point <argus_pap_index>` (PDP) is a policy evaluation engine. The PDP
+The :ref:`Policy Decision Point <argus_pdp_index>` (PDP) is a policy evaluation engine. The PDP
 receives authorization requests from Policy Enforcement Points and
 evaluates these requests against authorization policies retrieved from
 the PAP.
@@ -122,9 +132,7 @@ negative decision).
 In Argus, the PEP itself has a client/server architecture
 
   - The PEP Server handles the lightweight PEP client requests, and runs on the
-    Argus node. See the following links for more information on the PEP Server:
-    :ref:`Installation <argus_pepd_installation>`, :ref:`Configuration <argus_pepd_configuration>`,
-    :ref:`Operation <argus_pepd_operation>`, :ref:`Troubleshooting <argus_pepd_troubleshooting>`
+    Argus node.
 
   - Lightweight PEP client libraries are available to authorize
     requests from the application side, and to enforce decision locally. There are
@@ -133,8 +141,18 @@ In Argus, the PEP itself has a client/server architecture
     - PEP Client C API: :ref:`Programming Interface (API) <argus_pepc_api>`
     - PEP Client Java API: :ref:`Programming Interface (API) <argus_pepj_api>`
 
-:ref:`PEP command-line clients <argus_pepc_cli>` are also available
 
+.. list-table::
+   :header-rows: 0
+
+   *
+      - :ref:`Installation <argus_pepd_installation>`
+      - :ref:`Configuration <argus_pepd_configuration>`
+      - :ref:`Operation <argus_pepd_operation>`
+      - :ref:`Troubleshooting <argus_pepd_troubleshooting>`
+
+
+:ref:`PEP command-line clients <argus_pepc_cli>` are also available
 
 .. _argus_intro_enabled_applications:
 
@@ -150,10 +168,10 @@ authorization requests to the Argus service.
 
    *
      - GSI PEP Callout
-     - `Introduction <gsi_pep_callout>`__
-     - `Installation <AuthZPEPGSIInstall>`__
-     - `Configuration <AuthZPEPGSIConfig>`__
-     - `Troubleshooting <AuthZPEPGSITroubleshooting>`__
+     - :ref:`Introduction <gsi_pep_callout>`
+     - :ref:`Installation <pep_gsi_callout_installation>`
+     - :ref:`Configuration <pep_gsi_callout_configuration>`
+     - :ref:`Troubleshooting <pep_gsi_callout_troubleshooting>`
 
    *
      - gLExec with PEP Plugin
@@ -195,7 +213,7 @@ Nagios Monitoring
 
 Nagios plugins are available to monitor an Argus server.
 
--  **EMI**: :ref:`EMI Argus Nagios Probes Documentation <argus_emi_nagios_probes>`
+-  **UMD**: :ref:`Argus Nagios Probes Documentation <argus_emi_nagios_probes>`
 
 Development Information
 -----------------------
@@ -207,19 +225,11 @@ user-oriented documentation, you can find a description of Argus architecture an
 Specifications
 ~~~~~~~~~~~~~~
 
--  XACML 2.0 Specifications `eXtensible Access Control Markup Language
-   (XACML) Version
-   2.0 <http://docs.oasis-open.org/xacml/2.0/access_control-xacml-2.0-core-spec-os.pdf>`__
--  `SAML 2.0 Profile of XACML, Version 2 (Working Draft
-   5) <http://www.oasis-open.org/committees/download.php/24681/xacml-profile-saml2.0-v2-spec-wd-5-en.pdf>`__
--  XACML Profile for the gLite WN `XACML Grid Worker Node Authorization
-   Profile (v. 1.0) <https://edms.cern.ch/document/1058175>`__
--  XACML Profile for the gLite CE `XACML Grid Computing Element
-   Authorization Profile (v.
-   1.0) <https://edms.cern.ch/document/1078881/>`__
--  XACML Authorization Profile for EMI `Common XACML Authorization
-   Profile (v.
-   1.1) <https://twiki.cern.ch/twiki/bin/view/EMI/CommonXACMLProfileV1_1>`__
+-  XACML 2.0 Specifications `eXtensible Access Control Markup Language (XACML) Version 2.0 <http://docs.oasis-open.org/xacml/2.0/access_control-xacml-2.0-core-spec-os.pdf>`__
+-  `SAML 2.0 Profile of XACML, Version 2 (Working Draft 5) <http://www.oasis-open.org/committees/download.php/24681/xacml-profile-saml2.0-v2-spec-wd-5-en.pdf>`__
+-  XACML Profile for the gLite WN `XACML Grid Worker Node Authorization Profile (v. 1.0) <https://edms.cern.ch/document/1058175>`__
+-  XACML Profile for the gLite CE `XACML Grid Computing Element Authorization Profile (v. 1.0) <https://edms.cern.ch/document/1078881/>`__
+-  XACML Authorization Profile for EMI `Common XACML Authorization Profile (v. 1.1) <https://twiki.cern.ch/twiki/bin/view/EMI/CommonXACMLProfileV1_1>`__
 
 Requirements
 ~~~~~~~~~~~~
@@ -232,63 +242,40 @@ Requirements
 Presentations
 ~~~~~~~~~~~~~
 
--  `20110531-EMI\_AllHands\_2011-Argus\_Integration.ppt <%ATTACHURL%/20110531-EMI_AllHands_2011-Argus_Integration.ppt>`__:
-   Argus - EMI Authorization Integration (EMI AH 2011, 31 May 2011,
-   Lund)
--  `20110412-EGI\_UF\_2011-Argus.ppt <%ATTACHURL%/20110412-EGI_UF_2011-Argus.ppt>`__:
-   Argus - EMI Authorization Service (EGI UF 2011, 12 April 2011,
-   Vilnus)
--  `20100917\_EGI-TF\_ArgusSecurity.ppt <%ATTACHURL%/20100917_EGI-TF_ArgusSecurity.ppt>`__:
-   Argus Security (EGI TF 2010 Security Session, 17 Sept. 2010,
-   Amsterdam)
--  `introduction\_authz\_service.ppt <%ATTACHURL%/introduction_authz_service.ppt>`__:
-   General introduction to the authorization service
--  `100602\_argus\_intro\_rod.ppt <%ATTACHURL%/100602_argus_intro_rod.ppt>`__:
-   Introduction to Argus for ROD (EGI ROD Workshop, 2 June 2010,
-   Amsterdam)
+-  :download:`Argus - EMI Authorization Integration <docs/20110531-EMI_AllHands_2011-Argus_Integration.ppt>` (EMI AH 2011, 31 May 2011, Lund)
+-  :download:`Argus - EMI Authorization Service <docs/20110412-EGI_UF_2011-Argus.ppt>` (EGI UF 2011, 12 April 2011, Vilnus)
+-  :download:`Argus Security <docs/20100917_EGI-TF_ArgusSecurity.ppt>` (EGI TF 2010 Security Session, 17 Sept. 2010, Amsterdam)
+-  :download:`General introduction to the authorization service <docs/introduction_authz_service.ppt>`
+-  :download:`Introduction to Argus for ROD <docs/100602_argus_intro_rod.ppt>` (EGI ROD Workshop, 2 June 2010, Amsterdam)
 
 Souce Code Information
 ~~~~~~~~~~~~~~~~~~~~~~
 
-We have migrated the Argus source code to
-`GitHub <http://github.com>`__.
+The Argus source code is on `GitHub <http://github.com>`__.
 
 -  Argus Authorization Service: https://github.com/argus-authz
 
-The source code was previousely stored in the CERN subversion server.
-**Please do not use the SVN repository anymore**
-
--  WebSVN View: https://svnweb.cern.ch/world/wsvn/glxa
 
 Development Tools
 ~~~~~~~~~~~~~~~~~
 
-The Argus PT uses the following `development tools <ArgusPTDevTools>`__.
+The Argus PT uses the following :ref:`development tools <argus-development-tools>`.
 
-For performance and load testing we use the following `testing
-suite <AuthZLLT>`__.
+For performance and load testing we use the following :ref:`testing suite <argus-load-lifetime-testing>`.
 
 Argus Production Settings and Optimization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Production sites can optimize the Argus Service settings to their
-specific needs. Please have a look at the `Argus Fine
-Tuning <ArgusEMIFineTuning>`__ documentation.
+specific needs. Please have a look at the :ref:`Argus Service Fine Tuning <argus-emi-fine-tuning>` documentation.
 
 Perfomance and Load Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Results and metrics of the performance and load testing can be found
-here:
+Argus provides a load testsuite, based on Grinder framework.
 
--  For a physical machine:
+More information can be found on `Argus load testsuite <https://github.com/argus-authz/load-testsuite>`__.
 
-   -  `Versions 1.3.0 and 1.3.1 <AuthZTestingSummary130>`__
-   -  `Version 1.4.0 <AuthZTestingSummary140>`__
-
--  For a virtual machine:
-
-   -  `Version 1.4.0 <AuthZTestingSummary140V>`__
 
 Additional Support
 ------------------
@@ -300,12 +287,9 @@ Additional Support
    full-featured Java Profiler. YourKit, LLC is the creator of
    innovative and intelligent tools for profiling Java and .NET
    applications. Take a look at YourKit's leading software products:
-   `YourKit Java
-   Profiler <http://www.yourkit.com/java/profiler/index.jsp>`__ and
-   `YourKit .NET
-   Profiler <http://www.yourkit.com/.net/profiler/index.jsp>`__.
--  This product includes software developed by the `Caucho
-   Technology <http://www.caucho.com/>`__.
+   `YourKit Java Profiler <http://www.yourkit.com/java/profiler/index.jsp>`__ and
+   `YourKit .NET Profiler <http://www.yourkit.com/.net/profiler/index.jsp>`__.
+-  This product includes software developed by the `Caucho Technology <http://www.caucho.com/>`__.
 
 About the name Argus
 --------------------

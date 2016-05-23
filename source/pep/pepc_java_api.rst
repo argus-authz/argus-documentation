@@ -32,19 +32,20 @@ and process the response.
 
 1. Create a PEP client configuration and initialize it:
 
-::
+.. code-block:: java
 
-    PEPClientConfiguration config= new PEPClientConfiguration();
+    PEPClientConfiguration config = new PEPClientConfiguration();
     config.addPEPDaemonEndpoint("https://argus.example.org:8154/authz");
+
     // trust and key material for the HTTPS connection with client authentication
     config.setTrustMaterial("/etc/grid-security/certificates");
     config.setKeyMaterial("/etc/grid-security/hostcert.pem", "/etc/grid-security/hostkey.pem", "keystore_password");
 
 2. Create the PEP client based on the config:
 
-::
+.. code-block:: java
 
-    PEPClient pep=  new PEPClient(config);
+    PEPClient pep = new PEPClient(config);
 
 At this point you have a multi-threaded PEP client that can be **reuse**
 to submit many authorization requests to the PEP server.
@@ -52,32 +53,33 @@ to submit many authorization requests to the PEP server.
 3. Create an authorization request for a user proxy certificate, based
 on a profile:
 
-::
+.. code-block:: java
 
     // read the user proxy
-    PEMFileReader reader= new PEMFileReader();
-    X509Certificate[] userproxy= reader.readCertificates("/tmp/x509up_u959");
+    PEMFileReader reader = new PEMFileReader();
+    X509Certificate[] userproxy = reader.readCertificates("/tmp/x509up_u959");
+
     // create the request for a given profile
-    AuthorizationProfile profile= GridWNAuthorizationProfile.getInstance();
-    Request request= profile.createRequest(userproxy,
-                                           "http://example.org/wn/cluster1", 
+    AuthorizationProfile profile = GridWNAuthorizationProfile.getInstance();
+    Request request = profile.createRequest(userproxy,
+                                           "http://example.org/wn/cluster1",
                                             GridWNAuthorizationProfile.ACTION_EXECUTE);
 
 4. Authorize the request with the Argus PEP daemon:
 
-::
+.. code-block:: java
 
-    Response response= pep.authorize(request);
+    Response response = pep.authorize(request);
 
 5. Extract the user mapping information from the response:
 
-::
+.. code-block:: java
 
     // will throw an exception if the authorization response is not *Permit*, or if the obligation is not present
-    Obligation posixMappingObligation= profile.getObligationPosixMapping(response);
-    String userId= profile.getAttributeAssignmentUserId(posixMappingObligation);
-    String groupId= profile.getAttributeAssignmentPrimaryGroupId(posixMappingObligation);
-    List<String> groupIds= profile.getAttributeAssignmentGroupIds(posixMappingObligation);
+    Obligation posixMappingObligation = profile.getObligationPosixMapping(response);
+    String userId = profile.getAttributeAssignmentUserId(posixMappingObligation);
+    String groupId = profile.getAttributeAssignmentPrimaryGroupId(posixMappingObligation);
+    List<String> groupIds = profile.getAttributeAssignmentGroupIds(posixMappingObligation);
 
 Processing Authorization Decision
 ---------------------------------
@@ -100,9 +102,11 @@ GUI
 ---
 
 There is also a Java-based GUI available for sending requests to a PEPd.
-Just click on the following image which will download the application to
-your desktop and start it. Once you've downloaded it you can restart it
+Just download the application to your desktop and start it.
+Once you've downloaded it you can restart it
 by double-clicking the Argus-PEP-Client.jnlp file.
+
+:download:`Java-based GUI <../resources/Argus-Pep-Client.jnlp>`
 
 .. figure:: /images/Pep-Client-Gui-Screenshot.png
    :align: center

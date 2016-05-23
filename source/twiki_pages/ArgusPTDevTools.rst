@@ -1,3 +1,4 @@
+.. _argus-development-tools:
 
 Argus Development Tools
 =======================
@@ -9,22 +10,16 @@ Development
 -----------
 
 -  Eclipse IDE for all Java and C development (http://www.eclipse.org/)
--  CERN subversion server for the version control of all Argus
-   components (http://svnweb.cern.ch/world/wsvn/glxa)
--  CERN wiki for the development and product documentation
-   (https://twiki.cern.ch/twiki/bin/view/EGEE/AuthorizationFramework)
+-  GitHub for the version control of all Argus components (https://github.com/argus-authz)
+-  Wiki for the development and product documentation (http://argus-documentation.readthedocs.org/en/latest/)
 
 Build
 -----
 
--  Maven for the compilation of the main Java components
-   (http://maven.apache.org/)
--  ant for the compilation of the PEP Java client library
-   (http://ant.apache.org/)
+-  Maven for the compilation of the main Java components (http://maven.apache.org/)
+-  ANT for the compilation of the PEP Java client library (http://ant.apache.org/)
 -  Autotools, configure and make for the compilation of the C components
--  ETICS for the packaging and release management of all the Argus
-   components (https://etics.cern.ch/)
--  YAIM scripts for the glite-ARGUS node configuration
+
 
 Test
 ----

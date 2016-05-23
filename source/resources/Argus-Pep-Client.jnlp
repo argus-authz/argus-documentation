@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<jnlp spec="1.0+" codebase="https://twiki.cern.ch/twiki/pub/EGEE/AuthZPEPJavaAPI/" href="Argus-Pep-Client.jnlp">
+<information>
+<title>Argus PEP Client</title>
+<vendor>EGEE Collaboration</vendor>
+<description>A simple GUI to send requests to any Argus PEP server</description>
+<icon href="images/peacock.gif"/>
+<icon kind="splash" href="peacock.gif"/>
+<shortcut online="true">
+<desktop/>
+<menu submenu="Argus PEP Client"/>
+</shortcut>
+</information>
+<security>
+<all-permissions/>
+</security>
+<resources>
+<j2se version="1.6+" initial-heap-size="512m" max-heap-size="1024m"/>
+
+<jar href="pep-client-1.1.0.jar" main="true"/>
+<jar href="bcprov-jdk15-1.45.jar"/>
+<jar href="pep-common-2.1.0.jar"/>
+<jar href="pep-java-2.0.1.jar"/>
+<jar href="commons-httpclient-3.0.1.jar"/>
+<jar href="commons-codec-1.2.jar"/>
+<jar href="log4j-1.2.13.jar"/>
+<jar href="voms-api-java-1.9.18.jar"/>
+<jar href="commons-logging-1.1.jar"/>
+
+</resources>
+<application-desc main-class="clientGui.Main">
+<argument>-class</argument>
+<argument>clientGui.Main</argument>
+</application>
+</jnlp>

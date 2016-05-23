@@ -50,20 +50,29 @@ In an identity based system a user (more properly known as a subject)
 might have the identity 'jsmith'. In an attribute based system the
 subject might be identified by the following attributes:
 
--  ``id``: subject-id, ``datatype``: string, ``value``: jsmith
--  ``id``: org, ``datatype``: string, ``value``: CERN
--  ``id``: affiliation, ``datatype``: string, ``value``: employee
--  ``id``: vo, ``datatype``: string, ``value``: lhcb, cms, atlas
+===========   ========   =====
+id            datatype   value
+===========   ========   =====
+subject-id    string     jsmith
+org           string     CERN
+affiliation   string     emplyee
+vo            string     lhcb, cms, atlas
+===========   ========   =====
+
 
 In another example an action in an identity based access control system
 might be identified by the string 'submit-job'. In an attribute based
 system the action might be identified with the following attributes:
 
--  ``id``: action-id, ``datatype``: string, ``value``: submit-job
--  ``id``: pilot-job, ``datatype``: boolean, ``value``: false
--  ``id``: executable, ``datatype``: string, ``value``: /usr/bin/myexec
--  ``id``: expected-execution-duration, ``datatype``: integer,
-   ``value``: 10
+===========================   ========   =====
+id                            datatype   value
+===========================   ========   =====
+action-id                     string     submit-job
+pilot-job                     boolean    false
+executable                    string     /usr/bin/myexec
+expected-execution-duration   integer    10
+===========================   ========   =====
+
 
 The exact attributes available within a request are determined by the
 application seeking an authorization decision. Obviously each unique
@@ -188,7 +197,7 @@ system.
 Example Requests and Policies
 +++++++++++++++++++++++++++++
 
-Look at the `dedicated page <argus_rquest_and_policy_examples>` for request and policy examples.
+Look at the :ref:`dedicated page <argus_request_and_policy_examples>` for request and policy examples.
 
 Identifiers within Argus
 ------------------------
@@ -272,7 +281,9 @@ The identifier may be generated in one of two ways:
    identifier and thus make it a bit easier for policy writers.
 -  The application developer may generate an identifier. A reasonable
    formula for such an identifier is:
-   ``http://{application_domain_name}/{application_name}/action/{action_id} where the domain name is the domain component of the application's website and the action ID is a human readable string for the action (e.g. =readFile``,
+   ``http://{application_domain_name}/{application_name}/action/{action_id}``
+   where the domain name is the domain component of the application's
+   website and the action ID is a human readable string for the action (e.g. ``readFile``,
    ``addUser``)
 
 Attribute ID

@@ -7,27 +7,41 @@ Argus: Policy Administration Point (PAP): Operation
 Service Operation Commands
 --------------------------
 
-The service can then be started using the
-``PAP_HOME/bin/pap-standalone start`` command.
+Start the PAP service
+   ========   ===========
+   Platform   Command
+   ========   ===========
+   EL6        ``service argus-pap start``
+   EL7        ``systemctl start argus-pap``
+   ========   ===========
 
-The service can be stopped using the
-``PAP_HOME/bin/pap-standalone stop`` command.
+Stop the PAP service
+   ========   ===========
+   Platform   Command
+   ========   ===========
+   EL6        ``service argus-pap start``
+   EL7        ``systemctl start argus-pap``
+   ========   ===========
 
 Service Ports
 -------------
 
--  Default standalone service port: 8150
--  Default standalone shutdown service and status port: 8151
+-  Default service port: 8150
+-  Default shutdown service and status port: 8151
 
 Service Endpoints
 -----------------
 
--  ``/pap/services/ProvisioningService`` : this endpoint provides the
-   policy provisioning interface
--  ``/shutdown`` : this endpoint instructs the PAP standalone service to
+``/pap/services/ProvisioningService`` :
+   this endpoint provides the policy provisioning interface
+
+``/shutdown`` :
+   this endpoint instructs the PAP standalone service to
    shutdown and is reachable only from localhost on the configured
    shutdown and status port
--  ``/status`` : this endpoint provides current status information on
+
+``/status`` :
+   this endpoint provides current status information on
    the PAP is reachable only from localhost on the configured shutdown
    and status port
 

@@ -9,6 +9,9 @@ The PDP receives authorization requests from Policy Enforcement Points
 and evaluates these requests against authorization policies retrieved
 from the PAP.
 
+Summary
+-------
+
 .. toctree::
    :maxdepth: 2
 

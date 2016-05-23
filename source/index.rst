@@ -22,16 +22,20 @@ Contents:
    monitoring/index
    quick_start/index
    misc/examples
+   misc/service_reference_card
 
-   twiki_pages/index
 
 .. toctree::
    :hidden:
 
-   misc/argus_emi_deployment
+   misc/argus_deployment
+   misc/manual_configuration
+   misc/configuration_with_yaim
    misc/grid_map_file
    misc/emi_yaim_configuration
+   misc/old_version_known_issues
 
+   twiki_pages/index
 
 Indices and tables
 ==================

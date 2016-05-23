@@ -1,6 +1,7 @@
+.. _argus-emi-fine-tuning:
 
-Argus Services (EMI-1) Fine Tuning
-==================================
+Argus Services Fine Tuning
+==========================
 
 Optimizing Argus Memory Usage
 -----------------------------
@@ -137,12 +138,9 @@ The Argus PAP service logging configuration is configured with the
 **PAP Logging Configuration for Production**
 
 To configure the Argus PAP service for production logging, please
-download the attached `configuration
-file <%ATTACHURL%/pap-logback.xml>`__ and store it as
-``/etc/argus/pap/logging/standalone/logback.xml``:
+download the attached :download:`configuration file <../resources/pap-logback.xml>` and store it as
+``/etc/argus/pap/logging/standalone/logback.xml``.
 
-``wget --no-check-certificate`` %ATTACHURL%/pap-logback.xml
-``-O /etc/argus/pap/logging/standalone/logback.xml``
 
 You have to restart the PAP service to apply the new logging
 configuration.
@@ -156,12 +154,8 @@ The Argus PDP service logging configuration is configured with the
 **PDP Logging Configuration for Production**
 
 To configure the Argus PDP service for production logging, please
-download the attached `configuration
-file <%ATTACHURL%/pdp-logging.xml>`__ and store it as
-``/etc/argus/pdp/logging.xml``:
-
-``wget --no-check-certificate`` %ATTACHURL%/pdp-logging.xml
-``-O /etc/argus/pdp/logging.xml``
+download the attached :download:`configuration file <../resources/pdp-logging.xml>` and store it as
+``/etc/argus/pdp/logging.xml``.
 
 The PDP will automatically reload its logging configuration, no need to
 restart the service.
@@ -175,27 +169,9 @@ the ``/etc/argus/pepd/logging.xml`` file.
 **PEP Server Logging Configuration for Production**
 
 To configure the Argus PEP Server service for production logging, please
-download the attached `configuration
-file <%ATTACHURL%/pepd-logging.xml>`__ and store it as
-``/etc/argus/pepd/logging.xml``:
-
-``wget --no-check-certificate`` %ATTACHURL%/pepd-logging.xml
-``-O /etc/argus/pepd/logging.xml``
+download the attached :download:`configuration file <../resources/pepd-logging.xml>` and store it as
+``/etc/argus/pepd/logging.xml``.
 
 The PEP Server will automatically reload its logging configuration, no
 need to restart the service.
 
-%META:FILEATTACHMENT{name="pap-logback.xml" attachment="pap-logback.xml"
-attr="" comment="PAP logging config" date="1311669537"
-path="pap-logback.xml" size="2157" stream="pap-logback.xml"
-tmpFilename="/usr/tmp/CGItemp26785" user="ad968f62f612332eff6b"
-version="3"}% %META:FILEATTACHMENT{name="pdp-logging.xml"
-attachment="pdp-logging.xml" attr="" comment="PDP logging config"
-date="1311669557" path="pdp-logging.xml" size="5541"
-stream="pdp-logging.xml" tmpFilename="/usr/tmp/CGItemp26834"
-user="ad968f62f612332eff6b" version="3"}%
-%META:FILEATTACHMENT{name="pepd-logging.xml"
-attachment="pepd-logging.xml" attr="" comment="PEP Server logging
-config" date="1311669570" path="pepd-logging.xml" size="5067"
-stream="pepd-logging.xml" tmpFilename="/usr/tmp/CGItemp26858"
-user="ad968f62f612332eff6b" version="3"}%

@@ -9,6 +9,9 @@ The Policy Administration Point (PAP) provides three major functions:
 -  Store and manage authored policies
 -  Provide managed policies to other authorization service components
 
+Summary
+-------
+
 .. toctree::
    :maxdepth: 2
 

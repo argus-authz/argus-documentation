@@ -3,9 +3,9 @@
 Argus PEP Server Installation
 =============================
 
-EMI Installation
-----------------
+Installation
+------------
 
-To deploy the Argus PEP Server for EMI, Please follow the documentation
-:ref:`Argus Deployment for EMI <argus_emi_deployment>`
+To deploy the Argus PEP Server, please follow the documentation
+:ref:`Argus Deployment <argus-deployment>`
 

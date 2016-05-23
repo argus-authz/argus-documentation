@@ -3,12 +3,11 @@
 The Simplified Policy Language
 ==============================
 
-As already explained
-`here <https://twiki.cern.ch/twiki/bin/view/EGEE/AuthZIntro>`__, Argus
+As already explained :ref:`here <argus_concepts>`, Argus
 policies contain collections of rules that state which actions can be
 performed on which resources by which users. XACML, the language used
 internally by Argus to define policies, provides great expressiveness
-and flexibility but it's very hard to read and author for uman beings.
+and flexibility but it's very hard to read and author for human beings.
 For this reason, Argus provides a Simplified Policy Language (SPL) to
 hide the complexity of XACML while providing much of its flexibility.
 
@@ -17,7 +16,7 @@ As an example, the following policy denies access to all the resources
 
 ::
 
-    resource ".*" { 
+    resource ".*" {
        action ".*" {
           rule deny { vo = "atlas" }
        }
@@ -29,7 +28,7 @@ The SPL syntax
 ::
 
     resource <value> {
-       
+
        action <value> {
 
           rule <permit|deny> {
@@ -44,7 +43,7 @@ The SPL syntax
     ...
 
 The SPL defines three stanza types: ``resource``, ``action`` and
-``rule``. It's possible to define multple resouce stanzas that can
+``rule``. It's possible to define multiple resource stanzas that can
 contain multiple action stanzas that can contain multiple rules stanzas.
 
 The ``resource`` stanza is used to target a resource (or set of
@@ -74,7 +73,7 @@ resources or actions, like in the following example:
 ::
 
     resource "http://cnaf.infn.it/cream-ce-01" {
-       
+
        action ".*" {
 
           rule permit { vo = "cms" }
@@ -100,19 +99,19 @@ using a set of attributes, like:
 
 The table below specifies the supported attributes for Argus 1.1:
 
-+----------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-|  Attribute name      |  Description                                                                                   |  Example                                                                                        |
-+======================+================================================================================================+=================================================================================================+
-| ``subject``          | The user's X509 certificate subject in rfc2253 or openssl format                               | <verbatim>subject ="CN=Andrea Ceccanti,L=CNAF,OU=Personal Certificate,O=INFN,C=IT"</verbatim>   |
-+----------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| ``subject-issuer``   | The subject (in rfc2254 or openssl format) of the CA that issued the user's x509 certificate   | <verbatim>subject-issuer = "CN=INFN CA,O=INFN,C=IT"</verbatim>                                  |
-+----------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| ``vo``               | The name of the VO the user belongs to                                                         | <verbatim>vo = "atlas"</verbatim>                                                               |
-+----------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| ``fqan``             | The fqan present in the user's bag of VOMS attributes                                          | <verbatim>fqan="/dteam/Role=VO-Admin"</verbatim>                                                |
-+----------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| ``pfqan``            | The user primary fqan                                                                          | <verbatim>pfqan="/atlas/Role=pilot"</verbatim>                                                  |
-+----------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
++--------------------+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| Attribute name     | Description                                                                                  | Example                                                                      |
++====================+==============================================================================================+==============================================================================+
+| ``subject``        | The user's X509 certificate subject in rfc2253 or openssl format                             | ``subject ="CN=Andrea Ceccanti,L=CNAF,OU=Personal Certificate,O=INFN,C=IT"`` |
++--------------------+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``subject-issuer`` | The subject (in rfc2254 or openssl format) of the CA that issued the user's x509 certificate | ``subject-issuer = "CN=INFN CA,O=INFN,C=IT"``                                |
++--------------------+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``vo``             | The name of the VO the user belongs to                                                       | ``vo = "atlas"``                                                             |
++--------------------+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``fqan``           | The fqan present in the user's bag of VOMS attributes                                        | ``fqan="/dteam/Role=VO-Admin"``                                              |
++--------------------+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| ``pfqan``          | The user primary fqan                                                                        | ``pfqan="/atlas/Role=pilot"``                                                |
++--------------------+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 The contents of the ``rule`` stanza
 -----------------------------------
@@ -124,7 +123,7 @@ identified using the attributes defined in the previous section.
 ::
 
     resource "http://cnaf.infn.it/cream-ce-01" {
-       
+
        action "submit-pilot-job" {
 
           rule permit { pfqan="/atlas/Role=pilot" }
@@ -141,7 +140,7 @@ execution of the same action, one would write the following policy:
 ::
 
     resource "http://cnaf.infn.it/cream-ce-01" {
-       
+
        action "submit-pilot-job" {
 
           rule deny { vo = "lhcb" }
@@ -152,7 +151,7 @@ execution of the same action, one would write the following policy:
 Multiple attributes inside the ``rule`` stanza
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-It is possibile to define multiple attributes inside a ``rule`` stanza.
+It is possible to define multiple attributes inside a ``rule`` stanza.
 All the attributes defined in the rule stanza need to match with the
 subject attributes present in the authorization request for the rule to
 be applied. This can be explained more clearly using an example:
@@ -160,10 +159,10 @@ be applied. This can be explained more clearly using an example:
 ::
 
     resource "http://cnaf.infn.it/cream-ce-01" {
-       
+
        action "submit-job" {
 
-          rule permit { 
+          rule permit {
              vo = "cms"
              subject-issuer = "CN=INFN CA,O=INFN,C=IT"
           }
@@ -196,7 +195,7 @@ write a policy like this:
 ::
 
     resource "http://cnaf.infn.it/cream-ce-01" {
-       
+
        action ".*" {
 
           rule deny{ pfqan = "/cms/Role=pilot"}
@@ -215,7 +214,7 @@ reversed the order of the two rules like in the following policy:
 ::
 
     resource "http://cnaf.infn.it/cream-ce-01" {
-       
+
        action ".*" {
 
           rule permit { vo = "cms" }
@@ -238,9 +237,9 @@ stanzas. The syntax of the obligation stanza is as follows:
        [attributeId = attributeValue]*
     }
 
-Oligation stanzas can be placed either in the resource or action context
+Obligation stanzas can be placed either in the resource or action context
 and are used to define a set operations that must be performed by the
-Argus PEP in conjuction with an authorization decision. An obligation
+Argus PEP in conjunction with an authorization decision. An obligation
 stanza can define 0..N attribute definitions, that are passed as
 parameters to the PEP for the fulfillment of the obligation.
 
@@ -249,7 +248,7 @@ An example of policy with an obligation is the following:
 ::
 
     resource "http://cnaf.infn.it/wn"{
-        
+
        obligation "http://glite.org/xacml/obligation/local-environment-map" {}
 
        action "http://glite.org/xacml/action/execute"{
@@ -257,7 +256,7 @@ An example of policy with an obligation is the following:
        }
     }
 
-The Argus PEP currently supports only the ``map-to-local-enviroment``
+The Argus PEP currently supports only the ``map-to-local-environment``
 obligation.
 
 The ``map-to-local-environment`` obligation
@@ -270,7 +269,7 @@ id:
 
     http://glite.org/xacml/obligation/local-environment-map
 
-is used within a policy to signify that a mapping to a local posix
+is used within a policy to signify that a mapping to a local Posix
 account will be produced by the Argus server as a result of a permit
 policy.
 
@@ -307,7 +306,7 @@ policy is the following:
 ::
 
     resource "http://cnaf.infn.it/wn"{
-        
+
        obligation "http://glite.org/xacml/obligation/local-environment-map" {}
 
        action "http://glite.org/xacml/action/execute"{
