@@ -277,18 +277,6 @@ Argus provides a load testsuite, based on Grinder framework.
 More information can be found on `Argus load testsuite <https://github.com/argus-authz/load-testsuite>`__.
 
 
-For older version, results and metrics of the performance and load testing can be found
-here:
-
--  For a physical machine:
-
-   -  :ref:`Versions 1.3.0 and 1.3.1 <argus-testing-summary-130>`
-   -  :ref:`Version 1.4.0 <argus-testing-summary-140>`
-
--  For a virtual machine:
-
-   -  :ref:`Version 1.4.0 <argus-testing-summary-140V>`
-
 Additional Support
 ------------------
 
