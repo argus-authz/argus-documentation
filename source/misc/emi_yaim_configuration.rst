@@ -5,7 +5,8 @@ Argus YAIM Configuration for EMI
 
 .. warning::
 
-    As of UMD 4.0, YAIM is no longer supported to configure Argus. This page is kept for reference only.
+    As of UMD 4.0, and in particular on CENTOS 7,  YAIM is no longer supported
+    to configure Argus. This page is kept for reference only.
 
 
 YAIM Configuration for ARGUS\_server

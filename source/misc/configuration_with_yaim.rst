@@ -5,8 +5,8 @@ Configuration with YAIM
 
 .. warning::
 
-    As of UMD 4.0, YAIM is no longer supported to configure Argus.
-    This page is kept for old Argus versions only.
+    As of UMD 4.0, and in particular on CENTOS 7 YAIM is no longer supported to
+    configure Argus. 
 
 
 The ``ARGUS_server`` node type is available to configure the Argus
