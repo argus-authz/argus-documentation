@@ -49,7 +49,7 @@ manage the Argus services.
 
 Changes in the mapping logic behaviour (`pep-7`_ , `pep-11`_), and in
 particular in the handling of secondary group names, could produce different
-mappings for user jobs so it's safe to drain the site before upgrading the
+mappings for user jobs so it's safest to drain the site before upgrading the
 Argus services to version 1.7.0.
 
 Main fixes
