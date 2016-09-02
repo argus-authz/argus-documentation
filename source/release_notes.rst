@@ -67,11 +67,6 @@ PEP Server
 - Incorrect mapping for secondary group names [`pep-7`_] , [`pep-11`_] .
 - Incorrect handling of CNs with internal slash characters [`pep-9`_].
 
-PDP
-***
-
-- Argus PDP should not start until policies are succesfully fetched from a PAP [`pdp-3`_].
-
 PAP
 ***
 
