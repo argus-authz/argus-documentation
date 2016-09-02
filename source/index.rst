@@ -14,6 +14,7 @@ Contents:
    :maxdepth: 2
    :includehidden:
 
+   release_notes
    argus_introduction
    argus_concepts
    pap/index
