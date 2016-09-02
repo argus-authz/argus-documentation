@@ -36,6 +36,18 @@ Service configuration
 
 Instructions on how to configure and run the services are provided in the `Documentation`_.
 
+Configuration for the services has not changed, so existing SL6 installation
+can upgrade and reconfigure services as usual (YAIM on SL6 is still supported).
+
+YAIM configuration support is *not* provided on CENTOS 7; sites are free to use
+their favourite configuration management tool (Ansbile, Puppet, Quattor) to
+manage the Argus services configuration.
+
+Changes in the mapping logic behaviour (`pep-7`_ , `pep-11`_), and in
+particular in the handling of secondary group names, could produce different
+mappings for user jobs so it's safe to drain the site before upgrading the
+Argus services to version 1.7.0.
+
 Bug fixes
 ~~~~~~~~~
 
