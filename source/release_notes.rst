@@ -27,7 +27,7 @@ support for Centos 7. The highlights of this release are:
 Packages
 ~~~~~~~~
 
-Packages for this release can be obtained from the Argus produt team package repository:
+Packages for this release can be obtained from the Argus product team package repository:
 
 http://argus-authz.github.io/repo
 
@@ -49,8 +49,9 @@ manage the Argus services.
 
 Changes in the mapping logic behaviour (`pep-7`_ , `pep-11`_), and in
 particular in the handling of secondary group names, could produce different
-mappings for user jobs so it's safest to drain the site before upgrading the
-Argus services to version 1.7.0.
+mappings for user jobs, so it's safer to drain the site before upgrading the
+Argus services to version 1.7.0 if you want to avoid potential job failures
+due to the upgrade.
 
 Main fixes
 ~~~~~~~~~~
@@ -87,6 +88,6 @@ PAP
 .. _pap-7: https://issues.infn.it/jira/browse/ARGUS-7
 .. _pap-8: https://issues.infn.it/jira/browse/ARGUS-8
 
-.. _load testing test suite: https://github.com/argus-authz/load-testsuit://github.com/argus-authz/load-testsuite 
+.. _load testing test suite: https://github.com/argus-authz/load-testsuite 
 .. _integration test suite: https://github.com/argus-authz/argus-robot-testsuite
 .. _Documentation: http://argus-documentation.readthedocs.io
