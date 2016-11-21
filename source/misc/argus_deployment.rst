@@ -40,7 +40,7 @@ command:
 
 .. code-block:: bash
 
-   # yum install argus-authz
+   yum install argus-authz
 
 Install the EGI IGTF Bundle
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
