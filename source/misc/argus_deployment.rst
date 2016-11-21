@@ -33,9 +33,14 @@ typically installed in ``/etc/grid-security/hostcert.pem`` and
 Installation with YUM
 ---------------------
 
-The Argus Authorization Service is a bundle of 3 services (PAP, PDP and
-PEP Server) and is available in the repository. The Argus
-metapackage should be installed with YUM.
+The Argus Authorization Service is a bundle of 3 services (the PAP, PDP and PEP
+Server). Packages for the three services can be easily installed on a given
+machine by installing the ``argus-authz`` metapackage, as in the following
+command:
+
+.. code-block:: bash
+
+   # yum install argus-authz
 
 Install the EGI IGTF Bundle
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
