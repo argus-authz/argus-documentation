@@ -11,14 +11,15 @@ The main contents lives are the `master` branch. Tags are used to define the Arg
 
 If you want to build locally the documentation, first install on your machine the ReadTheDocs theme,
 
-```bash
-# pip install sphinx_rtd_theme
+```console
+$ sudo yum install python-pip python2-sphinx
+$ sudo pip install sphinx_rtd_theme
 ```
 
 The fork/clone this repository and in the `source` directory, enter:
 
-```bash
-make html
+```console
+$ make html
 ```
 
 The resulting documentation can be accessed in directory `build/html/index.html`.

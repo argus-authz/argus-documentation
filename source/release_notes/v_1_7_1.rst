@@ -1,0 +1,54 @@
+.. _v1_7_1:
+
+Argus 1.7.1 (TBD)
+=================
+
+The Argus 1.7.1 release provides the support to CAs with a lower Level of Assurance (LoA),
+introducing a new Policy Information Point (PIP).
+The highlights of this release are:
+
+- Introduced the :ref:`Authentication Profile PIP <argus_pep_pip_authn_profile_pip>`.
+- Enhanced the :ref:`Common XACML Authorization Profile PIP <argus_pep_pip_common_xacml_authz_profile>`.
+
+Packages
+~~~~~~~~
+
+Packages for this release can be obtained from the Argus product team package repository:
+
+http://argus-authz.github.io/repo
+
+Service configuration
+~~~~~~~~~~~~~~~~~~~~~
+
+Instructions on how to configure the new PIP  are provided in the
+following documentation sections:
+
+- :ref:`Authentication Profile PIP configuration <argus_pep_pip_authn_profile_pip>`
+
+Upgrade procedure
+-----------------
+
+Argus 1.7.1 is a drop-in replacement for 1.7.0.
+To install the new version and obtain a system with the same behavior of the previous release:
+
+#. Install the new packages: ``yum update``.
+#. Reconfigure, manually or with a configuration management system such as Puppet or Ansible;
+#. Restart the services.
+
+The new release provides a default configuration that grants the
+access to resources only granted to certificates issued by CAs in the *classic*,
+*slcs* and *mics* IGTF profiles.
+
+To enable IOTA CA support for selected VOs, you’ll need to:
+
+#. Install the IOTA CA RPM.
+#. Install another, yet-to-be-named RPM providing a VO-CA-AP policy file which states
+   which authentication profiles are enabled for VOs and trusted certificates.
+#. Configure the Argus PEP server to point the VO-CA-AP policy file, setting the
+   ``authenticationProfilePolicyFile`` property int the ``AUTHN_PROFILE_PIP`` section
+   with the ``vo-ca-ap-file`` absolute path.
+
+   For example:
+
+   ``authenticationProfilePolicyFile = /etc/grid-security/vo-ca-ap-file``
+
