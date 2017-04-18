@@ -3,11 +3,13 @@
 Argus 1.7.1 (TBD)
 =================
 
-The Argus 1.7.1 release provides the support to CAs with a lower Level of Assurance (LoA),
-introducing a new Policy Information Point (PIP).
+The Argus 1.7.1 release introduces a new Policy Information Point (PIP) that
+provides the support to CAs with a lower Level of Assurance (LoA).
+
 The highlights of this release are:
 
 - Introduced the :ref:`Authentication Profile PIP <argus_pep_pip_authn_profile_pip>`.
+- Introduced the new *x509-subject-issuer* and *x509-authn-profile* attributes.
 - Enhanced the :ref:`Common XACML Authorization Profile PIP <argus_pep_pip_common_xacml_authz_profile>`.
 
 Packages
@@ -28,27 +30,55 @@ following documentation sections:
 Upgrade procedure
 -----------------
 
-Argus 1.7.1 is a drop-in replacement for 1.7.0.
 To install the new version and obtain a system with the same behavior of the previous release:
 
-#. Install the new packages: ``yum update``.
-#. Reconfigure, manually or with a configuration management system such as Puppet or Ansible;
+#. Install the new packages.
+#. Reconfigure, manually or with a configuration management system (such as Puppet, Ansible or Quattor).
 #. Restart the services.
 
 The new release provides a default configuration that grants the
-access to resources only granted to certificates issued by CAs in the *classic*,
+access to resources only to certificates issued by CAs in the *classic*,
 *slcs* and *mics* IGTF profiles.
 
 To enable IOTA CA support for selected VOs, you’ll need to:
 
-#. Install the IOTA CA RPM.
-#. Install another, yet-to-be-named RPM providing a VO-CA-AP policy file which states
-   which authentication profiles are enabled for VOs and trusted certificates.
-#. Configure the Argus PEP server to point the VO-CA-AP policy file, setting the
-   ``authenticationProfilePolicyFile`` property int the ``AUTHN_PROFILE_PIP`` section
-   with the ``vo-ca-ap-file`` absolute path.
+#. Install the IOTA CA RPM, that provides the CA certificate and the policy info file.
+#. Customize a VO-CA-AP policy file which states which authentication profiles are
+   enabled for VOs and trusted certificates.
+   This file can be provided by an RPM, such as ``lcmaps-plugins-vo-ca-ap`` package,
+   or written manually by the system administrator, with the syntax described
+   `here <https://wiki.nikhef.nl/grid/Lcmaps-plugins-vo-ca-ap#vo-ca-ap-file>`__.
+#. Edit the Argus PEP server configuration file (``/etc/argus/pepd/pepd.ini``)
+   to point the VO-CA-AP policy file, setting the
+   ``authenticationProfilePolicyFile`` property with the ``vo-ca-ap-file`` absolute path.
 
    For example:
 
    ``authenticationProfilePolicyFile = /etc/grid-security/vo-ca-ap-file``
+#. Restart the services.
 
+
+Main fixes
+~~~~~~~~~~
+
+PEP Server
+----------
+
+Milestone `argus-pep-server-1.7.1`_:
+
+- Introduce support for Authentication Profiles in Argus [`pep-21`_].
+- Introduce new *x509-subject-issuer* and *x509-authn-profile* attributes [`pep-22`_].
+
+PAP
+---
+Milestone `argus-pap-1.7.1`_:
+
+- Introduce new *x509-subject-issuer* and *x509-authn-profile* attributes [`pap-14`_], [`pap-15`_].
+
+
+.. _argus-pep-server-1.7.1: https://github.com/argus-authz/argus-pep-server/milestone/2
+.. _pep-21: https://github.com/argus-authz/argus-pep-server/issues/21
+.. _pep-22: https://github.com/argus-authz/argus-pep-server/issues/22
+.. _argus-pap-1.7.1: https://github.com/argus-authz/argus-pap/milestone/1
+.. _pap-14: https://github.com/argus-authz/argus-pap/issues/14
+.. _pap-15: https://github.com/argus-authz/argus-pap/issues/15

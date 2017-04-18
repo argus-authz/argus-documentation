@@ -43,20 +43,26 @@ Configuration
    value in seconds, that is the refresh time interval used by the PIP to reload the policy
    files, e.g. 14400.
 
+.. note::
+   The Argus 1.7.1 packages provide a default authentication profile policy file located
+   in ``/etc/argus/pepd/vo-ca-ap-file``.
+   This file grants the access only to certificates issued by CAs in 
+   the IGTF *classic*, *mics* and *slcs* profiles.
+
 PIP Configuration Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+----------------------------------------+--------------------------------------------------------------+-----------+--------------------------------------+
-| Property                               | Description                                                  | Required? | Default Value                        |
-+========================================+==============================================================+===========+======================================+
-| ``authenticationProfilePolicyFile``    | Absolute path of authentication profile policy file          | Yes       | ``/etc/grid-security/vo-ca-ap-file`` |
-+----------------------------------------+--------------------------------------------------------------+-----------+--------------------------------------+
-| ``trustAnchors.directory``             | Absolute path where policy info files are located            | No        | ``/etc/grid-security/certificates``  |
-+----------------------------------------+--------------------------------------------------------------+-----------+--------------------------------------+
-| ``trustAnchors.policyFilePattern``     | Regular expression that matches the policy files to read     | No        | ``policy-*.info``                    |
-+----------------------------------------+--------------------------------------------------------------+-----------+--------------------------------------+
-| ``trustAnchors.refreshIntervalInSecs`` | Time, in seconds, with which the PIP reload the policy files | No        | 14400                                |
-+----------------------------------------+--------------------------------------------------------------+-----------+--------------------------------------+
++----------------------------------------+--------------------------------------------------------------+-----------+-------------------------------------+
+| Property                               | Description                                                  | Required? | Default Value                       |
++========================================+==============================================================+===========+=====================================+
+| ``authenticationProfilePolicyFile``    | Absolute path of authentication profile policy file          | Yes       | ``/etc/argus/pepd/vo-ca-ap-file``   |
++----------------------------------------+--------------------------------------------------------------+-----------+-------------------------------------+
+| ``trustAnchors.directory``             | Absolute path where policy info files are located            | No        | ``/etc/grid-security/certificates`` |
++----------------------------------------+--------------------------------------------------------------+-----------+-------------------------------------+
+| ``trustAnchors.policyFilePattern``     | Regular expression that matches the policy files to read     | No        | ``policy-*.info``                   |
++----------------------------------------+--------------------------------------------------------------+-----------+-------------------------------------+
+| ``trustAnchors.refreshIntervalInSecs`` | Time, in seconds, with which the PIP reload the policy files | No        | 14400                               |
++----------------------------------------+--------------------------------------------------------------+-----------+-------------------------------------+
 
 
 Populated Effective Request Attributes
@@ -109,7 +115,7 @@ PIP enabled.
 
     [AUTHN_PROFILE_PIP]
     parserClass = org.glite.authz.pep.pip.provider.authnprofilespip.AuthenticationProfilePIPConfigurationParser
-    authenticationProfilePolicyFile = /etc/grid-security/vo-ca-ap-file
+    authenticationProfilePolicyFile = /etc/argus/pepd/vo-ca-ap-file
     trustAnchors.directory = /etc/grid-security/certificates
     trustAnchors.policyFilePattern = policy-*.info
     trustAnchors.refreshIntervalInSecs = 14400
