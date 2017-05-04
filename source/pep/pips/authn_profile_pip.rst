@@ -4,7 +4,7 @@ Authentication Profile PIP
 --------------------------
 
 .. warning::
-   **This PIP is new since Argus 1.7.1**
+   **This PIP has been introduced in Argus 1.7.1**
 
 This PIP uses the informations extracted from the certificate by
 :ref:`argus_pep_pip_common_xacml_authz_profile` and

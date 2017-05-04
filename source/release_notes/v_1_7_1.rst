@@ -1,16 +1,32 @@
 .. _v1_7_1:
 
-Argus 1.7.1 (TBD)
-=================
+Argus 1.7.1 (05-05-2017)
+========================
 
-The Argus 1.7.1 release introduces a new Policy Information Point (PIP) that
-provides the support to CAs with a lower Level of Assurance (LoA).
+The Argus 1.7.1 release introduces support for different X.509 CA
+Authentication profiles via the new Authentication Profile Policy Information
+Point (PIP).
 
-The highlights of this release are:
+With this support, it is possible to define which authentication profiles are
+enabled at the VO level, and for any trusted X.509 certificate. This first
+level of authorization is implemented at the PEP server, that uses a special
+policy file, called VO-CA-AP file, to determine which authentication profiles
+are enabled. 
 
-- Introduced the :ref:`Authentication Profile PIP <argus_pep_pip_authn_profile_pip>`.
-- Introduced the new *x509-subject-issuer* and *x509-authn-profile* attributes.
-- Enhanced the :ref:`Common XACML Authorization Profile PIP <argus_pep_pip_common_xacml_authz_profile>`.
+Further, finer grained authorization can then be implemented as usual with
+policies defined in the PAP using the newly introduced *x509-authn-profile*
+attribute, in order to have differentiated access within resources of the same
+VO.
+
+In summary, the highlights of this release are:
+
+- The new :ref:`Authentication Profile PIP <argus_pep_pip_authn_profile_pip>`, which
+  provides support for different CA authentication profiles in Argus;
+- The new *x509-authn-profile* XACML attribute, that allows to write level-of-assurance aware policies, in case
+  you need more flexibility than what is allowed by the VO-CA-AP file first level of authorization implememented in 
+  the PEP server; 
+- The new *x509-subject-issuer* XACML attribute, which was introduced to simplify the development
+  of the Authentication Profile PIP.
 
 Packages
 ~~~~~~~~
@@ -19,30 +35,33 @@ Packages for this release can be obtained from the Argus product team package re
 
 http://argus-authz.github.io/repo
 
+Note that EL5/CENTOS5 packages are no longer provided (CENTOS5 is now out of support).
+
 Service configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-Instructions on how to configure the new PIP  are provided in the
-following documentation sections:
+Instructions on how to configure the Authentication Profile PIP are provided in
+the following section:
 
 - :ref:`Authentication Profile PIP configuration <argus_pep_pip_authn_profile_pip>`
 
 Upgrade procedure
 -----------------
 
-To install the new version and obtain a system with the same behavior of the previous release:
+To install Argus 1.7.1 and obtain a system with the same behavior of the former releases:
 
-#. Install the new packages.
-#. Reconfigure, manually or with a configuration management system (such as Puppet, Ansible or Quattor).
+#. Update the packages.
+#. Reconfigure the services, manually or with a configuration management system
+   (such as Puppet, Ansible or Quattor).
 #. Restart the services.
 
-The new release provides a default configuration that grants the
-access to resources only to certificates issued by CAs in the *classic*,
-*slcs* and *mics* IGTF profiles.
+Argus 1.7.1 comes with a default configuration that grants the access to
+resources only to certificates issued by CAs in the *classic*, *slcs* and
+*mics* IGTF profiles.
 
 To enable IOTA CA support for selected VOs, you’ll need to:
 
-#. Install the IOTA CA RPM, that provides the CA certificate and the policy info file.
+#. Install the IOTA CA RPM, that provides the IOTA CA certificates and the policy info files;
 #. Customize a VO-CA-AP policy file which states which authentication profiles are
    enabled for VOs and trusted certificates.
    This file can be provided by an RPM, such as ``lcmaps-plugins-vo-ca-ap`` package,
@@ -56,7 +75,6 @@ To enable IOTA CA support for selected VOs, you’ll need to:
 
    ``authenticationProfilePolicyFile = /etc/grid-security/vo-ca-ap-file``
 #. Restart the services.
-
 
 Main fixes
 ~~~~~~~~~~
