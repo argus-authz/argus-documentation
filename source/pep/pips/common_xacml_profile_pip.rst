@@ -107,8 +107,8 @@ populate the following attributes:
    -  **data type:** urn:oasis:names:tc:xacml:1.0:data-type:x500Name
    -  **multiple values allowed:** yes
    -  **description:** X.509 distinguished name of the authority(ies)
-      which issued the end-entity certificate. The values are in RFC2253
-      format.
+      which issued the end-entity certificate, included the Subject Identifier DN.
+      The values are in RFC2253 format.
 
 -  The CA Issuer Subject Attribute
 

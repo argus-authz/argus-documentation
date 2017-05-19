@@ -90,7 +90,7 @@ extracted from the X.509 certificate/proxy by the other PIPs.
 -  The X.509 Subject Issuer Attribute
 
    -  **type:** Subject
-   -  **id:** http://glite.org/xacml/attribute/subject-issuer
+   -  **id:** http://glite.org/xacml/attribute/x509-subject-issuer
    -  **data type:** urn:oasis:names:tc:xacml:1.0:data-type:x500Name
    -  **multiple values allowed:** no
    -  **description:** Distinguished Name of the CA issuer.

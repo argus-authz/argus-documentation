@@ -108,7 +108,7 @@ populate the following attributes:
    -  **multiple values allowed:** yes
    -  **description:** This is the Subject DN of the root CA and all
       subordinate CAs that signed within the end-entity certificate
-      chain. It is in RFC2253 format.
+      chain, included the Subject Identifier DN. It is in RFC2253 format.
 
 If VOMS support is enabled and a VOMS certificate is included within a
 user's proxy certificate, the following attributes will be populated
