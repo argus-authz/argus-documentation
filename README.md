@@ -1,4 +1,3 @@
-
 # Source repository for Argus documentation
 
 Argus documentation is in [reST](http://www.sphinx-doc.org/en/stable/rest.html) (`RST`) format and
