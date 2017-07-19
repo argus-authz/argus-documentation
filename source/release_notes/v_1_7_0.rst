@@ -48,6 +48,16 @@ mappings for user jobs, so it's safer to drain the site before upgrading the
 Argus services to version 1.7.0 if you want to avoid potential job failures
 due to the upgrade.
 
+Note (added 2017-07-19):
+
+If needed, to keep compatibility with the LCMAPS "-do_not_use_secondary_gids"
+option used by the CREAM YAIM module, in Argus 1.7 you would need to add:
+
+useSecondaryGroupNamesForMapping = false
+
+in the [ACCOUNTMAP_OH] section of the /etc/argus/pepd/pepd.ini
+and restart the service.
+
 Main fixes
 ~~~~~~~~~~
 
