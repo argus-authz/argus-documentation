@@ -8,14 +8,15 @@ Latest release:
 .. toctree::
    :maxdepth: 1
    
-   release_notes/v_1_7_1
+   release_notes/v_1_7_2
 
 
-Other releases:
+Older releases:
 
 .. toctree::
    :maxdepth: 1
    
+   release_notes/v_1_7_1
    release_notes/v_1_7_0
 
    
