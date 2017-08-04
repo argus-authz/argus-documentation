@@ -1,0 +1,42 @@
+.. _v1_7_2:
+
+Argus 1.7.2 (01-08-2017)
+========================
+
+The Argus 1.7.2 release provides a fix for an X.509 DN parsing problem in the
+PAP service.
+
+Updated components
+~~~~~~~~~~~~~~~~~~
+
+This release provides the following updated components:
+
+- Argus PAP service version 1.7.2
+
+Packages
+~~~~~~~~
+
+Packages for this release can be obtained from the Argus product team package repository:
+
+http://argus-authz.github.io/repo
+
+Note that EL5/CENTOS5 packages are no longer provided (CENTOS5 is now out of support).
+
+Upgrade procedure
+-----------------
+
+To install Argus 1.7.2: 
+
+#. Update the packages.
+#. Restart the Argus PAP service.
+
+Main fixes
+~~~~~~~~~~
+
+`argus-pap-1.7.2`_
+------------------
+
+- PAP permissions don't allow colon character in an X.509 subject principal [`pap-16`_].
+
+.. _pap-16: https://github.com/argus-authz/argus-pap/issues/16
+.. _argus-pap-1.7.2: https://github.com/argus-authz/argus-pap/milestone/2
