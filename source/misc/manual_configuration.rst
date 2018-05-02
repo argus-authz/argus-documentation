@@ -52,7 +52,7 @@ PDP
 ~~~
 
 ``/etc/argus/pdp/pdp.ini``
-   #. Set ``entity_id``.
+   #. Set ``entityId``.
    #. Set ``hostname`` with server host name.
    #. Set ``paps`` with PAP endpoint; one or more PAP endpoints can be specified in a space separated list.
    #. Set ``serviceCertificate`` with the absolute path of the X509 certificate of the server.
@@ -68,7 +68,7 @@ PEP
 ~~~
 
 ``/etc/argus/pepd/pepd.ini``
-   #. Set ``entity_id``.
+   #. Set ``entityId``.
    #. Set ``hostname`` with server host name.
    #. Set ``pdps`` with PDP endpoint; one or more PDP endpoints can be specified in a space separated list.
    #. Set ``serviceCertificate`` with the absolute path of the X509 certificate of the server.
