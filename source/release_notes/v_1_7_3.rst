@@ -1,0 +1,44 @@
+.. _v1_7_3:
+
+Argus 1.7.3 (02-03-2020)
+========================
+
+The Argus 1.7.3 release allows TLS protocol version to be configured on pdp and pep server components.
+
+Updated components
+~~~~~~~~~~~~~~~~~~
+
+This release provides the following updated components:
+
+- Argus PEP service version 1.7.4
+- Argus PDP service version 1.7.1
+
+Packages
+~~~~~~~~
+
+Packages for this release can be obtained from the Argus product team package repository:
+
+https://repo.cloud.cnaf.infn.it/service/rest/repository/browse/argus-rpm-stable/
+
+Upgrade procedure
+-----------------
+
+To install Argus 1.7.3: 
+
+#. Update the packages.
+#. Restart the Argus PEP and PDP services.
+
+Main fixes
+~~~~~~~~~~
+
+`argus-pep-server-1.7.4`_
+`argus-pdp-1.7.1`_
+------------------
+
+- TLS protocol version should be configurable [`pep-25`_].
+- TLS protocol version should be configurable [`pdp-6`_].
+
+.. _pep-25: https://github.com/argus-authz/argus-pep-server/issues/25
+.. _pdp-6: https://github.com/argus-authz/argus-pdp/issues/6
+.. _argus-pep-server-1.7.4: https://github.com/argus-authz/argus-pep-server/milestone/3
+.. _argus-pdp-1.7.1: https://github.com/argus-authz/argus-pdp/milestone/1
