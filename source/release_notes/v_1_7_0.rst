@@ -46,7 +46,7 @@ Changes in the mapping logic behaviour (`pep-7`_ , `pep-11`_), and in
 particular in the handling of secondary group names, could produce different
 mappings for user jobs, so it's safer to drain the site before upgrading the
 Argus services to version 1.7.0 if you want to avoid potential job failures
-due to the upgrade.
+due to the upgrade. More details can be found :ref:`here <argus_mapping>`.
 
 Main fixes
 ~~~~~~~~~~

@@ -21,6 +21,7 @@ Contents:
    pdp/index
    pep/index
    monitoring/index
+   operations/index
    quick_start/index
    misc/examples
    misc/service_reference_card
