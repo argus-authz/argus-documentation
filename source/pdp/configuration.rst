@@ -99,6 +99,18 @@ SECURITY section
         - false
 
     *
+        - tlsProtocol
+        - Which TLS protocol should be used whent HTTPS is enabled. Available values: TLS (default), TLSv1.2, TLSv1.1.
+        - No
+        - TLS
+
+    *
+        - enabledProtocols
+        - Specifies the TLS protocol versions to be enabled for use on the connection. The standard names that can be passed are, for example: TLSv1.2, TLSv1.1 and TLSv1.
+        - No
+        - None
+
+    *
         - requireClientCertAuthentication
         - Indicates whether the client must use a valid client certificate to authenticate to the PDP
         - No
@@ -126,6 +138,7 @@ PDP configuration file.
     trustInfoDir = /etc/grid-security/certificates
     # HTTPS enabled
     enableSSL = true
+    tlsProtocol = TLS
 
 Advanced Configuration Options
 ------------------------------
@@ -195,15 +208,21 @@ POLICY section
 SECURITY section
 ~~~~~~~~~~~~~~~~
 
-+-----------------------+---------------------------------------------------------------------------------------------------------------+-----------+------------------+
-| Property              | Description                                                                                                   | Required? | Default Value    |
-+=======================+===============================================================================================================+===========+==================+
-| trustInfoRefresh      | The frequency, in minutes, that the trust material specified by ``trustInfoDir`` will be checked for updates. | N         | 60 (1 hour)      |
-+-----------------------+---------------------------------------------------------------------------------------------------------------+-----------+------------------+
-| messageValidityPeriod | The number of seconds, from the time a message is issued, until it is considered expired.                     | N         | 300s (5 minutes) |
-+-----------------------+---------------------------------------------------------------------------------------------------------------+-----------+------------------+
-| clockSkew             | The allowance, in seconds, used when computing validity periods.                                              | N         | 30s              |
-+-----------------------+---------------------------------------------------------------------------------------------------------------+-----------+------------------+
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------------+
+| Property              | Description                                                                                                                                                                       | Required? | Default Value    |
++=======================+===================================================================================================================================================================================+===========+==================+
+| trustInfoRefresh      | The frequency, in minutes, that the trust material specified by ``trustInfoDir`` will be checked for updates.                                                                     | N         | 60 (1 hour)      |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------------+
+| messageValidityPeriod | The number of seconds, from the time a message is issued, until it is considered expired.                                                                                         | N         | 300s (5 minutes) |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------------+
+| clockSkew             | The allowance, in seconds, used when computing validity periods.                                                                                                                  | N         | 30s              |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------------+
+| enableSSL             | Enable HTTPS on the service port (SSL/TLS). The ``serviceCertificate``, ``servicePrivateKey``, and ``trustInfoDir`` properties must also be defined in order to use this setting. | N         | false            |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------------+
+| tlsProtocol           | Which TLS protocol should be used whent HTTPS is enabled. Available values: TLS (default), TLSv1.2, TLSv1.1.                                                                      | N         | TLS              |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------------+
+| enabledProtocols      | Specifies the TLS protocol versions to be enabled for use on the connection. The standard names that can be passed are, for example: TLSv1.2, TLSv1.1 and TLSv1                   | N         | None             |
++-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------------+
 
 
 .. _argus-pdp-conf-env-file:

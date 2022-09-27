@@ -3,9 +3,9 @@
 Argus 1.7.3 (24-09-2022)
 ========================
 
-The Argus 1.7.3 release allows TLS configuration for all the main services
-and includes a fix for the PEP policy parser in order to not fail in case
-of quoted commas or empty values for ``subjectdn``.
+The Argus 1.7.3 release allows TLS protocol version to be configured on
+pdp and pep server components and includes a fix for the PEP policy parser
+in order to not fail in case of quoted commas or empty values for ``subjectdn``.
 
 Updated components
 ~~~~~~~~~~~~~~~~~~

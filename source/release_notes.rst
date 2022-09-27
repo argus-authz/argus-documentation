@@ -7,9 +7,8 @@ Latest release:
 
 .. toctree::
    :maxdepth: 1
-   
-   release_notes/v_1_7_3.rst
 
+   release_notes/v_1_7_3
 
 Older releases:
 

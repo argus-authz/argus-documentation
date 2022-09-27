@@ -109,6 +109,10 @@ SECURITY section
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+---------------+
 | ``enableSSL``                       | Enable HTTPS on the service port (SSL/TLS). The ``serviceCertificate``, ``servicePrivateKey``, and ``trustInfoDir`` properties must also be defined in order to use this setting. | N                                                               | false         |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+---------------+
+| ``tlsProtocol``                     | Which TLS protocol should be used whent HTTPS is enabled. Available values: TLS (default), TLSv1.2, TLSv1.1.                                                                      | N                                                               | TLS           |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+---------------+
+| ``enabledProtocols``                | Specifies the TLS protocol versions to be enabled for use on the connection. The standard names that can be passed are, for example: TLSv1.2, TLSv1.1 and TLSv1                   | N                                                               | None          |
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+---------------+
 | ``requireClientCertAuthentication`` | The client must have a valid X.509 client certificate to authenticate to the PEP Server                                                                                           | N                                                               | true          |
 +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+---------------+
 
@@ -150,6 +154,7 @@ matches the name section configuring the PIP. Also note that the
     serviceCertificate = /etc/grid-security/hostcert.pem
     trustInfoDir = /etc/grid-security/certificates
     enableSSL = true
+    tlsProtocol = TLS
     requireClientCertAuthentication = true
 
     [REQVALIDATOR_PIP]
